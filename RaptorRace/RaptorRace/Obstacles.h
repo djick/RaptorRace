@@ -9,5 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Obstacles : SKNode
-
+@property SKSpriteNode *rock;
+@property SKSpriteNode *skeleton;
+@property SKSpriteNode *poop;
 @end
