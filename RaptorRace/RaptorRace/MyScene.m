@@ -18,7 +18,7 @@
         
         SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         
-        myLabel.text = @"iONE is so cool!";
+        myLabel.text = @"Raptor Race";
         myLabel.fontSize = 40;
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
