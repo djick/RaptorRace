@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		7147B48D18CF0A500083C542 /* Raptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7147B48C18CF0A500083C542 /* Raptor.m */; };
 		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
+		905AE3D318CF20A40007DE4E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D218CF20A40007DE4E /* GameScene.m */; };
+		905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D518CF20C90007DE4E /* Obstacles.m */; };
+		905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D818CF20FF0007DE4E /* MenuViewController.m */; };
+		905AE3DC18CF213B0007DE4E /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3DB18CF213B0007DE4E /* Ground.m */; };
+		905AE3DF18CF21700007DE4E /* PlayerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3DE18CF21700007DE4E /* PlayerProfile.m */; };
+		905AE3E218CF21950007DE4E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3E118CF21950007DE4E /* GameViewController.m */; };
 		AFCFA34C18BF81F900092E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34B18BF81F900092E6E /* Foundation.framework */; };
 		AFCFA34E18BF81F900092E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */; };
 		AFCFA35018BF81F900092E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34F18BF81F900092E6E /* UIKit.framework */; };
@@ -19,7 +25,6 @@
 		AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCFA35F18BF81F900092E6E /* Main.storyboard */; };
 		AFCFA36418BF81F900092E6E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCFA36318BF81F900092E6E /* ViewController.m */; };
 		AFCFA36718BF81F900092E6E /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCFA36618BF81F900092E6E /* MyScene.m */; };
-		AFCFA36918BF81F900092E6E /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCFA36818BF81F900092E6E /* Spaceship.png */; };
 		AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCFA36A18BF81F900092E6E /* Images.xcassets */; };
 		AFCFA37218BF81F900092E6E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA37118BF81F900092E6E /* XCTest.framework */; };
 		AFCFA37318BF81F900092E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34B18BF81F900092E6E /* Foundation.framework */; };
@@ -42,6 +47,18 @@
 		7147B48B18CF0A500083C542 /* Raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raptor.h; sourceTree = "<group>"; };
 		7147B48C18CF0A500083C542 /* Raptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raptor.m; sourceTree = "<group>"; };
 		7147B48E18CF0A570083C542 /* raptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptor.atlas; sourceTree = "<group>"; };
+		905AE3D118CF20A40007DE4E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		905AE3D218CF20A40007DE4E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		905AE3D418CF20C90007DE4E /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
+		905AE3D518CF20C90007DE4E /* Obstacles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacles.m; sourceTree = "<group>"; };
+		905AE3D718CF20FF0007DE4E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		905AE3D818CF20FF0007DE4E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		905AE3DA18CF213B0007DE4E /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
+		905AE3DB18CF213B0007DE4E /* Ground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
+		905AE3DD18CF21700007DE4E /* PlayerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerProfile.h; sourceTree = "<group>"; };
+		905AE3DE18CF21700007DE4E /* PlayerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerProfile.m; sourceTree = "<group>"; };
+		905AE3E018CF21950007DE4E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		905AE3E118CF21950007DE4E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		AFCFA34818BF81F900092E6E /* RaptorRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaptorRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCFA34B18BF81F900092E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,7 +75,6 @@
 		AFCFA36318BF81F900092E6E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AFCFA36518BF81F900092E6E /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		AFCFA36618BF81F900092E6E /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		AFCFA36818BF81F900092E6E /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		AFCFA36A18BF81F900092E6E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AFCFA37018BF81F900092E6E /* RaptorRaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptorRaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCFA37118BF81F900092E6E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -92,6 +108,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		905AE3CF18CF20210007DE4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				905AE3DD18CF21700007DE4E /* PlayerProfile.h */,
+				905AE3DE18CF21700007DE4E /* PlayerProfile.m */,
+				7147B48B18CF0A500083C542 /* Raptor.h */,
+				7147B48C18CF0A500083C542 /* Raptor.m */,
+				905AE3D418CF20C90007DE4E /* Obstacles.h */,
+				905AE3D518CF20C90007DE4E /* Obstacles.m */,
+				905AE3DA18CF213B0007DE4E /* Ground.h */,
+				905AE3DB18CF213B0007DE4E /* Ground.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		905AE3D018CF20560007DE4E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFCFA36218BF81F900092E6E /* ViewController.h */,
+				AFCFA36318BF81F900092E6E /* ViewController.m */,
+				905AE3D718CF20FF0007DE4E /* MenuViewController.h */,
+				905AE3D818CF20FF0007DE4E /* MenuViewController.m */,
+				905AE3E018CF21950007DE4E /* GameViewController.h */,
+				905AE3E118CF21950007DE4E /* GameViewController.m */,
+				AFCFA36518BF81F900092E6E /* MyScene.h */,
+				AFCFA36618BF81F900092E6E /* MyScene.m */,
+				905AE3D118CF20A40007DE4E /* GameScene.h */,
+				905AE3D218CF20A40007DE4E /* GameScene.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		AFCFA33F18BF81F900092E6E = {
 			isa = PBXGroup;
 			children = (
@@ -126,17 +174,12 @@
 		AFCFA35318BF81F900092E6E /* RaptorRace */ = {
 			isa = PBXGroup;
 			children = (
+				905AE3D018CF20560007DE4E /* ViewControllers */,
+				905AE3CF18CF20210007DE4E /* Models */,
 				7147B48E18CF0A570083C542 /* raptor.atlas */,
-				7147B48B18CF0A500083C542 /* Raptor.h */,
-				7147B48C18CF0A500083C542 /* Raptor.m */,
 				AFCFA35C18BF81F900092E6E /* AppDelegate.h */,
 				AFCFA35D18BF81F900092E6E /* AppDelegate.m */,
 				AFCFA35F18BF81F900092E6E /* Main.storyboard */,
-				AFCFA36218BF81F900092E6E /* ViewController.h */,
-				AFCFA36318BF81F900092E6E /* ViewController.m */,
-				AFCFA36518BF81F900092E6E /* MyScene.h */,
-				AFCFA36618BF81F900092E6E /* MyScene.m */,
-				AFCFA36818BF81F900092E6E /* Spaceship.png */,
 				AFCFA36A18BF81F900092E6E /* Images.xcassets */,
 				AFCFA35418BF81F900092E6E /* Supporting Files */,
 			);
@@ -251,7 +294,6 @@
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
-				AFCFA36918BF81F900092E6E /* Spaceship.png in Resources */,
 				AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,10 +313,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905AE3DF18CF21700007DE4E /* PlayerProfile.m in Sources */,
+				905AE3E218CF21950007DE4E /* GameViewController.m in Sources */,
 				AFCFA36718BF81F900092E6E /* MyScene.m in Sources */,
 				AFCFA36418BF81F900092E6E /* ViewController.m in Sources */,
 				AFCFA35E18BF81F900092E6E /* AppDelegate.m in Sources */,
+				905AE3DC18CF213B0007DE4E /* Ground.m in Sources */,
+				905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */,
 				AFCFA35A18BF81F900092E6E /* main.m in Sources */,
+				905AE3D318CF20A40007DE4E /* GameScene.m in Sources */,
+				905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */,
 				7147B48D18CF0A500083C542 /* Raptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
