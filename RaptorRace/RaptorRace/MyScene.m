@@ -20,7 +20,7 @@
         SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
         
         myLabel.text = @"Raptor Race";
-        myLabel.fontSize = 40;
+        myLabel.fontSize = 30;
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
         
