@@ -45,7 +45,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+    // Release any cached data, images,etc that aren't in use.
 }
 
 @end
