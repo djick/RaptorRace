@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "Raptor.h"
+#import "Obstacles.h"
 
 @implementation GameScene
 
@@ -31,6 +32,10 @@
         [raptor.physicsBody setAffectedByGravity:YES];
         //[raptor.physicsBody setFriction:0];
         [self addChild:raptor];
+        
+        //Add rock
+        Obstacles* rock = [[Obstacles alloc] init];
+        [self addChild:rock];
         
         
         
