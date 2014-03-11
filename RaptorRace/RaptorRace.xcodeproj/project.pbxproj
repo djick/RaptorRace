@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7147B48D18CF0A500083C542 /* Raptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7147B48C18CF0A500083C542 /* Raptor.m */; };
+		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
 		AFCFA34C18BF81F900092E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34B18BF81F900092E6E /* Foundation.framework */; };
 		AFCFA34E18BF81F900092E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */; };
 		AFCFA35018BF81F900092E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34F18BF81F900092E6E /* UIKit.framework */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7147B48B18CF0A500083C542 /* Raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raptor.h; sourceTree = "<group>"; };
+		7147B48C18CF0A500083C542 /* Raptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raptor.m; sourceTree = "<group>"; };
+		7147B48E18CF0A570083C542 /* raptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptor.atlas; sourceTree = "<group>"; };
 		AFCFA34818BF81F900092E6E /* RaptorRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaptorRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCFA34B18BF81F900092E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +126,9 @@
 		AFCFA35318BF81F900092E6E /* RaptorRace */ = {
 			isa = PBXGroup;
 			children = (
+				7147B48E18CF0A570083C542 /* raptor.atlas */,
+				7147B48B18CF0A500083C542 /* Raptor.h */,
+				7147B48C18CF0A500083C542 /* Raptor.m */,
 				AFCFA35C18BF81F900092E6E /* AppDelegate.h */,
 				AFCFA35D18BF81F900092E6E /* AppDelegate.m */,
 				AFCFA35F18BF81F900092E6E /* Main.storyboard */,
@@ -241,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
+				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
 				AFCFA36918BF81F900092E6E /* Spaceship.png in Resources */,
 				AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */,
@@ -266,6 +275,7 @@
 				AFCFA36418BF81F900092E6E /* ViewController.m in Sources */,
 				AFCFA35E18BF81F900092E6E /* AppDelegate.m in Sources */,
 				AFCFA35A18BF81F900092E6E /* main.m in Sources */,
+				7147B48D18CF0A500083C542 /* Raptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +486,7 @@
 				AFCFA38318BF81F900092E6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFCFA38418BF81F900092E6E /* Build configuration list for PBXNativeTarget "RaptorRaceTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +495,7 @@
 				AFCFA38618BF81F900092E6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

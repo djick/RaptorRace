@@ -7,6 +7,7 @@
 //
 
 #import "MyScene.h"
+#import "Raptor.h"
 
 @implementation MyScene
 
@@ -14,9 +15,9 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
         
         myLabel.text = @"Raptor Race";
         myLabel.fontSize = 40;
@@ -24,7 +25,12 @@
                                        CGRectGetMidY(self.frame));
         
         [self addChild:myLabel];
+        
+        Raptor* raptor = [[Raptor alloc] init];
+        raptor.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/4);
+        [self addChild:raptor];
     }
+    
     return self;
 }
 
