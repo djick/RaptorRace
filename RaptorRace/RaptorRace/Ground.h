@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Ground : SKNode
-
+@interface Ground : SKNode{
+    SKSpriteNode *hill;
+}
 @end

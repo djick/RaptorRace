@@ -10,15 +10,15 @@
 #import "GameScene.h"
 
 @implementation ViewController
-
+/*
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    //skView.showsFPS = YES;
+    //skView.showsNodeCount = YES;
     
     // Create and configure the scene.
     SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
@@ -27,11 +27,31 @@
     // Present the scene.
     [skView presentScene:scene];
 }
-
+*/
 - (BOOL)shouldAutorotate
 {
     return YES;
 }
+
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    // Configure the view.
+    SKView * skView = (SKView *)self.view;
+    if (!skView.scene) {
+        skView.showsFPS = YES;
+        skView.showsNodeCount = YES;
+        
+        // Create and configure the scene.
+        SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
+        scene.scaleMode = SKSceneScaleModeAspectFill;
+        
+        // Present the scene.
+        [skView presentScene:scene];
+    }
+}
+
 
 - (NSUInteger)supportedInterfaceOrientations
 {
