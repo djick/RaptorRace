@@ -13,6 +13,9 @@
 		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
 		71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1718D08CE200441272 /* dinosaur1.png */; };
 		71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1818D08CE200441272 /* dinosaur2.png */; };
+		71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */; };
+		71A9DE1E18D0F6B000441272 /* ground1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1D18D0F6B000441272 /* ground1.png */; };
+		71A9DE2018D0F9D500441272 /* ground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1F18D0F9D500441272 /* ground2.png */; };
 		71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4C18CFAF1E00036F3C /* skeleton.png */; };
 		71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4E18CFB16400036F3C /* skeleton1.png */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
@@ -60,6 +63,9 @@
 		7147B48E18CF0A570083C542 /* raptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptor.atlas; sourceTree = "<group>"; };
 		71A9DE1718D08CE200441272 /* dinosaur1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur1.png; sourceTree = "<group>"; };
 		71A9DE1818D08CE200441272 /* dinosaur2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur2.png; sourceTree = "<group>"; };
+		71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newestSkeleton1.png; sourceTree = "<group>"; };
+		71A9DE1D18D0F6B000441272 /* ground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground1.png; sourceTree = "<group>"; };
+		71A9DE1F18D0F9D500441272 /* ground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground2.png; sourceTree = "<group>"; };
 		71E2AC4C18CFAF1E00036F3C /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
 		71E2AC4E18CFB16400036F3C /* skeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton1.png; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
@@ -210,6 +216,9 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71A9DE1F18D0F9D500441272 /* ground2.png */,
+				71A9DE1D18D0F6B000441272 /* ground1.png */,
+				71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */,
 				71A9DE1718D08CE200441272 /* dinosaur1.png */,
 				71A9DE1818D08CE200441272 /* dinosaur2.png */,
 				0A06FAA518D085FF00C997B3 /* skeletonpixel1.png */,
@@ -324,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
+				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
 				0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */,
 				0A06FAA618D085FF00C997B3 /* skeletonpixel1.png in Resources */,
@@ -331,8 +341,10 @@
 				71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */,
 				AFE9FF4618D0797800835561 /* landscape.png in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
+				71A9DE1E18D0F6B000441272 /* ground1.png in Resources */,
 				71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */,
 				71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */,
+				71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */,
 				7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */,
 				AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */,
 			);
