@@ -10,22 +10,15 @@
 		0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E956E18CF4E6F00C14FA4 /* rock.png */; };
 		7147B48D18CF0A500083C542 /* Raptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7147B48C18CF0A500083C542 /* Raptor.m */; };
 		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
-<<<<<<< HEAD
+		71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4C18CFAF1E00036F3C /* skeleton.png */; };
 		71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4E18CFB16400036F3C /* skeleton1.png */; };
-		71E2AC5218D0757500036F3C /* obstacle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC5018D0757500036F3C /* obstacle2.png */; };
-		71E2AC5318D0757500036F3C /* obstacle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC5118D0757500036F3C /* obstacle1.png */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
-=======
-		904701BE18D073CF00D6DF99 /* SillyRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 904701BD18D073CF00D6DF99 /* SillyRaptor.m */; };
-		904701C018D0753A00D6DF99 /* sillyRaptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 904701BF18D0753A00D6DF99 /* sillyRaptor.atlas */; };
->>>>>>> FETCH_HEAD
 		905AE3D318CF20A40007DE4E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D218CF20A40007DE4E /* GameScene.m */; };
 		905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D518CF20C90007DE4E /* Obstacles.m */; };
 		905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D818CF20FF0007DE4E /* MenuViewController.m */; };
 		905AE3DC18CF213B0007DE4E /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3DB18CF213B0007DE4E /* Ground.m */; };
 		905AE3DF18CF21700007DE4E /* PlayerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3DE18CF21700007DE4E /* PlayerProfile.m */; };
 		905AE3E218CF21950007DE4E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3E118CF21950007DE4E /* GameViewController.m */; };
-		905AE3E518CF2F380007DE4E /* AnyRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3E418CF2F380007DE4E /* AnyRaptor.m */; };
 		AFCFA34C18BF81F900092E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34B18BF81F900092E6E /* Foundation.framework */; };
 		AFCFA34E18BF81F900092E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */; };
 		AFCFA35018BF81F900092E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34F18BF81F900092E6E /* UIKit.framework */; };
@@ -59,16 +52,9 @@
 		7147B48B18CF0A500083C542 /* Raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raptor.h; sourceTree = "<group>"; };
 		7147B48C18CF0A500083C542 /* Raptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raptor.m; sourceTree = "<group>"; };
 		7147B48E18CF0A570083C542 /* raptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptor.atlas; sourceTree = "<group>"; };
-<<<<<<< HEAD
+		71E2AC4C18CFAF1E00036F3C /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
 		71E2AC4E18CFB16400036F3C /* skeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton1.png; sourceTree = "<group>"; };
-		71E2AC5018D0757500036F3C /* obstacle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle2.png; sourceTree = "<group>"; };
-		71E2AC5118D0757500036F3C /* obstacle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle1.png; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
-=======
-		904701BC18D073CF00D6DF99 /* SillyRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SillyRaptor.h; sourceTree = "<group>"; };
-		904701BD18D073CF00D6DF99 /* SillyRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SillyRaptor.m; sourceTree = "<group>"; };
-		904701BF18D0753A00D6DF99 /* sillyRaptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = sillyRaptor.atlas; path = ../../../../Desktop/sillyRaptor.atlas; sourceTree = "<group>"; };
->>>>>>> FETCH_HEAD
 		905AE3D118CF20A40007DE4E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		905AE3D218CF20A40007DE4E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		905AE3D418CF20C90007DE4E /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
@@ -81,8 +67,6 @@
 		905AE3DE18CF21700007DE4E /* PlayerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerProfile.m; sourceTree = "<group>"; };
 		905AE3E018CF21950007DE4E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		905AE3E118CF21950007DE4E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		905AE3E318CF2F380007DE4E /* AnyRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyRaptor.h; sourceTree = "<group>"; };
-		905AE3E418CF2F380007DE4E /* AnyRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyRaptor.m; sourceTree = "<group>"; };
 		AFCFA34818BF81F900092E6E /* RaptorRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaptorRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCFA34B18BF81F900092E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,10 +123,6 @@
 				905AE3DE18CF21700007DE4E /* PlayerProfile.m */,
 				7147B48B18CF0A500083C542 /* Raptor.h */,
 				7147B48C18CF0A500083C542 /* Raptor.m */,
-				905AE3E318CF2F380007DE4E /* AnyRaptor.h */,
-				905AE3E418CF2F380007DE4E /* AnyRaptor.m */,
-				904701BC18D073CF00D6DF99 /* SillyRaptor.h */,
-				904701BD18D073CF00D6DF99 /* SillyRaptor.m */,
 				905AE3D418CF20C90007DE4E /* Obstacles.h */,
 				905AE3D518CF20C90007DE4E /* Obstacles.m */,
 				905AE3DA18CF213B0007DE4E /* Ground.h */,
@@ -217,15 +197,10 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				71E2AC5018D0757500036F3C /* obstacle2.png */,
-				71E2AC5118D0757500036F3C /* obstacle1.png */,
 				71E2AC4E18CFB16400036F3C /* skeleton1.png */,
 				7FDAC26318D06C7900EBFEF0 /* Ground.png */,
+				71E2AC4C18CFAF1E00036F3C /* skeleton.png */,
 				0A8E956E18CF4E6F00C14FA4 /* rock.png */,
-=======
-				904701BF18D0753A00D6DF99 /* sillyRaptor.atlas */,
->>>>>>> FETCH_HEAD
 				AFCFA35518BF81F900092E6E /* RaptorRace-Info.plist */,
 				AFCFA35618BF81F900092E6E /* InfoPlist.strings */,
 				AFCFA35918BF81F900092E6E /* main.m */,
@@ -331,12 +306,11 @@
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
 				0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
-				904701C018D0753A00D6DF99 /* sillyRaptor.atlas in Resources */,
+				71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
+				71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */,
 				7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */,
 				AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */,
-				71E2AC5218D0757500036F3C /* obstacle2.png in Resources */,
-				71E2AC5318D0757500036F3C /* obstacle1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +339,6 @@
 				AFCFA35A18BF81F900092E6E /* main.m in Sources */,
 				905AE3D318CF20A40007DE4E /* GameScene.m in Sources */,
 				905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */,
-				905AE3E518CF2F380007DE4E /* AnyRaptor.m in Sources */,
-				904701BE18D073CF00D6DF99 /* SillyRaptor.m in Sources */,
 				7147B48D18CF0A500083C542 /* Raptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
