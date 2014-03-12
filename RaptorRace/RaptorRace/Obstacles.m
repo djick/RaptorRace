@@ -14,15 +14,15 @@
 
 -(id)init {
     if (self = [super init]) {
-        _rock= [SKSpriteNode spriteNodeWithImageNamed:@"rock.png"];
-        _rock.size=CGSizeMake(40, 40);
-        _rock.position = CGPointMake(200, 40);
-        _rock.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
-        _rock.physicsBody.affectedByGravity=NO;
-        _rock.physicsBody.mass=50000;
-        _rock.physicsBody.allowsRotation=NO;
-        _rock.physicsBody.dynamic=NO; //Making dem obstacles static
-        [self addChild:_rock];
+        _dinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"rock.png"];
+        _dinosaur1.size=CGSizeMake(40, 40);
+        _dinosaur1.position = CGPointMake(200, 40);
+        _dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+        _dinosaur1.physicsBody.affectedByGravity=NO;
+        _dinosaur1.physicsBody.mass=50000;
+        _dinosaur1.physicsBody.allowsRotation=NO;
+        _dinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
+        [self addChild:_dinosaur1];
 
     }
     
