@@ -26,7 +26,7 @@
     _dinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"obstacle1"];
     _dinosaur1.size=CGSizeMake(70, 50);
     _dinosaur1.position = CGPointMake(100, 100);
-    _dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+    _dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(70,50)];
     _dinosaur1.physicsBody.affectedByGravity=NO;
     _dinosaur1.physicsBody.mass=50000;
     _dinosaur1.physicsBody.allowsRotation=NO;
@@ -37,12 +37,11 @@
     
 }
 
-
 -(void)makeDinosaur2 {
     _dinosaur2= [SKSpriteNode spriteNodeWithImageNamed:@"obstacle2"];
     _dinosaur2.size=CGSizeMake(70, 50);
     _dinosaur2.position = CGPointMake(200, 100);
-    _dinosaur2.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+    _dinosaur2.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(70,50)];
     _dinosaur2.physicsBody.affectedByGravity=NO;
     _dinosaur2.physicsBody.mass=50000;
     _dinosaur2.physicsBody.allowsRotation=NO;
@@ -57,7 +56,7 @@
     _skeleton= [SKSpriteNode spriteNodeWithImageNamed:@"skeleton1.png"];
     _skeleton.size=CGSizeMake(50, 40);
     _skeleton.position = CGPointMake(300, 110);
-    _skeleton.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+    _skeleton.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50,40)];
     _skeleton.physicsBody.affectedByGravity=NO;
     _skeleton.physicsBody.mass=50000;
     _skeleton.physicsBody.allowsRotation=NO;
@@ -67,4 +66,6 @@
     [self addChild:_skeleton];
     
 }
+
+
 @end
