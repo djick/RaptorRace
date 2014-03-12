@@ -9,5 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate>
-
+@property(nonatomic,readonly) SKLabelNode *scoreLabel;
+@property(nonatomic) CGFloat score;
+-(void) countUp;
 @end
