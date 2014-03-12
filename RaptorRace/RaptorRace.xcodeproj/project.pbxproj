@@ -64,6 +64,7 @@
 		71E2AC4C18CFAF1E00036F3C /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
 		71E2AC4E18CFB16400036F3C /* skeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton1.png; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
+		7FDAC26518D0872A00EBFEF0 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		905AE3D118CF20A40007DE4E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		905AE3D218CF20A40007DE4E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		905AE3D418CF20C90007DE4E /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		905AE3D018CF20560007DE4E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7FDAC26518D0872A00EBFEF0 /* Categories.h */,
 				AFCFA36218BF81F900092E6E /* ViewController.h */,
 				AFCFA36318BF81F900092E6E /* ViewController.m */,
 				905AE3D718CF20FF0007DE4E /* MenuViewController.h */,

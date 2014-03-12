@@ -7,6 +7,7 @@
 //
 
 #import "Raptor.h"
+#import "Categories.h"
 
 @implementation Raptor
 
@@ -26,7 +27,6 @@ NSArray *_raptorRunningFrames;
         _raptorRunningFrames = runningFrames;
         SKTexture *temp = _raptorRunningFrames[0];
         _raptor = [SKSpriteNode spriteNodeWithTexture:temp];
-     
         [self addChild:_raptor];
         [self runningRaptor];
     }

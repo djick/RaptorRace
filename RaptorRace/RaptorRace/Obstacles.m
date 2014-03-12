@@ -31,6 +31,7 @@
     _dinosaur1.physicsBody.mass=50000;
     _dinosaur1.physicsBody.allowsRotation=NO;
     _dinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
+    [_dinosaur1.physicsBody setCollisionBitMask:0];
     _dinosaur1.xScale = 1;
     _dinosaur1.yScale = 1;
     [self addChild:_dinosaur1];
@@ -47,6 +48,7 @@
     _dinosaur2.physicsBody.mass=50000;
     _dinosaur2.physicsBody.allowsRotation=NO;
     _dinosaur2.physicsBody.dynamic=NO; //Making dem obstacles static
+    [_dinosaur2.physicsBody setCollisionBitMask:0];
     _dinosaur2.xScale = 1;
     _dinosaur2.yScale = 1;
     [self addChild:_dinosaur2];
@@ -62,6 +64,7 @@
     _skeleton.physicsBody.mass=50000;
     _skeleton.physicsBody.allowsRotation=NO;
     _skeleton.physicsBody.dynamic=NO; //Making dem obstacles static
+    [_skeleton.physicsBody setCollisionBitMask:0];
     _skeleton.xScale = 2;
     _skeleton.yScale = 2;
     [self addChild:_skeleton];
