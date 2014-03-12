@@ -10,4 +10,28 @@
 
 @implementation AnyRaptor
 
+- (SKSpriteNode *) makeRaptor
+{
+    return NULL;
+}
+
+- (NSString *) getAtlasName
+{
+    return NULL;
+}
+
+- (NSString* ) getPictureNameFormat
+{
+   return NULL;
+}
+
+- (void) setRaptorAnimationWithAtlasNamed:(NSString *)name
+                     AndPictureNAmeFormat:(NSString *)format{
+    
+}
+
+- (void) setPhysicalAbilitiesOfRaptor
+{
+    
+}
 @end
