@@ -56,7 +56,7 @@
 }
 
 -(void)makeSkeleton {
-    _skeleton= [SKSpriteNode spriteNodeWithImageNamed:@"skeleton1.png"];
+    _skeleton= [SKSpriteNode spriteNodeWithImageNamed:@"skeletonpixel1.png"];
     _skeleton.size=CGSizeMake(50, 40);
     _skeleton.position = CGPointMake(300, 110);
     _skeleton.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
