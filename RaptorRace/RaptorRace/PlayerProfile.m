@@ -10,4 +10,8 @@
 
 @implementation PlayerProfile
 
+- (void) updateScore:(CGFloat) newScore {
+    _highScore = newScore;
+}
+
 @end
