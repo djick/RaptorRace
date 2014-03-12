@@ -35,6 +35,7 @@
 		AFCFA37418BF81F900092E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34F18BF81F900092E6E /* UIKit.framework */; };
 		AFCFA37C18BF81F900092E6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFCFA37A18BF81F900092E6E /* InfoPlist.strings */; };
 		AFCFA37E18BF81F900092E6E /* RaptorRaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */; };
+		AFE9FF4618D0797800835561 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4518D0797800835561 /* landscape.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		AFCFA37918BF81F900092E6E /* RaptorRaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaptorRaceTests-Info.plist"; sourceTree = "<group>"; };
 		AFCFA37B18BF81F900092E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptorRaceTests.m; sourceTree = "<group>"; };
+		AFE9FF4518D0797800835561 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE9FF4518D0797800835561 /* landscape.png */,
 				71E2AC4E18CFB16400036F3C /* skeleton1.png */,
 				7FDAC26318D06C7900EBFEF0 /* Ground.png */,
 				71E2AC4C18CFAF1E00036F3C /* skeleton.png */,
@@ -307,6 +310,7 @@
 				0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
 				71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */,
+				AFE9FF4618D0797800835561 /* landscape.png in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
 				71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */,
 				7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */,

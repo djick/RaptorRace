@@ -58,6 +58,24 @@
         _skyColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0];
         [self setBackgroundColor:_skyColor];
         
+        //Landscape
+        SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"landscape"];
+        skylineTexture.filteringMode = SKTextureFilteringNearest;
+        
+        SKAction* moveSkylineSprite = [SKAction moveByX:-skylineTexture.size.width*2 y:0 duration:0.1 * skylineTexture.size.width*2];
+        SKAction* resetSkylineSprite = [SKAction moveByX:skylineTexture.size.width*2 y:0 duration:0];
+        SKAction* moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSkylineSprite, resetSkylineSprite]]];
+
+        
+        for( int i = 0; i < 2 + self.frame.size.width / ( skylineTexture.size.width * 2 ); ++i ) {
+            SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:skylineTexture];
+            [sprite setScale:2.0];
+            sprite.zPosition = -20;
+            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + 25 * 2);
+            [sprite runAction:moveSkylineSpritesForever];
+            [self addChild:sprite];
+        }
+        
     }
     
     return self;
