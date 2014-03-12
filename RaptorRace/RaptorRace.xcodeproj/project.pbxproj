@@ -204,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				AFE9FF4518D0797800835561 /* landscape.png */,
+				714A78C318D07BD300322F5D /* obstacle2.png */,
+				714A78C418D07BD300322F5D /* obstacle1.png */,
 				71E2AC4E18CFB16400036F3C /* skeleton1.png */,
 				7FDAC26318D06C7900EBFEF0 /* Ground.png */,
 				71E2AC4C18CFAF1E00036F3C /* skeleton.png */,

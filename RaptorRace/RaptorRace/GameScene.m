@@ -45,7 +45,7 @@
         //Add score label
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
         _scoreLabel.fontSize = 10;
-        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetMidY(self.frame));
+        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/5.3));
         _scoreLabel.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
         _scoreLabel.text = @"000";
         
