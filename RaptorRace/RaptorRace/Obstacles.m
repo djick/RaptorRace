@@ -12,15 +12,30 @@
 @implementation Obstacles
 //Categorybitmasks legges i gameview til slutt
 
--(id)init {
+
+-(id)init {                             //Prøvde aa faa til noe her, men de vil ikke bevege seg.
+    int obstacleinterval=2;
     if (self = [super init]) {
-        
-        [self makeDinosaur1];
-        [self makeDinosaur2];
-        [self makeSkeleton];
+        for (int i=0; i<obstacleinterval; i++){
+            [self makeDinosaur1];
+            //[self makeDinosaur2];
+            //[self makeSkeleton];
+            if (i==0) {
+                _dinosaur1.position=CGPointMake(400, 100);
+                [_dinosaur1.physicsBody applyForce:(CGVectorMake(500, 100))];
+            }
+            else{
+                _dinosaur1.position=CGPointMake(500, 100);
+                [_dinosaur1.physicsBody applyForce:(CGVectorMake(500, 100))]; //FAENDA! APPLY FORCE DIN JAEVEL
+            }
+        }
     }
+    
     return self;
 }
+
+/*
+  */
 
 -(void)makeDinosaur1 {
     _dinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur1"];
@@ -28,9 +43,9 @@
     _dinosaur1.position = CGPointMake(100, 100);
     _dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(70,50)];
     _dinosaur1.physicsBody.affectedByGravity=NO;
-    _dinosaur1.physicsBody.mass=50000;
+    _dinosaur1.physicsBody.mass=50;
     _dinosaur1.physicsBody.allowsRotation=NO;
-    _dinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
+    _dinosaur1.physicsBody.dynamic=NO;
     _dinosaur1.xScale = 1;
     _dinosaur1.yScale = 1;
     [self addChild:_dinosaur1];
