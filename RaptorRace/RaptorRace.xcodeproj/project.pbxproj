@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A06FAA618D085FF00C997B3 /* skeletonpixel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A06FAA518D085FF00C997B3 /* skeletonpixel1.png */; };
 		0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E956E18CF4E6F00C14FA4 /* rock.png */; };
 		7147B48D18CF0A500083C542 /* Raptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7147B48C18CF0A500083C542 /* Raptor.m */; };
 		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A06FAA518D085FF00C997B3 /* skeletonpixel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeletonpixel1.png; sourceTree = "<group>"; };
 		0A8E956E18CF4E6F00C14FA4 /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rock.png; sourceTree = "<group>"; };
 		7147B48B18CF0A500083C542 /* Raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raptor.h; sourceTree = "<group>"; };
 		7147B48C18CF0A500083C542 /* Raptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raptor.m; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0A06FAA518D085FF00C997B3 /* skeletonpixel1.png */,
 				714A78C718D07DC700322F5D /* obstacle1.png */,
 				714A78C818D07DC700322F5D /* obstacle2.png */,
 				AFE9FF4518D0797800835561 /* landscape.png */,
@@ -326,6 +329,7 @@
 				0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */,
 				714A78C918D07DC700322F5D /* obstacle1.png in Resources */,
 				714A78C518D07BD300322F5D /* obstacle2.png in Resources */,
+				0A06FAA618D085FF00C997B3 /* skeletonpixel1.png in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
 				71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */,
 				AFE9FF4618D0797800835561 /* landscape.png in Resources */,
