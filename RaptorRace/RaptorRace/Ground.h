@@ -10,5 +10,10 @@
 
 @interface Ground : SKNode{
     SKSpriteNode *hill;
+    CGRect parentFrame;
 }
+@property SKTexture *groundTexture;
+
+-(void) makeRandomHill;
+- (void) setFrame:(CGRect) frame;
 @end
