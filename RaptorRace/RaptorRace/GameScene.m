@@ -55,7 +55,7 @@
         //Add score label
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
         _scoreLabel.fontSize = 20;
-        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/5));
+        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
         _scoreLabel.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
         _scoreLabel.text = @"000";
         
@@ -81,7 +81,7 @@
             SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:skylineTexture];
             [sprite setScale:2.0];
             sprite.zPosition = -20;
-            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + 25 * 2);
+            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + ground.groundTexture.size.height );
             [sprite runAction:moveSkylineSpritesForever];
             [self addChild:sprite];
         }
