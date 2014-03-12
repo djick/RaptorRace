@@ -11,9 +11,7 @@
 @implementation Ground
 
 -(id)init{
-    if(self == [super init]){
-        [self makeRandomHill];
-    }
+    self = [super init];
     return self;
 }
 
@@ -23,29 +21,30 @@
     [self addChild:moving];
     // Create ground
     
-    SKTexture* groundTexture = [SKTexture textureWithImageNamed:@"Ground.png"];
-    groundTexture.filteringMode = SKTextureFilteringNearest;
+    self.groundTexture = [SKTexture textureWithImageNamed:@"Ground.png"];
+    self.groundTexture.filteringMode = SKTextureFilteringNearest;
     
-    SKAction* moveGroundSprite = [SKAction moveByX:-groundTexture.size.width*2 y:0 duration:0.02 * groundTexture.size.width*2];
-    SKAction* resetGroundSprite = [SKAction moveByX:groundTexture.size.width*2 y:0 duration:0];
+    SKAction* moveGroundSprite = [SKAction moveByX:-self.groundTexture.size.width*2 y:0 duration:0.02 * self.groundTexture.size.width*2];
+    SKAction* resetGroundSprite = [SKAction moveByX:self.groundTexture.size.width*2 y:0 duration:0];
     SKAction* moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
+    NSLog(@"Mywidth: %f", self.frame.size.width);
+    NSLog(@"Parent: %f", parentFrame.size.width);
     
-    for( int i = 0; i < 2 + self.frame.size.width / ( groundTexture.size.width * 2 ); ++i ) {
+    for( int i = 0; i < 2 + parentFrame.size.width / ( self.groundTexture.size.width * 2 ); ++i ) {
         // Create the sprite
         NSLog(@"creates sprite");
-        SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:groundTexture];
+        SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:self.groundTexture];
         [sprite setScale:2.0];
-        sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + 120);
+        sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 4);
         [sprite runAction:moveGroundSpritesForever];
         [moving addChild:sprite];
     }
-    SKNode* dummy = [SKNode node];
-    dummy.position = CGPointMake(100, groundTexture.size.height*10);
-    dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
-    dummy.physicsBody.dynamic = NO;
-    //dummy.physicsBody.categoryBitMask = worldCategory;
-    [self addChild:dummy];
-    
+
+
+}
+
+- (void) setFrame:(CGRect) frame{
+    parentFrame = frame;
 }
 
 @end

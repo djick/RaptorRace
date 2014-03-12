@@ -42,6 +42,16 @@
         Obstacles* rock = [[Obstacles alloc] init];
         [self addChild:rock];
         
+        //Add ground
+        Ground *ground = [[Ground alloc] init];
+        ground.position = CGPointMake(0, ground.groundTexture.size.height*2);
+        ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, ground.groundTexture.size.height * 2)];
+        ground.physicsBody.dynamic = NO;
+        [ground setFrame:self.frame];
+        //dummy.physicsBody.categoryBitMask = worldCategory;
+        [self addChild:ground];
+        [ground makeRandomHill];
+        
         //Add score label
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
         _scoreLabel.fontSize = 20;
