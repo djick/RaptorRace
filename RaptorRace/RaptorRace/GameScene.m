@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "Raptor.h"
 #import "Obstacles.h"
+#import "Ground.h"
 
 @implementation GameScene
 
@@ -36,7 +37,6 @@
         //Add rock
         Obstacles* rock = [[Obstacles alloc] init];
         [self addChild:rock];
-        
         
         
         
