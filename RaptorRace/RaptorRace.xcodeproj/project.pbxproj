@@ -43,6 +43,7 @@
 		AFCFA37C18BF81F900092E6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFCFA37A18BF81F900092E6E /* InfoPlist.strings */; };
 		AFCFA37E18BF81F900092E6E /* RaptorRaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */; };
 		AFE9FF4618D0797800835561 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4518D0797800835561 /* landscape.png */; };
+		AFE9FF4818D1165C00835561 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4718D1165C00835561 /* cloud.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		AFCFA37B18BF81F900092E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptorRaceTests.m; sourceTree = "<group>"; };
 		AFE9FF4518D0797800835561 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
+		AFE9FF4718D1165C00835561 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE9FF4718D1165C00835561 /* cloud.png */,
 				71A9DE1F18D0F9D500441272 /* ground2.png */,
 				71A9DE1D18D0F6B000441272 /* ground1.png */,
 				71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */,
@@ -335,6 +338,7 @@
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
 				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
+				AFE9FF4818D1165C00835561 /* cloud.png in Resources */,
 				0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */,
 				0A06FAA618D085FF00C997B3 /* skeletonpixel1.png in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
