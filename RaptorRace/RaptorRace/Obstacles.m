@@ -14,18 +14,34 @@
 
 -(id)init {
     if (self = [super init]) {
-
-        [self makeRock];
+        
+        [self makeDinosaur1];
+        [self makeDinosaur2];
         [self makeSkeleton];
     }
     return self;
 }
 
+-(void)makeDinosaur1 {
+    _dinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"obstacle1"];
+    _dinosaur1.size=CGSizeMake(70, 50);
+    _dinosaur1.position = CGPointMake(100, 100);
+    _dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+    _dinosaur1.physicsBody.affectedByGravity=NO;
+    _dinosaur1.physicsBody.mass=50000;
+    _dinosaur1.physicsBody.allowsRotation=NO;
+    _dinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
+    _dinosaur1.xScale = 1;
+    _dinosaur1.yScale = 1;
+    [self addChild:_dinosaur1];
+    
+}
 
--(void)makeRock {
-    _dinosaur2= [SKSpriteNode spriteNodeWithImageNamed:@"rock.png"];
-    _dinosaur2.size=CGSizeMake(40, 40);
-    _dinosaur2.position = CGPointMake(200, 300);
+
+-(void)makeDinosaur2 {
+    _dinosaur2= [SKSpriteNode spriteNodeWithImageNamed:@"obstacle2"];
+    _dinosaur2.size=CGSizeMake(70, 50);
+    _dinosaur2.position = CGPointMake(200, 100);
     _dinosaur2.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
     _dinosaur2.physicsBody.affectedByGravity=NO;
     _dinosaur2.physicsBody.mass=50000;
@@ -34,13 +50,13 @@
     _dinosaur2.xScale = 1;
     _dinosaur2.yScale = 1;
     [self addChild:_dinosaur2];
-
+    
 }
 
 -(void)makeSkeleton {
     _skeleton= [SKSpriteNode spriteNodeWithImageNamed:@"skeleton1.png"];
-    _skeleton.size=CGSizeMake(40, 40);
-    _skeleton.position = CGPointMake(100, 300);
+    _skeleton.size=CGSizeMake(50, 40);
+    _skeleton.position = CGPointMake(300, 110);
     _skeleton.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
     _skeleton.physicsBody.affectedByGravity=NO;
     _skeleton.physicsBody.mass=50000;
@@ -49,6 +65,6 @@
     _skeleton.xScale = 2;
     _skeleton.yScale = 2;
     [self addChild:_skeleton];
-
+    
 }
 @end
