@@ -23,17 +23,17 @@
 
 
 -(void)makeRock {
-    _rock= [SKSpriteNode spriteNodeWithImageNamed:@"rock.png"];
-    _rock.size=CGSizeMake(40, 40);
-    _rock.position = CGPointMake(200, 300);
-    _rock.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
-    _rock.physicsBody.affectedByGravity=NO;
-    _rock.physicsBody.mass=50000;
-    _rock.physicsBody.allowsRotation=NO;
-    _rock.physicsBody.dynamic=NO; //Making dem obstacles static
-    _rock.xScale = 1;
-    _rock.yScale = 1;
-    [self addChild:_rock];
+    _dinosaur2= [SKSpriteNode spriteNodeWithImageNamed:@"rock.png"];
+    _dinosaur2.size=CGSizeMake(40, 40);
+    _dinosaur2.position = CGPointMake(200, 300);
+    _dinosaur2.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+    _dinosaur2.physicsBody.affectedByGravity=NO;
+    _dinosaur2.physicsBody.mass=50000;
+    _dinosaur2.physicsBody.allowsRotation=NO;
+    _dinosaur2.physicsBody.dynamic=NO; //Making dem obstacles static
+    _dinosaur2.xScale = 1;
+    _dinosaur2.yScale = 1;
+    [self addChild:_dinosaur2];
 
 }
 

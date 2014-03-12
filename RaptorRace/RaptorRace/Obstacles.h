@@ -11,5 +11,5 @@
 @interface Obstacles : SKNode
 @property SKSpriteNode *skeleton;
 @property SKSpriteNode *dinosaur1;
-@property SKSpriteNode *dinorsaur2;
+@property SKSpriteNode *dinosaur2;
 @end
