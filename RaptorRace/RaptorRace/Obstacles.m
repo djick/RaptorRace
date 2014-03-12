@@ -14,8 +14,21 @@
 
 -(id)init {
     if (self = [super init]) {
+<<<<<<< HEAD
+        _dinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"rock.png"];
+        _dinosaur1.size=CGSizeMake(40, 40);
+        _dinosaur1.position = CGPointMake(200, 40);
+        _dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+        _dinosaur1.physicsBody.affectedByGravity=NO;
+        _dinosaur1.physicsBody.mass=50000;
+        _dinosaur1.physicsBody.allowsRotation=NO;
+        _dinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
+        [self addChild:_dinosaur1];
+
+=======
         [self makeRock];
         [self makeSkeleton];
+>>>>>>> FETCH_HEAD
     }
     return self;
 }
