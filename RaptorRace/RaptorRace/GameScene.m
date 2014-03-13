@@ -57,7 +57,7 @@
             sprite.zPosition = -20;
             sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + 25 * 2);
             [sprite runAction:moveSkylineSpritesForever];
-            [self addChild:sprite];
+            [moving addChild:sprite];
         }
         
         
@@ -104,30 +104,6 @@
         [rock.physicsBody setContactTestBitMask:0];
         [self addChild:rock];*/
         
-      
-        
-        //Add ground
-        /*Ground *ground = [[Ground alloc] init];
-        ground.position = CGPointMake(0, ground.groundTexture.size.height*3);
-        [self addChild:ground];
-        [ground makeRandomHill];
-        NSLog(@"%f",ground.groundTexture.size.height);
-        ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, ground.groundTexture.size.height*2)];
-        ground.physicsBody.dynamic = NO;
-        ground.physicsBody.categoryBitMask = worldCategory;
-        [ground.physicsBody setContactTestBitMask:dinoCategory];
-        [ground.physicsBody setCollisionBitMask:0];*/
-        
-        /*SKNode* dummy = [SKNode node];
-        dummy.position = CGPointMake(0, ground.groundTexture.size.height/4);
-        dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, ground.groundTexture.size.height /2)];
-        dummy.physicsBody.dynamic = NO;
-        dummy.physicsBody.categoryBitMask = worldCategory;
-        [dummy.physicsBody setContactTestBitMask:dinoCategory];
-        [dummy.physicsBody setCollisionBitMask:0];
-        [self addChild:dummy];*/
-        
-        
         //Add score label
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
         _scoreLabel.fontSize = 20;
@@ -154,7 +130,7 @@
             sprite.zPosition = -20;
             sprite.position = CGPointMake(i * sprite.size.width*(arc4random_uniform(2) + 1), sprite.size.height / 2 + cloudTexture.size.height*(arc4random_uniform(3) + 3));
             [sprite runAction:moveCloudeSpriteForever];
-            [self addChild:sprite];
+            [moving addChild:sprite];
         }
         
         self.obs = [[Obstacles alloc]init];
