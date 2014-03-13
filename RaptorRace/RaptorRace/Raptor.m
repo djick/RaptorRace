@@ -28,6 +28,7 @@ NSArray *_raptorRunningFrames;
         SKTexture *temp = _raptorRunningFrames[0];
         _raptor = [SKSpriteNode spriteNodeWithTexture:temp];
         [self addChild:_raptor];
+        _raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
         [self runningRaptor];
     }
     

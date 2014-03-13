@@ -19,6 +19,7 @@
 		71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4C18CFAF1E00036F3C /* skeleton.png */; };
 		71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4E18CFB16400036F3C /* skeleton1.png */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
+		7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDAC26718D1D98900EBFEF0 /* BRaptor.m */; };
 		905AE3D318CF20A40007DE4E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D218CF20A40007DE4E /* GameScene.m */; };
 		905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D518CF20C90007DE4E /* Obstacles.m */; };
 		905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D818CF20FF0007DE4E /* MenuViewController.m */; };
@@ -71,6 +72,8 @@
 		71E2AC4E18CFB16400036F3C /* skeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton1.png; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
 		7FDAC26518D0872A00EBFEF0 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
+		7FDAC26618D1D98900EBFEF0 /* BRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRaptor.h; sourceTree = "<group>"; };
+		7FDAC26718D1D98900EBFEF0 /* BRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRaptor.m; sourceTree = "<group>"; };
 		905AE3D118CF20A40007DE4E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		905AE3D218CF20A40007DE4E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		905AE3D418CF20C90007DE4E /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				905AE3DE18CF21700007DE4E /* PlayerProfile.m */,
 				7147B48B18CF0A500083C542 /* Raptor.h */,
 				7147B48C18CF0A500083C542 /* Raptor.m */,
+				7FDAC26618D1D98900EBFEF0 /* BRaptor.h */,
+				7FDAC26718D1D98900EBFEF0 /* BRaptor.m */,
 				9066C23618D08D20001F355B /* AnyRaptor.h */,
 				9066C23718D08D20001F355B /* AnyRaptor.m */,
 				905AE3D418CF20C90007DE4E /* Obstacles.h */,
@@ -380,6 +385,7 @@
 				905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */,
 				AFCFA35A18BF81F900092E6E /* main.m in Sources */,
 				905AE3D318CF20A40007DE4E /* GameScene.m in Sources */,
+				7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */,
 				905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */,
 				9066C23818D08D20001F355B /* AnyRaptor.m in Sources */,
 				7147B48D18CF0A500083C542 /* Raptor.m in Sources */,

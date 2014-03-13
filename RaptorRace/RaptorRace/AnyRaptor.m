@@ -51,6 +51,11 @@ SKSpriteNode *raptor;
     raptorRunningFrames = runningFrames;
     SKTexture *temp = raptorRunningFrames[0];
     raptor = [SKSpriteNode spriteNodeWithTexture:temp];
+    [raptor runAction:[SKAction repeatActionForever:
+                        [SKAction animateWithTextures:runningFrames
+                                         timePerFrame:0.1f
+                                               resize:NO
+                                              restore:YES]] withKey:@"runningInPlaceRaptor"];
     
 //    [self addChild:raptor];
 //    [self runningRaptor];
