@@ -62,7 +62,7 @@
         
         
         //Add char
-        raptor = [[BRaptor alloc] init].raptor;
+        raptor = [[BRaptor alloc] init];
         raptor.position = CGPointMake(self.frame.size.width / 4, CGRectGetMidY(self.frame));
         raptor.physicsBody.dynamic = YES;
         raptor.physicsBody.allowsRotation = NO;

@@ -10,15 +10,6 @@
 
 @implementation BRaptor
 
--(id) init{
-    if(self = [super init]){
-        self.raptor = [super makeRaptor];
-        NSLog(@"makes");
-        [self addChild:self.raptor];
-    }
-    return self;
-    
-}
 
 - (NSString *) getAtlasName
 {
