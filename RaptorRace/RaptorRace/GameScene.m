@@ -157,6 +157,9 @@
             [self addChild:sprite];
         }
         
+        self.obs = [[Obstacles alloc]init];
+        [self.obs addObstacles];
+        
     }
     
     return self;
@@ -173,6 +176,8 @@
         self.scoreLabel.text = [NSString stringWithFormat:@"%05.0f", self.score];
         _displayedScore = self.score;
     }
+    //Trying to do da spawning
+    [self.obs spawnObstacle];
 }
 
 
