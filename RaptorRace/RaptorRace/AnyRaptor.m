@@ -13,11 +13,24 @@
 NSArray *raptorRunningFrames;
 SKSpriteNode *raptor;
 
+-(id)init
+{
+    if (self = [super init])
+    {
+        raptor = [self makeRaptor];
+        [self addChild:raptor];
+        NSLog(@"HÆLLÆ");
+    }
+    
+    return self;
+}
+
 - (SKSpriteNode *) makeRaptor
 {
     [self setRaptorAnimationWithAtlasNamed:[self getAtlasName]
                       AndPictureNAmeFormat:[self getPictureNameFormat]];
     [self setPhysicalAbilitiesOfRaptor];
+    [self runningRaptor];
     return raptor;
 }
 
@@ -59,5 +72,15 @@ SKSpriteNode *raptor;
 - (void) setPhysicalAbilitiesOfRaptor
 {
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
+}
+
+-(void)runningRaptor
+{
+    [raptor runAction:[SKAction repeatActionForever:
+                       [SKAction animateWithTextures:raptorRunningFrames
+                                        timePerFrame:0.1f
+                                              resize:NO
+                                             restore:YES]] withKey:@"runningInPlaceRaptor"];
+    return;
 }
 @end
