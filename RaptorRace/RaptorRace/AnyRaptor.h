@@ -11,11 +11,9 @@
 @interface AnyRaptor : SKNode
 
 /**
- This methd runs all of the defined methods for an object of class AnyRaptor.
- 
- @return Returns a SpriteNode with capabilities defined by the methods of an AnyRaptor object.
+ This methd runs all of the defined methods for an object of class AnyRaptor, creating the raptor.
  */
-- (SKSpriteNode *) makeRaptor;
+- (void) makeRaptor;
 
 // Steps to make a raptor
 
@@ -46,4 +44,10 @@
  Sets the physical abilities of the raptor.
  */
 - (void) setPhysicalAbilitiesOfRaptor;
+
+/**
+ Adds the running animation to the raptor.
+ */
+-(void)runningRaptor;
+
 @end

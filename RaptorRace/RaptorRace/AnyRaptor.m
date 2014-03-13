@@ -17,21 +17,20 @@ SKSpriteNode *raptor;
 {
     if (self = [super init])
     {
-        raptor = [self makeRaptor];
+        [self makeRaptor];
         [self addChild:raptor];
-        NSLog(@"HÆLLÆ");
+        NSLog(@"Raptor initialized");
     }
     
     return self;
 }
 
-- (SKSpriteNode *) makeRaptor
+- (void) makeRaptor
 {
     [self setRaptorAnimationWithAtlasNamed:[self getAtlasName]
                       AndPictureNAmeFormat:[self getPictureNameFormat]];
     [self setPhysicalAbilitiesOfRaptor];
     [self runningRaptor];
-    return raptor;
 }
 
 - (NSString *) getAtlasName
@@ -64,9 +63,6 @@ SKSpriteNode *raptor;
     raptorRunningFrames = runningFrames;
     SKTexture *temp = raptorRunningFrames[0];
     raptor = [SKSpriteNode spriteNodeWithTexture:temp];
-    
-//    [self addChild:raptor];
-//    [self runningRaptor];
 }
 
 - (void) setPhysicalAbilitiesOfRaptor
