@@ -7,6 +7,7 @@
 //
 
 #import "Ground.h"
+#import "Categories.h"
 
 @implementation Ground
 
@@ -24,21 +25,24 @@
     self.groundTexture = [SKTexture textureWithImageNamed:@"ground2.png"];
     self.groundTexture.filteringMode = SKTextureFilteringNearest;
     
+    //create actions for animation
     SKAction* moveGroundSprite = [SKAction moveByX:-self.groundTexture.size.width*2 y:0 duration:0.02 * self.groundTexture.size.width*2];
     SKAction* resetGroundSprite = [SKAction moveByX:self.groundTexture.size.width*2 y:0 duration:0];
     SKAction* moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
-    NSLog(@"Mywidth: %f", self.frame.size.width);
-    NSLog(@"Parent: %f", parentFrame.size.width);
-    
-    for( int i = 0; i < 2 + parentFrame.size.width / ( self.groundTexture.size.width * 2 ); ++i ) {
+   
+    for( int i = 0; i < 2 + self.parent.frame.size.width / ( self.groundTexture.size.width * 2 ); ++i ) {
         // Create the sprite
         NSLog(@"creates sprite");
         SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:self.groundTexture];
         [sprite setScale:2.0];
         sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 4);
         [sprite runAction:moveGroundSpritesForever];
-        [moving addChild:sprite];
+        [self addChild:sprite];
     }
+    
+    
+    //Setup Physics Body
+    
 
 
 }

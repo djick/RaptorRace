@@ -162,6 +162,7 @@
 		905AE3D018CF20560007DE4E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7FDAC26518D0872A00EBFEF0 /* Categories.h */,
 				AFCFA36218BF81F900092E6E /* ViewController.h */,
 				AFCFA36318BF81F900092E6E /* ViewController.m */,
 				905AE3D718CF20FF0007DE4E /* MenuViewController.h */,
