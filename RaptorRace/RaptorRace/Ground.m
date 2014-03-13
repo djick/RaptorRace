@@ -21,7 +21,7 @@
     [self addChild:moving];
     // Create ground
     
-    self.groundTexture = [SKTexture textureWithImageNamed:@"Ground.png"];
+    self.groundTexture = [SKTexture textureWithImageNamed:@"ground2.png"];
     self.groundTexture.filteringMode = SKTextureFilteringNearest;
     
     SKAction* moveGroundSprite = [SKAction moveByX:-self.groundTexture.size.width*2 y:0 duration:0.02 * self.groundTexture.size.width*2];

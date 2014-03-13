@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface PlayerProfile : NSObject
-
+@property(nonatomic,readonly) GLfloat highScore;
+-(void)updateScore:(CGFloat)newScore;
 @end

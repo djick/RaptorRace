@@ -69,20 +69,37 @@
         [self setBackgroundColor:_skyColor];
         
         //Landscape
-        SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"landscape"];
-        skylineTexture.filteringMode = SKTextureFilteringNearest;
+        SKTexture* landscapeTexture = [SKTexture textureWithImageNamed:@"landscape"];
+        landscapeTexture.filteringMode = SKTextureFilteringNearest;
         
-        SKAction* moveSkylineSprite = [SKAction moveByX:-skylineTexture.size.width*2 y:0 duration:0.1 * skylineTexture.size.width*2];
-        SKAction* resetSkylineSprite = [SKAction moveByX:skylineTexture.size.width*2 y:0 duration:0];
-        SKAction* moveSkylineSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveSkylineSprite, resetSkylineSprite]]];
+        SKAction* moveLandscapeSprite = [SKAction moveByX:-landscapeTexture.size.width*2 y:0 duration:0.1 * landscapeTexture.size.width*2];
+        SKAction* resetLandscapeSprite = [SKAction moveByX:landscapeTexture.size.width*2 y:0 duration:0];
+        SKAction* moveLandscapeSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveLandscapeSprite, resetLandscapeSprite]]];
 
         
-        for( int i = 0; i < 2 + self.frame.size.width / ( skylineTexture.size.width * 2 ); ++i ) {
-            SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:skylineTexture];
+        for( int i = 0; i < 2 + self.frame.size.width / ( landscapeTexture.size.width * 2 ); ++i ) {
+            SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:landscapeTexture];
             [sprite setScale:2.0];
             sprite.zPosition = -20;
             sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + ground.groundTexture.size.height );
-            [sprite runAction:moveSkylineSpritesForever];
+            [sprite runAction:moveLandscapeSpritesForever];
+            [self addChild:sprite];
+        }
+        
+        //Clouds
+        SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"cloud"];
+        cloudTexture.filteringMode=SKTextureFilteringNearest;
+        
+        SKAction* moveCloudSprite = [SKAction moveByX:-cloudTexture.size.width*2 y:0 duration:0.3 * cloudTexture.size.width*2];
+        SKAction* resetCloudSprite = [SKAction moveByX:cloudTexture.size.width*2 y:0 duration:0];
+        SKAction* moveCloudeSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveCloudSprite, resetCloudSprite]]];
+        
+        for( int i = 0; i < 2 + self.frame.size.width / ( cloudTexture.size.width * 2 ); ++i ) {
+            SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:cloudTexture];
+            [sprite setScale:2.0];
+            sprite.zPosition = -20;
+            sprite.position = CGPointMake(i * sprite.size.width*(arc4random_uniform(2) + 1), sprite.size.height / 2 + ground.groundTexture.size.height*(arc4random_uniform(3) + 3));
+            [sprite runAction:moveCloudeSpriteForever];
             [self addChild:sprite];
         }
         

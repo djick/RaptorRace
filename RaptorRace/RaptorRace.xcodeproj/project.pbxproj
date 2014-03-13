@@ -11,10 +11,11 @@
 		0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E956E18CF4E6F00C14FA4 /* rock.png */; };
 		7147B48D18CF0A500083C542 /* Raptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7147B48C18CF0A500083C542 /* Raptor.m */; };
 		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
-		714A78C518D07BD300322F5D /* obstacle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 714A78C318D07BD300322F5D /* obstacle2.png */; };
-		714A78C618D07BD300322F5D /* obstacle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 714A78C418D07BD300322F5D /* obstacle1.png */; };
-		714A78C918D07DC700322F5D /* obstacle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 714A78C718D07DC700322F5D /* obstacle1.png */; };
-		714A78CA18D07DC700322F5D /* obstacle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 714A78C818D07DC700322F5D /* obstacle2.png */; };
+		71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1718D08CE200441272 /* dinosaur1.png */; };
+		71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1818D08CE200441272 /* dinosaur2.png */; };
+		71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */; };
+		71A9DE1E18D0F6B000441272 /* ground1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1D18D0F6B000441272 /* ground1.png */; };
+		71A9DE2018D0F9D500441272 /* ground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1F18D0F9D500441272 /* ground2.png */; };
 		71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4C18CFAF1E00036F3C /* skeleton.png */; };
 		71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4E18CFB16400036F3C /* skeleton1.png */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
@@ -42,6 +43,7 @@
 		AFCFA37C18BF81F900092E6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFCFA37A18BF81F900092E6E /* InfoPlist.strings */; };
 		AFCFA37E18BF81F900092E6E /* RaptorRaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */; };
 		AFE9FF4618D0797800835561 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4518D0797800835561 /* landscape.png */; };
+		AFE9FF4818D1165C00835561 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4718D1165C00835561 /* cloud.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +62,11 @@
 		7147B48B18CF0A500083C542 /* Raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raptor.h; sourceTree = "<group>"; };
 		7147B48C18CF0A500083C542 /* Raptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raptor.m; sourceTree = "<group>"; };
 		7147B48E18CF0A570083C542 /* raptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptor.atlas; sourceTree = "<group>"; };
-		714A78C318D07BD300322F5D /* obstacle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle2.png; sourceTree = "<group>"; };
-		714A78C418D07BD300322F5D /* obstacle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle1.png; sourceTree = "<group>"; };
-		714A78C718D07DC700322F5D /* obstacle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle1.png; sourceTree = "<group>"; };
-		714A78C818D07DC700322F5D /* obstacle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstacle2.png; sourceTree = "<group>"; };
+		71A9DE1718D08CE200441272 /* dinosaur1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur1.png; sourceTree = "<group>"; };
+		71A9DE1818D08CE200441272 /* dinosaur2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur2.png; sourceTree = "<group>"; };
+		71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newestSkeleton1.png; sourceTree = "<group>"; };
+		71A9DE1D18D0F6B000441272 /* ground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground1.png; sourceTree = "<group>"; };
+		71A9DE1F18D0F9D500441272 /* ground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground2.png; sourceTree = "<group>"; };
 		71E2AC4C18CFAF1E00036F3C /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
 		71E2AC4E18CFB16400036F3C /* skeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton1.png; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		AFCFA37B18BF81F900092E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptorRaceTests.m; sourceTree = "<group>"; };
 		AFE9FF4518D0797800835561 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
+		AFE9FF4718D1165C00835561 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,12 +218,14 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE9FF4718D1165C00835561 /* cloud.png */,
+				71A9DE1F18D0F9D500441272 /* ground2.png */,
+				71A9DE1D18D0F6B000441272 /* ground1.png */,
+				71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */,
+				71A9DE1718D08CE200441272 /* dinosaur1.png */,
+				71A9DE1818D08CE200441272 /* dinosaur2.png */,
 				0A06FAA518D085FF00C997B3 /* skeletonpixel1.png */,
-				714A78C718D07DC700322F5D /* obstacle1.png */,
-				714A78C818D07DC700322F5D /* obstacle2.png */,
 				AFE9FF4518D0797800835561 /* landscape.png */,
-				714A78C318D07BD300322F5D /* obstacle2.png */,
-				714A78C418D07BD300322F5D /* obstacle1.png */,
 				71E2AC4E18CFB16400036F3C /* skeleton1.png */,
 				7FDAC26318D06C7900EBFEF0 /* Ground.png */,
 				71E2AC4C18CFAF1E00036F3C /* skeleton.png */,
@@ -329,18 +335,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				714A78CA18D07DC700322F5D /* obstacle2.png in Resources */,
+				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
+				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
+				AFE9FF4818D1165C00835561 /* cloud.png in Resources */,
 				0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */,
-				714A78C918D07DC700322F5D /* obstacle1.png in Resources */,
-				714A78C518D07BD300322F5D /* obstacle2.png in Resources */,
 				0A06FAA618D085FF00C997B3 /* skeletonpixel1.png in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
 				71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */,
 				AFE9FF4618D0797800835561 /* landscape.png in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
-				714A78C618D07BD300322F5D /* obstacle1.png in Resources */,
+				71A9DE1E18D0F6B000441272 /* ground1.png in Resources */,
 				71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */,
+				71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */,
+				71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */,
 				7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */,
 				AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */,
 			);
