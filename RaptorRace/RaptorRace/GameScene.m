@@ -29,7 +29,7 @@
         //Physics of the world/scene
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
-        self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
+        //self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
         [self.physicsWorld setGravity:CGVectorMake(0, -1)];
         
         //Set up background
@@ -72,7 +72,31 @@
         [rock.physicsBody setContactTestBitMask:0];
         [self addChild:rock];*/
         
-        //Add ground
+        
+        SKTexture* groundTexture = [SKTexture textureWithImageNamed:@"Ground"];
+        groundTexture.filteringMode = SKTextureFilteringNearest;
+        
+        SKAction* moveGroundSprite = [SKAction moveByX:-groundTexture.size.width*2 y:0 duration:0.02 * groundTexture.size.width*2];
+        SKAction* resetGroundSprite = [SKAction moveByX:groundTexture.size.width*2 y:0 duration:0];
+        SKAction* moveGroundSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveGroundSprite, resetGroundSprite]]];
+        
+        for( int i = 0; i < 2 + self.frame.size.width / ( groundTexture.size.width * 2 ); ++i ) {
+            // Create the sprite
+            SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:groundTexture];
+            [sprite setScale:2.0];
+            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2);
+            [sprite runAction:moveGroundSpritesForever];
+            [self addChild:sprite];
+        }
+        // Create ground physics container
+        
+        SKNode* dummy = [SKNode node];
+        dummy.position = CGPointMake(0, groundTexture.size.height);
+        dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
+        dummy.physicsBody.dynamic = NO;
+        [self addChild:dummy];
+        
+        /*//Add ground
         Ground *ground = [[Ground alloc] init];
         ground.position = CGPointMake(0, ground.groundTexture.size.height*2);
         [self addChild:ground];
@@ -83,6 +107,12 @@
         ground.physicsBody.categoryBitMask = worldCategory;
         [ground.physicsBody setContactTestBitMask:dinoCategory];
         [ground.physicsBody setCollisionBitMask:0];
+        
+        SKNode* dummy = [SKNode node];
+        dummy.position = CGPointMake(0, groundTexture.size.height);
+        dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
+        dummy.physicsBody.dynamic = NO;
+        [self addChild:dummy];*/
         
         //Add score label
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
@@ -114,6 +144,7 @@
         _displayedScore = self.score;
     }
 }
+
 
 
 @end
