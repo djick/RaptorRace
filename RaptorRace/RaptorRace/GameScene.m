@@ -86,13 +86,13 @@
             // Create the sprite
             SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:groundTexture];
             [sprite setScale:2.0];
-            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2);
+            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 4);
             [sprite runAction:moveGroundSpritesForever];
             [moving addChild:sprite];
         }
         
         SKNode* dummy = [SKNode node];
-        dummy.position = CGPointMake(0, groundTexture.size.height);
+        dummy.position = CGPointMake(0, groundTexture.size.height/2);
         dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
         dummy.physicsBody.dynamic = NO;
         dummy.physicsBody.categoryBitMask = worldCategory;

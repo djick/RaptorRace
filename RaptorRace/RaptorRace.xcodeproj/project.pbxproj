@@ -19,6 +19,8 @@
 		71E2AC4D18CFAF1E00036F3C /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4C18CFAF1E00036F3C /* skeleton.png */; };
 		71E2AC4F18CFB16500036F3C /* skeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71E2AC4E18CFB16400036F3C /* skeleton1.png */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
+		90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */; };
+		90293B4718D1D4EB00DDE637 /* sillyRaptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */; };
 		7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDAC26718D1D98900EBFEF0 /* BRaptor.m */; };
 		905AE3D318CF20A40007DE4E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D218CF20A40007DE4E /* GameScene.m */; };
 		905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D518CF20C90007DE4E /* Obstacles.m */; };
@@ -71,6 +73,9 @@
 		71E2AC4C18CFAF1E00036F3C /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
 		71E2AC4E18CFB16400036F3C /* skeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton1.png; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
+		90293B4318D1D44F00DDE637 /* TemplateTestRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateTestRaptor.h; sourceTree = "<group>"; };
+		90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateTestRaptor.m; sourceTree = "<group>"; };
+		90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sillyRaptor.atlas; sourceTree = "<group>"; };
 		7FDAC26518D0872A00EBFEF0 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		7FDAC26618D1D98900EBFEF0 /* BRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRaptor.h; sourceTree = "<group>"; };
 		7FDAC26718D1D98900EBFEF0 /* BRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRaptor.m; sourceTree = "<group>"; };
