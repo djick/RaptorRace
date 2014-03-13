@@ -10,13 +10,22 @@
 #import "Ground.h"
 #include <stdlib.h>
 
+#define kNumAsteroids   15
+
+
 @implementation Obstacles
 //Categorybitmasks legges i gameview til slutt
+
+double _nextDinosaurSpawn;
+int _nextDinosaur;
+NSMutableArray *dinosaurs;
 
 
 -(id)init {
     if (self = [super init]) {
         [self generateDinosaurs];
+        [self generateSkeletons];
+    
     }
     
     return self;
@@ -58,7 +67,7 @@
 -(void)makeSkeleton {
     _skeleton= [SKSpriteNode spriteNodeWithImageNamed:@"newestSkeleton1"];
     _skeleton.size=CGSizeMake(45, 35);
-    //_skeleton.position = CGPointMake(300, 110);
+    _skeleton.position = CGPointMake(300, 110);
     _skeleton.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50,40)];
     _skeleton.physicsBody.affectedByGravity=NO;
     _skeleton.physicsBody.mass=50000;
@@ -73,11 +82,11 @@
 
 // Generating skeletons that stand still, will slow the player down if it bumps into it
 -(void)generateSkeletons {
-    int obstacleinterval=2;
+    int obstacleinterval=1;
     for (int i=0; i<obstacleinterval; i++){
         [self makeSkeleton];
         if (i==0) {
-            _skeleton.position=CGPointMake(200, 97);
+            _skeleton.position=CGPointMake(400, 97);
         }
         else{
             _skeleton.position=CGPointMake(270, 97);
@@ -105,8 +114,38 @@
     
 }
 
+_dinosaurs = [[NSMutableArray alloc] initWithCapacity:kNumAsteroids];
+
+for (int i = 0; i < kNumAsteroids; ++i) {
+    SKSpriteNode *asteroid = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
+    asteroid.hidden = YES;
+    [asteroid setXScale:0.5];
+    [asteroid setYScale:0.5];
+    [_asteroids addObject:asteroid];
+    [self addChild:asteroid];
+}
+
+double curTime = CACurrentMediaTime();
 -(void)movingDinosaurs {
-    float randDuration = [self randomValueBetween:2.0 andValue:6.0];
+    
+    if (curTime > _nextDinosaurSpawn) {
+        //NSLog(@"spawning new dinosaur");
+        float randSecs = [self randomValueBetween:0.20 andValue:1.0];
+        _nextDinosaurSpawn = randSecs + curTime;
+        
+        float randY = [self randomValueBetween:0.0 andValue:self.frame.size.height];
+        float randDuration = [self randomValueBetween:2.0 andValue:10.0];
+        
+        SKSpriteNode *asteroid = [_dinosaur1 objectAtIndex:_nextDinosaur];
+        _nextDinosaur++;
+        
+        if (_nextDinosaur >= _dinosaur1.count) {
+            _nextDinosaur = 0;
+        }
+        
+        [asteroid removeAllActions];
+    
+    float randDuration = [self randomValueBetween:3.0 andValue:8.0];
     CGFloat height = 97;
     _dinosaur1.position = CGPointMake(500, height);
     _dinosaur1.hidden = NO;
