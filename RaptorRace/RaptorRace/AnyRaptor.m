@@ -68,6 +68,7 @@ SKSpriteNode *raptor;
 - (void) setPhysicalAbilitiesOfRaptor
 {
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
+    raptor.physicsBody.allowsRotation = NO;
 }
 
 -(void)runningRaptor

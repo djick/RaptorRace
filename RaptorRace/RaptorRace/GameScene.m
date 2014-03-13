@@ -63,7 +63,7 @@
         
         //Add char
         raptor = [[BRaptor alloc] init];
-        raptor.position = CGPointMake(self.frame.size.width / 4, CGRectGetMidY(self.frame));
+        raptor.position = CGPointMake(self.frame.size.width / 3, CGRectGetMidY(self.frame));
         raptor.physicsBody.dynamic = YES;
         raptor.physicsBody.allowsRotation = NO;
         raptor.physicsBody.categoryBitMask = dinoCategory;
@@ -74,7 +74,6 @@
         
         
         // Create ground
-        
         SKTexture* groundTexture = [SKTexture textureWithImageNamed:@"Ground"];
         groundTexture.filteringMode = SKTextureFilteringNearest;
         
@@ -121,14 +120,22 @@
         cloudTexture.filteringMode=SKTextureFilteringNearest;
         
         SKAction* moveCloudSprite = [SKAction moveByX:-cloudTexture.size.width*2 y:0 duration:0.3 * cloudTexture.size.width*2];
-        SKAction* resetCloudSprite = [SKAction moveByX:cloudTexture.size.width*2 y:0 duration:0];
-        SKAction* moveCloudeSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveCloudSprite, resetCloudSprite]]];
+        //SKAction* resetCloudSprite = [SKAction moveByX:cloudTexture.size.width*2 y:0 duration:0];
+        SKAction* moveCloudeSpriteForever = [SKAction repeatActionForever:[SKAction sequence:@[moveCloudSprite]]]; //resetCloudSprite
         
         for( int i = 0; i < 2 + self.frame.size.width / ( cloudTexture.size.width * 2 ); ++i ) {
             SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:cloudTexture];
             [sprite setScale:2.0];
             sprite.zPosition = -20;
-            sprite.position = CGPointMake(i * sprite.size.width*(arc4random_uniform(2) + 1), sprite.size.height / 2 + cloudTexture.size.height*(arc4random_uniform(3) + 3));
+            if(i > 10){
+                sprite.position = CGPointMake((i/10) * sprite.size.width*(arc4random_uniform(2) + 1), sprite.size.height / 2 + cloudTexture.size.height*(arc4random_uniform(3) + 3));
+            }
+            else if (i > 100) {
+                sprite.position = CGPointMake((i/100) * sprite.size.width*(arc4random_uniform(2) + 1), sprite.size.height / 2 + cloudTexture.size.height*(arc4random_uniform(3) + 3));
+            }
+            else {
+                sprite.position = CGPointMake(i * sprite.size.width*(arc4random_uniform(2) + 1), sprite.size.height / 2 + cloudTexture.size.height*(arc4random_uniform(3) + 3));
+            }
             [sprite runAction:moveCloudeSpriteForever];
             [moving addChild:sprite];
         }
