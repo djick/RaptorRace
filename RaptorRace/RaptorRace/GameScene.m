@@ -134,6 +134,7 @@
         }
         
         self.obs = [[Obstacles alloc]init];
+        [self addChild:self.obs];
         [self.obs addObstacles];
         
     }

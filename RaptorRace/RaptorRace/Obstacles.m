@@ -31,55 +31,55 @@ NSMutableArray *obstacleList;
 }
 
 
--(void)makeDinosaur1 {
-    _dinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur1"];
-    _dinosaur1.size=CGSizeMake(70, 50);
+-(SKSpriteNode*)makeDinosaur1 {
+    SKSpriteNode* SKdinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur1"];
+    SKdinosaur1.size=CGSizeMake(70, 50);
     //_dinosaur1.position = CGPointMake(100, 100);
-    /*_dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
-    _dinosaur1.position = CGPointMake(100, 100);
-    _dinosaur1.physicsBody.affectedByGravity=NO;
-    _dinosaur1.physicsBody.mass=1;
-    _dinosaur1.physicsBody.allowsRotation=NO;
-    _dinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
-    [_dinosaur1.physicsBody setCollisionBitMask:0];
-    _dinosaur1.xScale = 1;
-    _dinosaur1.yScale = 1;*/
+    SKdinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+    SKdinosaur1.position = CGPointMake(100, 100);
+    SKdinosaur1.physicsBody.affectedByGravity=NO;
+    SKdinosaur1.physicsBody.mass=1;
+    SKdinosaur1.physicsBody.allowsRotation=NO;
+    SKdinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
+    [SKdinosaur1.physicsBody setCollisionBitMask:0];
+    SKdinosaur1.xScale = 1;
+    SKdinosaur1.yScale = 1;
 
-    //return _dinosaur2;
+    return SKdinosaur1;
     
 }
 
--(void)makeDinosaur2 {
-    _dinosaur2= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur2"];
-    _dinosaur2.size=CGSizeMake(70, 50);
+-(SKSpriteNode*)makeDinosaur2 {
+    SKSpriteNode* SKdinosaur2= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur2"];
+    SKdinosaur2.size=CGSizeMake(70, 50);
     //_dinosaur2.position = CGPointMake(200, 100);
-    _dinosaur2.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(70,50)];
-    _dinosaur2.physicsBody.affectedByGravity=NO;
-    _dinosaur2.physicsBody.mass=100;
-    _dinosaur2.physicsBody.allowsRotation=NO;
-    _dinosaur2.physicsBody.dynamic=NO; //Making dem obstacles static
-    [_dinosaur2.physicsBody setCollisionBitMask:0];
-    _dinosaur2.xScale = 1;
-    _dinosaur2.yScale = 1;
+    SKdinosaur2.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(70,50)];
+    SKdinosaur2.physicsBody.affectedByGravity=NO;
+    SKdinosaur2.physicsBody.mass=100;
+    SKdinosaur2.physicsBody.allowsRotation=NO;
+    SKdinosaur2.physicsBody.dynamic=NO; //Making dem obstacles static
+    [SKdinosaur2.physicsBody setCollisionBitMask:0];
+    SKdinosaur2.xScale = 1;
+    SKdinosaur2.yScale = 1;
     
-    //return _dinosaur2;
+    return SKdinosaur2;
 }
 
--(void)makeSkeleton {
-    _skeleton= [SKSpriteNode spriteNodeWithImageNamed:@"newestSkeleton1"];
-    _skeleton.size=CGSizeMake(45, 35);
-    _skeleton.position = CGPointMake(300, 110);
-    _skeleton.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50,40)];
-    _skeleton.physicsBody.affectedByGravity=NO;
-    _skeleton.physicsBody.mass=50000;
-    _skeleton.physicsBody.allowsRotation=NO;
-    _skeleton.physicsBody.dynamic=NO; //Making dem obstacles static
-    [_skeleton.physicsBody setCollisionBitMask:0];
-    _skeleton.xScale = 2;
-    _skeleton.yScale = 2;
+-(SKSpriteNode*)makeSkeleton {
+    SKSpriteNode* SKskeleton= [SKSpriteNode spriteNodeWithImageNamed:@"newestSkeleton1"];
+    SKskeleton.size=CGSizeMake(45, 35);
+    SKskeleton.position = CGPointMake(300, 110);
+    SKskeleton.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50,40)];
+    SKskeleton.physicsBody.affectedByGravity=NO;
+    SKskeleton.physicsBody.mass=50000;
+    SKskeleton.physicsBody.allowsRotation=NO;
+    SKskeleton.physicsBody.dynamic=NO; //Making dem obstacles static
+    [SKskeleton.physicsBody setCollisionBitMask:0];
+    SKskeleton.xScale = 2;
+    SKskeleton.yScale = 2;
     
     
-    //return _skeleton;
+    return SKskeleton;
     
 }
 
@@ -120,14 +120,18 @@ NSMutableArray *obstacleList;
 // must be called when game is started
 - (void)addObstacles{
     //
-    [self makeDinosaur1];
-    [self makeDinosaur2];
-    obstacleList= [[NSMutableArray alloc] initWithObjects:_dinosaur1,_dinosaur2, nil];
+    obstacleList= [[NSMutableArray alloc] initWithObjects:[self makeDinosaur1],[self makeDinosaur2], nil];
     
     dinosaurs = [[NSMutableArray alloc] initWithCapacity:kNumObstacles];
-    
+    int n = 0;
     for (int i = 0; i < kNumObstacles; ++i) {
-        SKSpriteNode *dinosaur = obstacleList[1];
+        SKSpriteNode* dinosaur;
+        if(n==0){
+            dinosaur = [self makeDinosaur1];
+        }
+        else{
+            dinosaur = [self makeDinosaur2];
+        }
         NSLog(@"making obstacles");
         dinosaur.hidden = YES;
         [dinosaur setXScale:1];
@@ -149,16 +153,16 @@ NSMutableArray *obstacleList;
     
         float randDuration = [self randomValueBetween:3.0 andValue:8.0];
         CGFloat height = 97;
-        _dinosaur1.position = CGPointMake(500, height);
-        _dinosaur1.hidden = NO;
-        CGPoint location = CGPointMake(-self.frame.size.width-_dinosaur1.size.width, height);
+        obstacle.position = CGPointMake(500, height);
+        obstacle.hidden = NO;
+        CGPoint location = CGPointMake(-self.frame.size.width-obstacle.size.width, height);
         SKAction *moveAction = [SKAction moveTo:location duration:randDuration];
         SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
-        _dinosaur1.hidden = YES;
+        obstacle.hidden = YES;
         }];
         SKAction *moveDinosaurActionWithDone = [SKAction sequence:@[moveAction, doneAction ]];
-        [_dinosaur1 runAction:moveDinosaurActionWithDone withKey:@"dinosaurMoving"];
+        [obstacle runAction:moveDinosaurActionWithDone withKey:@"dinosaurMoving"];
     }
 }
 
