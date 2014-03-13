@@ -8,15 +8,15 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Obstacles : SKSpriteNode
+@interface Obstacles : SKNode
 @property SKSpriteNode *skeleton;
 @property SKSpriteNode *dinosaur1;
 @property SKSpriteNode *dinosaur2;
 
 
--(void)makeDinosaur1;
--(void)makeDinosaur2;
--(void)makeSkeleton;
+-(SKSpriteNode*)makeDinosaur1;
+-(SKSpriteNode*)makeDinosaur2;
+-(SKSpriteNode*)makeSkeleton;
 -(void)generateSkeletons;
 -(void)spawnObstacle;
 -(void)addObstacles;
