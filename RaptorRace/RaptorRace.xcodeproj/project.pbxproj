@@ -46,6 +46,7 @@
 		AFCFA37C18BF81F900092E6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFCFA37A18BF81F900092E6E /* InfoPlist.strings */; };
 		AFCFA37E18BF81F900092E6E /* RaptorRaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */; };
 		AFE6394A18D201A90011D3CC /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE6394918D201A90011D3CC /* MenuScene.m */; };
+		AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE6394B18D203EC0011D3CC /* mainMenyBG.png */; };
 		AFE9FF4618D0797800835561 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4518D0797800835561 /* landscape.png */; };
 		AFE9FF4818D1165C00835561 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4718D1165C00835561 /* cloud.png */; };
 /* End PBXBuildFile section */
@@ -118,6 +119,7 @@
 		AFCFA37D18BF81F900092E6E /* RaptorRaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptorRaceTests.m; sourceTree = "<group>"; };
 		AFE6394818D201A90011D3CC /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		AFE6394918D201A90011D3CC /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		AFE6394B18D203EC0011D3CC /* mainMenyBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenyBG.png; sourceTree = "<group>"; };
 		AFE9FF4518D0797800835561 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
 		AFE9FF4718D1165C00835561 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +240,7 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE6394B18D203EC0011D3CC /* mainMenyBG.png */,
 				AFE9FF4718D1165C00835561 /* cloud.png */,
 				71A9DE1F18D0F9D500441272 /* ground2.png */,
 				71A9DE1D18D0F6B000441272 /* ground1.png */,
@@ -357,6 +360,7 @@
 			files = (
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
 				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
+				AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */,
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
 				AFE9FF4818D1165C00835561 /* cloud.png in Resources */,
 				0A8E956F18CF4E6F00C14FA4 /* rock.png in Resources */,
