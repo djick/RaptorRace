@@ -10,16 +10,17 @@
 #import "Ground.h"
 #include <stdlib.h>
 
-#define kNumObstacles   3
+#define kNumObstacles   17
 
 
 @implementation Obstacles
 //Categorybitmasks legges i gameview til slutt
-
+{
 double _nextDinosaurSpawn;
 int _nextDinosaur;
 NSMutableArray *dinosaurs;
 NSMutableArray *obstacleList;
+}
 
 
 -(id)init {
@@ -34,7 +35,7 @@ NSMutableArray *obstacleList;
     _dinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur1"];
     _dinosaur1.size=CGSizeMake(70, 50);
     //_dinosaur1.position = CGPointMake(100, 100);
-    _dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
+    /*_dinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
     _dinosaur1.position = CGPointMake(100, 100);
     _dinosaur1.physicsBody.affectedByGravity=NO;
     _dinosaur1.physicsBody.mass=1;
@@ -42,8 +43,9 @@ NSMutableArray *obstacleList;
     _dinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
     [_dinosaur1.physicsBody setCollisionBitMask:0];
     _dinosaur1.xScale = 1;
-    _dinosaur1.yScale = 1;
-    [self addChild:_dinosaur1];
+    _dinosaur1.yScale = 1;*/
+
+    //return _dinosaur2;
     
 }
 
@@ -59,7 +61,8 @@ NSMutableArray *obstacleList;
     [_dinosaur2.physicsBody setCollisionBitMask:0];
     _dinosaur2.xScale = 1;
     _dinosaur2.yScale = 1;
-    [self addChild:_dinosaur2];
+    
+    //return _dinosaur2;
 }
 
 -(void)makeSkeleton {
@@ -74,7 +77,9 @@ NSMutableArray *obstacleList;
     [_skeleton.physicsBody setCollisionBitMask:0];
     _skeleton.xScale = 2;
     _skeleton.yScale = 2;
-    [self addChild:_skeleton];
+    
+    
+    //return _skeleton;
     
 }
 
@@ -115,12 +120,15 @@ NSMutableArray *obstacleList;
 // must be called when game is started
 - (void)addObstacles{
     //
+    [self makeDinosaur1];
+    [self makeDinosaur2];
+    obstacleList= [[NSMutableArray alloc] initWithObjects:_dinosaur1,_dinosaur2, nil];
     
-    obstacleList= [[NSMutableArray alloc] initWithArray:@[@"dinosaur1", @"dinosaur2"]];
     dinosaurs = [[NSMutableArray alloc] initWithCapacity:kNumObstacles];
     
     for (int i = 0; i < kNumObstacles; ++i) {
-        SKSpriteNode *dinosaur = [SKSpriteNode spriteNodeWithImageNamed:obstacleList[1]];
+        SKSpriteNode *dinosaur = obstacleList[1];
+        NSLog(@"making obstacles");
         dinosaur.hidden = YES;
         [dinosaur setXScale:1];
         [dinosaur setYScale:1];
@@ -133,8 +141,8 @@ NSMutableArray *obstacleList;
 -(void)spawnObstacle {
     double curTime = CACurrentMediaTime();
     if (curTime > _nextDinosaurSpawn) {
-        //NSLog(@"spawning new dinosaur");
-        float randSecs = [self randomValueBetween:0.20 andValue:1.0];
+        NSLog(@"spawning new dinosaur");
+        float randSecs = [self randomValueBetween:2.0 andValue:6.0];
         _nextDinosaurSpawn = randSecs + curTime;
         SKSpriteNode *obstacle = [dinosaurs objectAtIndex:rand()%1];
         [obstacle removeAllActions];
