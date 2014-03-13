@@ -7,10 +7,11 @@
 //
 
 #import "GameScene.h"
-#import "Raptor.h"
+#import "BRaptor.h"
 #import "Obstacles.h"
 #import "Ground.h"
 #import "Categories.h"
+
 
 
 
@@ -18,6 +19,8 @@
     CGFloat _displayedScore;
     NSTimer* timer;
     SKColor* _skyColor;
+    SKNode* moving;
+    SKSpriteNode *raptor;
 }
 
 
@@ -31,6 +34,9 @@
         self.physicsWorld.contactDelegate = self;
         //self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
         [self.physicsWorld setGravity:CGVectorMake(0, -1)];
+        
+        moving = [SKNode node];
+        [self addChild:moving];
         
         //Set up background
         _skyColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0];
@@ -51,27 +57,23 @@
             sprite.zPosition = -20;
             sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + 25 * 2);
             [sprite runAction:moveSkylineSpritesForever];
-            [self addChild:sprite];
+            [moving addChild:sprite];
         }
         
         
         //Add char
-        Raptor* raptor = [[Raptor alloc] init];
-        raptor.position = CGPointMake(self.frame.size.width/2, self.frame.size.height-30);
-        raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100, 100)];
-        //[raptor.physicsBody setAffectedByGravity:YES];
-        [raptor.physicsBody setAllowsRotation:NO];
-        [raptor.physicsBody setCategoryBitMask:dinoCategory];
-        [raptor.physicsBody setContactTestBitMask:worldCategory];
-        [raptor.physicsBody setCollisionBitMask:0];
-        //[raptor.physicsBody setFriction:0];
+        raptor = [[BRaptor alloc] init].raptor;
+        raptor.position = CGPointMake(self.frame.size.width / 4, CGRectGetMidY(self.frame));
+        raptor.physicsBody.dynamic = YES;
+        raptor.physicsBody.allowsRotation = NO;
+        raptor.physicsBody.categoryBitMask = dinoCategory;
+        raptor.physicsBody.collisionBitMask = worldCategory | pipeCategory;
+        raptor.physicsBody.contactTestBitMask = worldCategory | pipeCategory;
+        
         [self addChild:raptor];
         
-        //Add rock
-       /* Obstacles* rock = [[Obstacles alloc] init];
-        [rock.physicsBody setContactTestBitMask:0];
-        [self addChild:rock];*/
         
+        // Create ground
         
         SKTexture* groundTexture = [SKTexture textureWithImageNamed:@"Ground"];
         groundTexture.filteringMode = SKTextureFilteringNearest;
@@ -84,35 +86,23 @@
             // Create the sprite
             SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:groundTexture];
             [sprite setScale:2.0];
-            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2);
+            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 4);
             [sprite runAction:moveGroundSpritesForever];
-            [self addChild:sprite];
+            [moving addChild:sprite];
         }
-        // Create ground physics container
         
         SKNode* dummy = [SKNode node];
-        dummy.position = CGPointMake(0, groundTexture.size.height);
+        dummy.position = CGPointMake(0, groundTexture.size.height/2);
         dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
         dummy.physicsBody.dynamic = NO;
+        dummy.physicsBody.categoryBitMask = worldCategory;
         [self addChild:dummy];
         
-        /*//Add ground
-        Ground *ground = [[Ground alloc] init];
-        ground.position = CGPointMake(0, ground.groundTexture.size.height*2);
-        [self addChild:ground];
-        [ground makeRandomHill];
-        NSLog(@"%f", ground.groundTexture.size.height*2);
-        ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, ground.groundTexture.size.height * 2)];
-        ground.physicsBody.dynamic = NO;
-        ground.physicsBody.categoryBitMask = worldCategory;
-        [ground.physicsBody setContactTestBitMask:dinoCategory];
-        [ground.physicsBody setCollisionBitMask:0];
         
-        SKNode* dummy = [SKNode node];
-        dummy.position = CGPointMake(0, groundTexture.size.height);
-        dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
-        dummy.physicsBody.dynamic = NO;
-        [self addChild:dummy];*/
+        //Add rock
+       /* Obstacles* rock = [[Obstacles alloc] init];
+        [rock.physicsBody setContactTestBitMask:0];
+        [self addChild:rock];*/
         
         //Add score label
         _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
@@ -125,25 +115,6 @@
 
         //Start timer
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
-        
-        
-        //Landscape
-        SKTexture* landscapeTexture = [SKTexture textureWithImageNamed:@"landscape"];
-        landscapeTexture.filteringMode = SKTextureFilteringNearest;
-        
-        SKAction* moveLandscapeSprite = [SKAction moveByX:-landscapeTexture.size.width*2 y:0 duration:0.1 * landscapeTexture.size.width*2];
-        SKAction* resetLandscapeSprite = [SKAction moveByX:landscapeTexture.size.width*2 y:0 duration:0];
-        SKAction* moveLandscapeSpritesForever = [SKAction repeatActionForever:[SKAction sequence:@[moveLandscapeSprite, resetLandscapeSprite]]];
-
-        
-        for( int i = 0; i < 2 + self.frame.size.width / ( landscapeTexture.size.width * 2 ); ++i ) {
-            SKSpriteNode* sprite = [SKSpriteNode spriteNodeWithTexture:landscapeTexture];
-            [sprite setScale:2.0];
-            sprite.zPosition = -20;
-            sprite.position = CGPointMake(i * sprite.size.width, sprite.size.height / 2 + landscapeTexture.size.height );
-            [sprite runAction:moveLandscapeSpritesForever];
-            [self addChild:sprite];
-        }
         
         //Clouds
         SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"cloud"];
@@ -159,8 +130,11 @@
             sprite.zPosition = -20;
             sprite.position = CGPointMake(i * sprite.size.width*(arc4random_uniform(2) + 1), sprite.size.height / 2 + cloudTexture.size.height*(arc4random_uniform(3) + 3));
             [sprite runAction:moveCloudeSpriteForever];
-            [self addChild:sprite];
+            [moving addChild:sprite];
         }
+        
+        self.obs = [[Obstacles alloc]init];
+        [self.obs addObstacles];
         
     }
     
@@ -178,6 +152,8 @@
         self.scoreLabel.text = [NSString stringWithFormat:@"%05.0f", self.score];
         _displayedScore = self.score;
     }
+    //Trying to do da spawning
+    [self.obs spawnObstacle];
 }
 
 

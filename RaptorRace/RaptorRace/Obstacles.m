@@ -10,7 +10,7 @@
 #import "Ground.h"
 #include <stdlib.h>
 
-#define kNumAsteroids   15
+#define kNumObstacles   3
 
 
 @implementation Obstacles
@@ -24,9 +24,6 @@ NSMutableArray *obstacleList;
 
 -(id)init {
     if (self = [super init]) {
-        [self generateDinosaurs];
-        [self generateSkeletons];
-    
     }
     
     return self;
@@ -101,7 +98,7 @@ NSMutableArray *obstacleList;
 }
 
 // Generating dinosaurs that go left, will slow the player down if they bump into each other,
--(void)generateDinosaurs {
+/*-(void)generateDinosaurs {
     int obstacleinterval=2;
     for (int i=0; i<obstacleinterval; i++){
         [self makeDinosaur1];
@@ -114,56 +111,47 @@ NSMutableArray *obstacleList;
     }
     
 }
-
-- (void) spawnDinosaurs{
-    // Spawn Dinosaurs
+ */
+// must be called when game is started
+- (void)addObstacles{
+    //
     
     obstacleList= [[NSMutableArray alloc] initWithArray:@[@"dinosaur1", @"dinosaur2"]];
-    //dinosaurs = [[NSMutableArray alloc] initWithCapacity:kNumAsteroids];
+    dinosaurs = [[NSMutableArray alloc] initWithCapacity:kNumObstacles];
     
-    for (int i = 0; i < kNumAsteroids; ++i) {
-        SKSpriteNode *dinosaur = [SKSpriteNode spriteNodeWithImageNamed:obstacleList[rand() % 1]];
+    for (int i = 0; i < kNumObstacles; ++i) {
+        SKSpriteNode *dinosaur = [SKSpriteNode spriteNodeWithImageNamed:obstacleList[1]];
         dinosaur.hidden = YES;
         [dinosaur setXScale:1];
         [dinosaur setYScale:1];
-        //[_dinosaurs addObject:dinosaur];
+        [dinosaurs addObject:dinosaur];
         [self addChild:dinosaur];
     }
-
+    
 }
-
--(void)movingDinosaurs {
+// must be called in update
+-(void)spawnObstacle {
     double curTime = CACurrentMediaTime();
     if (curTime > _nextDinosaurSpawn) {
         //NSLog(@"spawning new dinosaur");
         float randSecs = [self randomValueBetween:0.20 andValue:1.0];
         _nextDinosaurSpawn = randSecs + curTime;
-        
-        //float randY = [self randomValueBetween:0.0 andValue:self.frame.size.height];
-        //float randDuration = [self randomValueBetween:2.0 andValue:10.0];
-        
-        //SKSpriteNode *asteroid = [_dinosaur1 objectAtIndex:_nextDinosaur];
-        _nextDinosaur++;
-        
-        //if (_nextDinosaur >= _dinosaur1.count) {
-            _nextDinosaur = 0;
-        }
-        
-        //[asteroid removeAllActions];
+        SKSpriteNode *obstacle = [dinosaurs objectAtIndex:rand()%1];
+        [obstacle removeAllActions];
     
-    float randDuration = [self randomValueBetween:3.0 andValue:8.0];
-    CGFloat height = 97;
-    _dinosaur1.position = CGPointMake(500, height);
-    _dinosaur1.hidden = NO;
-    CGPoint location = CGPointMake(-self.frame.size.width-_dinosaur1.size.width, height);
-    SKAction *moveAction = [SKAction moveTo:location duration:randDuration];
-    SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
+        float randDuration = [self randomValueBetween:3.0 andValue:8.0];
+        CGFloat height = 97;
+        _dinosaur1.position = CGPointMake(500, height);
+        _dinosaur1.hidden = NO;
+        CGPoint location = CGPointMake(-self.frame.size.width-_dinosaur1.size.width, height);
+        SKAction *moveAction = [SKAction moveTo:location duration:randDuration];
+        SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
         _dinosaur1.hidden = YES;
-    }];
-    SKAction *moveDinosaurActionWithDone = [SKAction sequence:@[moveAction, doneAction ]];
-    [_dinosaur1 runAction:moveDinosaurActionWithDone withKey:@"dinosaurMoving"];
- 
+        }];
+        SKAction *moveDinosaurActionWithDone = [SKAction sequence:@[moveAction, doneAction ]];
+        [_dinosaur1 runAction:moveDinosaurActionWithDone withKey:@"dinosaurMoving"];
+    }
 }
 
 @end

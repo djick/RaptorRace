@@ -20,5 +20,7 @@
 -(void)generateSkeletons;
 -(void)generateDinosaurs;
 -(void)movingDinosaurs;
+-(void)spawnObstacle;
+-(void)addObstacles;
 
 @end
