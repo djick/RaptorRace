@@ -74,7 +74,6 @@
         
         
         // Create ground
-        
         SKTexture* groundTexture = [SKTexture textureWithImageNamed:@"Ground"];
         groundTexture.filteringMode = SKTextureFilteringNearest;
         
