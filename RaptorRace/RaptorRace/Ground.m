@@ -17,8 +17,12 @@
 }
 
 -(void) makeRandomHill{
-    //add ground texture
-    self.groundTexture = [SKTexture textureWithImageNamed:@"Ground.png"];
+    //Add Ground
+    SKNode *moving = [SKNode node];
+    [self addChild:moving];
+    // Create ground
+    
+    self.groundTexture = [SKTexture textureWithImageNamed:@"ground2.png"];
     self.groundTexture.filteringMode = SKTextureFilteringNearest;
     
     //create actions for animation
