@@ -19,6 +19,7 @@
 double _nextDinosaurSpawn;
 int _nextDinosaur;
 NSMutableArray *dinosaurs;
+NSMutableArray *obstacleList;
 
 
 -(id)init {
@@ -114,36 +115,41 @@ NSMutableArray *dinosaurs;
     
 }
 
-_dinosaurs = [[NSMutableArray alloc] initWithCapacity:kNumAsteroids];
+- (void) spawnDinosaurs{
+    // Spawn Dinosaurs
+    
+    obstacleList= [[NSMutableArray alloc] initWithArray:@[@"dinosaur1", @"dinosaur2"]];
+    //dinosaurs = [[NSMutableArray alloc] initWithCapacity:kNumAsteroids];
+    
+    for (int i = 0; i < kNumAsteroids; ++i) {
+        SKSpriteNode *dinosaur = [SKSpriteNode spriteNodeWithImageNamed:obstacleList[rand() % 1]];
+        dinosaur.hidden = YES;
+        [dinosaur setXScale:1];
+        [dinosaur setYScale:1];
+        //[_dinosaurs addObject:dinosaur];
+        [self addChild:dinosaur];
+    }
 
-for (int i = 0; i < kNumAsteroids; ++i) {
-    SKSpriteNode *asteroid = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid"];
-    asteroid.hidden = YES;
-    [asteroid setXScale:0.5];
-    [asteroid setYScale:0.5];
-    [_asteroids addObject:asteroid];
-    [self addChild:asteroid];
 }
 
-double curTime = CACurrentMediaTime();
 -(void)movingDinosaurs {
-    
+    double curTime = CACurrentMediaTime();
     if (curTime > _nextDinosaurSpawn) {
         //NSLog(@"spawning new dinosaur");
         float randSecs = [self randomValueBetween:0.20 andValue:1.0];
         _nextDinosaurSpawn = randSecs + curTime;
         
-        float randY = [self randomValueBetween:0.0 andValue:self.frame.size.height];
-        float randDuration = [self randomValueBetween:2.0 andValue:10.0];
+        //float randY = [self randomValueBetween:0.0 andValue:self.frame.size.height];
+        //float randDuration = [self randomValueBetween:2.0 andValue:10.0];
         
-        SKSpriteNode *asteroid = [_dinosaur1 objectAtIndex:_nextDinosaur];
+        //SKSpriteNode *asteroid = [_dinosaur1 objectAtIndex:_nextDinosaur];
         _nextDinosaur++;
         
-        if (_nextDinosaur >= _dinosaur1.count) {
+        //if (_nextDinosaur >= _dinosaur1.count) {
             _nextDinosaur = 0;
         }
         
-        [asteroid removeAllActions];
+        //[asteroid removeAllActions];
     
     float randDuration = [self randomValueBetween:3.0 andValue:8.0];
     CGFloat height = 97;
