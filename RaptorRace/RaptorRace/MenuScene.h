@@ -10,4 +10,6 @@
 
 @interface MenuScene : SKScene
 
+- (SKSpriteNode *)fireButtonNode;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 @end
