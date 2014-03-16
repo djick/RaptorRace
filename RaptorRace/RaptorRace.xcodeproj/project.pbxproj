@@ -22,6 +22,7 @@
 		7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDAC26718D1D98900EBFEF0 /* BRaptor.m */; };
 		90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */; };
 		90293B4718D1D4EB00DDE637 /* sillyRaptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */; };
+		9044F67818D5E67F0076B124 /* AnyGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9044F67718D5E67F0076B124 /* AnyGameLevel.m */; };
 		905AE3D318CF20A40007DE4E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D218CF20A40007DE4E /* GameScene.m */; };
 		905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D518CF20C90007DE4E /* Obstacles.m */; };
 		905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D818CF20FF0007DE4E /* MenuViewController.m */; };
@@ -81,6 +82,8 @@
 		90293B4318D1D44F00DDE637 /* TemplateTestRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateTestRaptor.h; sourceTree = "<group>"; };
 		90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateTestRaptor.m; sourceTree = "<group>"; };
 		90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sillyRaptor.atlas; sourceTree = "<group>"; };
+		9044F67618D5E67F0076B124 /* AnyGameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyGameLevel.h; sourceTree = "<group>"; };
+		9044F67718D5E67F0076B124 /* AnyGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyGameLevel.m; sourceTree = "<group>"; };
 		905AE3D118CF20A40007DE4E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		905AE3D218CF20A40007DE4E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		905AE3D418CF20C90007DE4E /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				7FDAC26618D1D98900EBFEF0 /* BRaptor.h */,
 				7FDAC26718D1D98900EBFEF0 /* BRaptor.m */,
 				9066C23618D08D20001F355B /* AnyRaptor.h */,
+				9044F67618D5E67F0076B124 /* AnyGameLevel.h */,
+				9044F67718D5E67F0076B124 /* AnyGameLevel.m */,
 				9066C23718D08D20001F355B /* AnyRaptor.m */,
 				905AE3D418CF20C90007DE4E /* Obstacles.h */,
 				905AE3D518CF20C90007DE4E /* Obstacles.m */,
@@ -397,6 +402,7 @@
 				90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */,
 				905AE3DF18CF21700007DE4E /* PlayerProfile.m in Sources */,
 				905AE3E218CF21950007DE4E /* GameViewController.m in Sources */,
+				9044F67818D5E67F0076B124 /* AnyGameLevel.m in Sources */,
 				AFCFA36718BF81F900092E6E /* MyScene.m in Sources */,
 				AFCFA36418BF81F900092E6E /* ViewController.m in Sources */,
 				AFCFA35E18BF81F900092E6E /* AppDelegate.m in Sources */,
