@@ -26,8 +26,13 @@
     NSTimer* timer;
     SKColor* _skyColor;
     SKNode* moving;
-    SKSpriteNode *raptor;
+    AnyRaptor *raptor;
     int collisions;
+}
+
+-(void) didMoveToView:(SKView *)view{
+    UITapGestureRecognizer *rec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [[self view] addGestureRecognizer:rec];
 }
 
 
@@ -191,6 +196,7 @@
     }
 }
  */
+
 
 
 
