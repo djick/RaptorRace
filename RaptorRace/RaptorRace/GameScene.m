@@ -184,7 +184,8 @@
     //Trying to do da spawning
     [self.obs spawnObstacle];
 }
-/*-(void)didBeginContact:(SKPhysicsContact*)contact {
+
+-(void)didBeginContact:(SKPhysicsContact*)contact {
     if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
         NSLog(@"collison detected");
         if (collisions==2) {
@@ -194,8 +195,17 @@
             collisions=collisions+1;
         }
     }
+    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
 }
- */
+
 
 
 
