@@ -71,6 +71,11 @@ SKSpriteNode *raptor;
     raptor.physicsBody.allowsRotation = NO;
 }
 
+- (void) applyForce{
+    [raptor.physicsBody applyImpulse:CGVectorMake(0, 25)];
+}
+
+
 -(void)runningRaptor
 {
     [raptor runAction:[SKAction repeatActionForever:

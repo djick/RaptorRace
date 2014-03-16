@@ -36,7 +36,7 @@ NSMutableArray *obstacleList;
     SKdinosaur1.size=CGSizeMake(70, 50);
     //_dinosaur1.position = CGPointMake(100, 100);
     SKdinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
-    SKdinosaur1.position = CGPointMake(100, 100);
+    //SKdinosaur1.position = CGPointMake(100, 100);
     SKdinosaur1.physicsBody.affectedByGravity=NO;
     SKdinosaur1.physicsBody.mass=1;
     SKdinosaur1.physicsBody.allowsRotation=NO;

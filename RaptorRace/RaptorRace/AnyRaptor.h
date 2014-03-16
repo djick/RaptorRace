@@ -50,4 +50,6 @@
  */
 -(void)runningRaptor;
 
+- (void) applyForce;
+
 @end
