@@ -13,6 +13,12 @@
 #import "Categories.h"
 
 
+@interface GameScene () <UIGestureRecognizerDelegate>
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapit;
+
+-(IBAction)handleTap:(id)sender;
+
+@end
 
 
 @implementation GameScene {
@@ -20,7 +26,12 @@
     NSTimer* timer;
     SKColor* _skyColor;
     SKNode* moving;
-    SKSpriteNode *raptor;
+    AnyRaptor *raptor;
+}
+
+-(void) didMoveToView:(SKView *)view{
+    UITapGestureRecognizer *rec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [[self view] addGestureRecognizer:rec];
 }
 
 
@@ -63,7 +74,7 @@
         
         //Add char
         raptor = [[BRaptor alloc] init];
-        raptor.position = CGPointMake(self.frame.size.width / 3, CGRectGetMidY(self.frame));
+        raptor.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame));
         raptor.physicsBody.dynamic = YES;
         raptor.physicsBody.allowsRotation = NO;
         raptor.physicsBody.categoryBitMask = dinoCategory;
@@ -149,6 +160,13 @@
     return self;
 }
 
+
+-(IBAction)handleTap:(UITapGestureRecognizer *)tap{
+    NSLog(@"recognizes tap");
+    if(tap.state == UIGestureRecognizerStateEnded){
+        [raptor applyForce];
+    }
+}
 //Increase score
 - (void)countUp {
     self.score += 5;
@@ -163,6 +181,7 @@
     //Trying to do da spawning
     [self.obs spawnObstacle];
 }
+
 
 
 
