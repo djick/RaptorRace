@@ -21,6 +21,7 @@
     SKColor* _skyColor;
     SKNode* moving;
     SKSpriteNode *raptor;
+    int collisions;
 }
 
 
@@ -28,6 +29,8 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        //resets the number of raptor-obstacle crashes
+        collisions=0;
         
         //Physics of the world/scene
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
@@ -67,8 +70,8 @@
         raptor.physicsBody.dynamic = YES;
         raptor.physicsBody.allowsRotation = NO;
         raptor.physicsBody.categoryBitMask = dinoCategory;
-        raptor.physicsBody.collisionBitMask = worldCategory | pipeCategory;
-        raptor.physicsBody.contactTestBitMask = worldCategory | pipeCategory;
+        raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
+        raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
         
         [self addChild:raptor];
         
@@ -163,7 +166,18 @@
     //Trying to do da spawning
     [self.obs spawnObstacle];
 }
-
+/*-(void)didBeginContact:(SKPhysicsContact*)contact {
+    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+}
+ */
 
 
 @end
