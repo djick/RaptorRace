@@ -36,7 +36,7 @@ NSMutableArray *obstacleList;
     SKdinosaur1.size=CGSizeMake(70, 50);
     //_dinosaur1.position = CGPointMake(100, 100);
     SKdinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
-    SKdinosaur1.position = CGPointMake(100, 100);
+    //SKdinosaur1.position = CGPointMake(100, 100);
     SKdinosaur1.physicsBody.affectedByGravity=NO;
     SKdinosaur1.physicsBody.mass=1;
     SKdinosaur1.physicsBody.allowsRotation=NO;
@@ -146,7 +146,7 @@ NSMutableArray *obstacleList;
     double curTime = CACurrentMediaTime();
     if (curTime > _nextDinosaurSpawn) {
         NSLog(@"spawning new dinosaur");
-        float randSecs = [self randomValueBetween:2.0 andValue:6.0];
+        float randSecs = [self randomValueBetween:3.0 andValue:10.0];
         _nextDinosaurSpawn = randSecs + curTime;
         SKSpriteNode *obstacle = [dinosaurs objectAtIndex:rand()%1];
         [obstacle removeAllActions];
@@ -155,7 +155,7 @@ NSMutableArray *obstacleList;
         CGFloat height = 97;
         obstacle.position = CGPointMake(500, height);
         obstacle.hidden = NO;
-        CGPoint location = CGPointMake(-self.frame.size.width-obstacle.size.width, height);
+        CGPoint location = CGPointMake(1, height);
         SKAction *moveAction = [SKAction moveTo:location duration:randDuration];
         SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
