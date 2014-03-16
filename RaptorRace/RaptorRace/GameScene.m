@@ -28,6 +28,7 @@
     SKNode* moving;
     AnyRaptor *raptor;
     CGFloat groundHeight;
+    int collisions;
 }
 
 -(void) didMoveToView:(SKView *)view{
