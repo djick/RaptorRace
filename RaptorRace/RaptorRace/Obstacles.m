@@ -134,15 +134,15 @@ NSMutableArray *obstacleList;
         }
         NSLog(@"making obstacles");
         dinosaur.hidden = YES;
-        [dinosaur setXScale:1];
-        [dinosaur setYScale:1];
+        [dinosaur setXScale:0.7];
+        [dinosaur setYScale:0.7];
         [dinosaurs addObject:dinosaur];
         [self addChild:dinosaur];
     }
     
 }
 // must be called in update
--(void)spawnObstacle {
+-(void)spawnObstacle:(CGFloat) height {
     double curTime = CACurrentMediaTime();
     if (curTime > _nextDinosaurSpawn) {
         NSLog(@"spawning new dinosaur");
@@ -152,10 +152,10 @@ NSMutableArray *obstacleList;
         [obstacle removeAllActions];
     
         float randDuration = [self randomValueBetween:3.0 andValue:8.0];
-        CGFloat height = 97;
+        //CGFloat height = 97;
         obstacle.position = CGPointMake(500, height);
         obstacle.hidden = NO;
-        CGPoint location = CGPointMake(-self.frame.size.width-obstacle.size.width, height);
+        CGPoint location = CGPointMake(-self.frame.size.width+obstacle.size.width/2, height);
         SKAction *moveAction = [SKAction moveTo:location duration:randDuration];
         SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");

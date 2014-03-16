@@ -69,10 +69,21 @@ SKSpriteNode *raptor;
 {
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
+    raptor.physicsBody.restitution = 0.0;
 }
 
 - (void) applyForce{
-    [raptor.physicsBody applyImpulse:CGVectorMake(0, 25)];
+    CGFloat velocity = raptor.physicsBody.velocity.dy;
+    if(velocity >0){
+        [raptor.physicsBody applyImpulse:CGVectorMake(0, 25)];
+        raptor.speed = 1.0;
+    }
+    else{
+        [raptor.physicsBody setVelocity:CGVectorMake(0, 0)];
+        [raptor.physicsBody applyImpulse:CGVectorMake(0, 60)];
+        raptor.speed = 1.0;
+    }
+    
 }
 
 

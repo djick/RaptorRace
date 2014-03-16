@@ -18,7 +18,7 @@
 -(SKSpriteNode*)makeDinosaur2;
 -(SKSpriteNode*)makeSkeleton;
 -(void)generateSkeletons;
--(void)spawnObstacle;
+-(void)spawnObstacle:(CGFloat)height;
 -(void)addObstacles;
 
 @end

@@ -27,6 +27,7 @@
     SKColor* _skyColor;
     SKNode* moving;
     AnyRaptor *raptor;
+    CGFloat groundHeight;
 }
 
 -(void) didMoveToView:(SKView *)view{
@@ -44,7 +45,7 @@
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
         //self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
-        [self.physicsWorld setGravity:CGVectorMake(0, -1)];
+        [self.physicsWorld setGravity:CGVectorMake(0, -5)];
         
         moving = [SKNode node];
         [self addChild:moving];
@@ -100,6 +101,7 @@
             [sprite runAction:moveGroundSpritesForever];
             [moving addChild:sprite];
         }
+        groundHeight = groundTexture.size.height*2;
         
         SKNode* dummy = [SKNode node];
         dummy.position = CGPointMake(0, groundTexture.size.height/2);
@@ -179,7 +181,7 @@
         _displayedScore = self.score;
     }
     //Trying to do da spawning
-    [self.obs spawnObstacle];
+    [self.obs spawnObstacle:groundHeight];
 }
 
 
