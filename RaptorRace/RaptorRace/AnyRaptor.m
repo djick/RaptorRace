@@ -7,6 +7,7 @@
 //
 
 #import "AnyRaptor.h"
+#import "Categories.h"
 
 @implementation AnyRaptor
 
@@ -69,6 +70,7 @@ SKSpriteNode *raptor;
 {
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
+    raptor.physicsBody.categoryBitMask = obstacleCategory;
 }
 
 - (void) applyForce{
