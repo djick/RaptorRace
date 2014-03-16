@@ -34,6 +34,7 @@ SKSpriteNode *raptor;
     [self runningRaptor];
 }
 
+// Has to be implemented by sub-class, or it wil raise exception.
 - (NSString *) getAtlasName
 {
     [NSException raise:NSInternalInconsistencyException
@@ -41,6 +42,7 @@ SKSpriteNode *raptor;
     return NULL;
 }
 
+// Has to be implemented by sub-class, or it wil raise exception.
 - (NSString* ) getPictureNameFormat
 {
     [NSException raise:NSInternalInconsistencyException

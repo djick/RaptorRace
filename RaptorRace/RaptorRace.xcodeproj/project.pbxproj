@@ -23,6 +23,7 @@
 		90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */; };
 		90293B4718D1D4EB00DDE637 /* sillyRaptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */; };
 		9044F67818D5E67F0076B124 /* AnyGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9044F67718D5E67F0076B124 /* AnyGameLevel.m */; };
+		9044F67A18D608950076B124 /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9044F67918D608950076B124 /* ground.atlas */; };
 		905AE3D318CF20A40007DE4E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D218CF20A40007DE4E /* GameScene.m */; };
 		905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D518CF20C90007DE4E /* Obstacles.m */; };
 		905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3D818CF20FF0007DE4E /* MenuViewController.m */; };
@@ -84,6 +85,7 @@
 		90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sillyRaptor.atlas; sourceTree = "<group>"; };
 		9044F67618D5E67F0076B124 /* AnyGameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyGameLevel.h; sourceTree = "<group>"; };
 		9044F67718D5E67F0076B124 /* AnyGameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyGameLevel.m; sourceTree = "<group>"; };
+		9044F67918D608950076B124 /* ground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ground.atlas; sourceTree = "<group>"; };
 		905AE3D118CF20A40007DE4E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		905AE3D218CF20A40007DE4E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		905AE3D418CF20C90007DE4E /* Obstacles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacles.h; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				905AE3D018CF20560007DE4E /* ViewControllers */,
 				905AE3CF18CF20210007DE4E /* Models */,
+				9044F67918D608950076B124 /* ground.atlas */,
 				7147B48E18CF0A570083C542 /* raptor.atlas */,
 				90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */,
 				AFCFA35C18BF81F900092E6E /* AppDelegate.h */,
@@ -363,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9044F67A18D608950076B124 /* ground.atlas in Resources */,
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
 				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
 				AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */,

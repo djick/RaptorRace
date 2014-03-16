@@ -17,8 +17,17 @@
 
 /**
  Creates the background for the scene.
+ 
+ @param name The name of the image to be used as background.
  */
-- (void) createBackground;
+- (void) createBackgroundWithImageNamed:(NSString *)name;
+
+/**
+ Adds clouds to the scene.
+ 
+ @param name The name of the image to be used as cloud.
+ */
+- (void) addCloudsWithImageNamed:(NSString *)name;
 
 /**
  Adds the scorecounter to the scene (or should this be somewhere else?
@@ -27,9 +36,12 @@
 
 /**
  Creats the ground for the scene.
+ 
+ @param name The name of the atlas that should be used for animating the ground.
+ @param format The format of the picture names for the pictures in the specified atlas.
  */
-- (void) createGround;
-
+- (void) createGroundWithAtlasNamed:(NSString *)name
+                          AndFormat:(NSString *)format;
 /**
  Adds obstacles to the scene.
  */
@@ -39,6 +51,34 @@
  Adds a raptor to the scene.
  */
 - (void) addRaptor;
+
+/**
+ Gets the name of the atlas that should be used for the animation of the sprite.
  
+ @return Retruns a string with the name of the atlas that should be used for animation.
+ */
+- (NSString *) getGroundAtlasName;
+
+/**
+ Gets the formate of the names of the pictures in the atlas.
+ 
+ @return Returns the name format of the pictures in the atas.
+ */
+- (NSString* ) getGroundPictureNameFormat;
+
+/**
+ Gets the name of the picture that should be used for the animation of the sprite.
+ 
+ @return Retruns a string with the name of the picture that should be used as background.
+ */
+- (NSString *) getBackgroundPictureName;
+
+/**
+Gets the name of the picture that should be used for the clouds.
+
+@return Retruns a string with the name of the picture that should be used for the clouds.
+*/
+- (NSString *) getCloudPictureName;
+
 
 @end
