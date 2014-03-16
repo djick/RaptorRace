@@ -146,7 +146,7 @@ NSMutableArray *obstacleList;
     double curTime = CACurrentMediaTime();
     if (curTime > _nextDinosaurSpawn) {
         NSLog(@"spawning new dinosaur");
-        float randSecs = [self randomValueBetween:2.0 andValue:6.0];
+        float randSecs = [self randomValueBetween:3.0 andValue:10.0];
         _nextDinosaurSpawn = randSecs + curTime;
         SKSpriteNode *obstacle = [dinosaurs objectAtIndex:rand()%1];
         [obstacle removeAllActions];

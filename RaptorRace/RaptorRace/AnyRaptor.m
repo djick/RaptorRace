@@ -7,6 +7,7 @@
 //
 
 #import "AnyRaptor.h"
+#import "Categories.h"
 
 @implementation AnyRaptor
 
