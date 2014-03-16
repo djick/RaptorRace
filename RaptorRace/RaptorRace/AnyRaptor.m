@@ -71,6 +71,7 @@ SKSpriteNode *raptor;
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
     raptor.physicsBody.restitution = 0.0;
+    raptor.physicsBody.categoryBitMask = obstacleCategory;
 }
 
 - (void) applyForce{

@@ -155,7 +155,7 @@ NSMutableArray *obstacleList;
         //CGFloat height = 97;
         obstacle.position = CGPointMake(500, height);
         obstacle.hidden = NO;
-        CGPoint location = CGPointMake(-self.frame.size.width+obstacle.size.width/2, height);
+        CGPoint location = CGPointMake(1, height);
         SKAction *moveAction = [SKAction moveTo:location duration:randDuration];
         SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
