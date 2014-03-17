@@ -17,6 +17,7 @@
 		71B12DA518D6652900EA30D6 /* highscore.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA318D6652900EA30D6 /* highscore.png */; };
 		71B12DA718D6669600EA30D6 /* newgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA618D6669600EA30D6 /* newgame.png */; };
 		71B12DAC18D6699500EA30D6 /* RRbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DAB18D6699500EA30D6 /* RRbg.png */; };
+		7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036A918D705AD00010347 /* ScoreSingleton.m */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
 		7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDAC26718D1D98900EBFEF0 /* BRaptor.m */; };
 		90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */; };
@@ -76,6 +77,8 @@
 		71B12DA318D6652900EA30D6 /* highscore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highscore.png; sourceTree = "<group>"; };
 		71B12DA618D6669600EA30D6 /* newgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newgame.png; sourceTree = "<group>"; };
 		71B12DAB18D6699500EA30D6 /* RRbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RRbg.png; sourceTree = "<group>"; };
+		7F3036A818D705AD00010347 /* ScoreSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSingleton.h; sourceTree = "<group>"; };
+		7F3036A918D705AD00010347 /* ScoreSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSingleton.m; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
 		7FDAC26518D0872A00EBFEF0 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		7FDAC26618D1D98900EBFEF0 /* BRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRaptor.h; sourceTree = "<group>"; };
@@ -179,8 +182,8 @@
 				905AE3DB18CF213B0007DE4E /* Ground.m */,
 				90293B4318D1D44F00DDE637 /* TemplateTestRaptor.h */,
 				90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */,
-				90AA4A5718D7001400DE5E3E /* ScoreCounterSingleton.h */,
-				90AA4A5818D7001400DE5E3E /* ScoreCounterSingleton.m */,
+				7F3036A818D705AD00010347 /* ScoreSingleton.h */,
+				7F3036A918D705AD00010347 /* ScoreSingleton.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -420,9 +423,9 @@
 				AFE6394A18D201A90011D3CC /* MenuScene.m in Sources */,
 				905AE3DC18CF213B0007DE4E /* Ground.m in Sources */,
 				905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */,
+				7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */,
 				AFCFA35A18BF81F900092E6E /* main.m in Sources */,
 				905AE3D318CF20A40007DE4E /* GameScene.m in Sources */,
-				90AA4A5918D7001400DE5E3E /* ScoreCounterSingleton.m in Sources */,
 				7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */,
 				905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */,
 				9066C23818D08D20001F355B /* AnyRaptor.m in Sources */,
