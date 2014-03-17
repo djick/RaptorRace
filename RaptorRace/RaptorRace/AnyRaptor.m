@@ -19,6 +19,7 @@ SKSpriteNode *raptor;
     if (self = [super init])
     {
         [self makeRaptor];
+        
         [self addChild:raptor];
         NSLog(@"Raptor initialized");
     }
