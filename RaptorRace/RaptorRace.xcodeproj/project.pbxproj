@@ -55,6 +55,7 @@
 		AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE6394B18D203EC0011D3CC /* mainMenyBG.png */; };
 		AFE9FF4618D0797800835561 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4518D0797800835561 /* landscape.png */; };
 		AFE9FF4818D1165C00835561 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4718D1165C00835561 /* cloud.png */; };
+		AFFB37FC18D7444000E3F781 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB37FB18D7444000E3F781 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		AFE6394B18D203EC0011D3CC /* mainMenyBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenyBG.png; sourceTree = "<group>"; };
 		AFE9FF4518D0797800835561 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
 		AFE9FF4718D1165C00835561 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		AFFB37FA18D7444000E3F781 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		AFFB37FB18D7444000E3F781 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				905AE3D218CF20A40007DE4E /* GameScene.m */,
 				AFE6394818D201A90011D3CC /* MenuScene.h */,
 				AFE6394918D201A90011D3CC /* MenuScene.m */,
+				AFFB37FA18D7444000E3F781 /* GameOverScene.h */,
+				AFFB37FB18D7444000E3F781 /* GameOverScene.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				9044F67818D5E67F0076B124 /* AnyGameLevel.m in Sources */,
 				AFCFA36718BF81F900092E6E /* MyScene.m in Sources */,
 				AFCFA36418BF81F900092E6E /* ViewController.m in Sources */,
+				AFFB37FC18D7444000E3F781 /* GameOverScene.m in Sources */,
 				7F3036AD18D70DCF00010347 /* Pause.m in Sources */,
 				AFCFA35E18BF81F900092E6E /* AppDelegate.m in Sources */,
 				AFE6394A18D201A90011D3CC /* MenuScene.m in Sources */,
