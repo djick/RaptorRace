@@ -112,6 +112,7 @@
         dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
         dummy.physicsBody.dynamic = NO;
         dummy.physicsBody.categoryBitMask = worldCategory;
+        dummy.physicsBody.restitution = 0.0;
         [self addChild:dummy];
         
         
