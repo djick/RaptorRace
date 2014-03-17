@@ -81,7 +81,7 @@ int collisions;
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
     raptor.physicsBody.restitution = 0.0;
-    raptor.physicsBody.categoryBitMask = obstacleCategory;
+    raptor.physicsBody.categoryBitMask = dinoCategory;
 }
 
 - (void) forceApplied:(CGVector) force {
@@ -135,26 +135,5 @@ int collisions;
                                              restore:YES]] withKey:@"runningInPlaceRaptor"];
     return;
 }
--(void)didBeginContact:(SKPhysicsContact*)contact {
-    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-}
-//hello
 
 @end

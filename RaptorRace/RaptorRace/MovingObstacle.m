@@ -7,6 +7,7 @@
 //
 
 #import "MovingObstacle.h"
+#import "Categories.h"
 
 @implementation MovingObstacle
 
@@ -72,6 +73,27 @@ SKSpriteNode * obstacle;
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return NULL;
+}
+
+-(void)didBeginContact:(SKPhysicsContact*)contact {
+    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
 }
 
 @end

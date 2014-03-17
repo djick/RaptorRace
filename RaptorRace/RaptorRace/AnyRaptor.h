@@ -52,6 +52,7 @@
  */
 -(void)runningRaptor;
 
+
 /**
  Apply force to the raptor
  @param force A vector containing the force in x and y direction to apply
