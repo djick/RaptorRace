@@ -15,4 +15,13 @@
 - (void) updateScore:(CGFloat) s;
 - (CGFloat) getScore;
 
+/**
+ Customises the score counter.
+ 
+ @param color The custom color for the score counter.
+ @param fontName The name of the font to use on the score counter.
+ */
+- (void) customSingletonWithColor:(SKColor *)color
+                      AndFontName:(NSString *)fontName;
+
 @end

@@ -29,8 +29,6 @@ static ScoreSingleton *_sharedInstance = nil;
     self.fontSize = 20;
     self.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
     self.text = @"000";
-    
-    //self.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
 }
 
 - (void) updateScore:(CGFloat) s{
@@ -40,6 +38,13 @@ static ScoreSingleton *_sharedInstance = nil;
 
 - (CGFloat) getScore{
     return score;
+}
+
+- (void) customSingletonWithColor:(SKColor *)color
+                      AndFontName:(NSString *)fontName
+{
+    self.fontColor = color;
+    self.fontName = fontName;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AnyGameLevel.h"
+#import "ScoreSingleton.h"
 
 @implementation AnyGameLevel
 
@@ -16,6 +17,10 @@ NSArray *groundMovingFrames;
 
 SKSpriteNode *ground;
 SKSpriteNode *background;
+
+ScoreSingleton * scoreLabel;
+
+NSTimer* timer;
 
 -(id)initWithSize:(CGSize)size
 {
@@ -32,7 +37,16 @@ SKSpriteNode *background;
 {
     [self addChild:ground];
     [self addChild:background];
-    NSLog(@"%f", ground.position.x);
+    [self addChild:scoreLabel];
+}
+
+- (void)update:(NSTimeInterval)currentTime
+{
+    //If not the current score is shown
+    CGFloat displayedScore = 0.0;
+    if([scoreLabel getScore] != displayedScore) {
+        displayedScore = [[ScoreSingleton getInstance] getScore];
+    }
 }
 
 - (void) makeGameLevel
@@ -42,6 +56,8 @@ SKSpriteNode *background;
     [self createBackgroundWithImageNamed:[self getBackgroundPictureName]
                       AndBackgroundColor:[self getBackgroundColor]];
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
+    [self addScoreCounterWithColor:[self getScoreCounterColor]
+                      AndFontNamed:[self getScoreCounterFontName]];
     
 }
 
@@ -100,10 +116,24 @@ SKSpriteNode *background;
     }
 }
 
+/**
+ A helper-method for addScoreCounter... increments the timer.
+ */
+- (void)countUp
+{
+    [[ScoreSingleton getInstance] updateScore:5];
+}
+
+
 - (void) addScoreCounterWithColor:(UIColor *)color
                      AndFontNamed:(NSString *)fontName
 {
-    SKLabelNode * scoreLabel;
+    scoreLabel = [ScoreSingleton getInstance];
+    [scoreLabel customSingletonWithColor:color
+                             AndFontName:fontName];
+    scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
 }
 
 - (void) createGroundWithAtlasNamed:(NSString *)name
@@ -132,9 +162,10 @@ SKSpriteNode *background;
                                              restore:YES]] withKey:@"movingGround"];
     
     [ground setScale:2.0];
-        ground.position = CGPointMake(0, ground.size.height/4);
+    ground.position = CGPointMake(0, ground.size.height/4);
     
 }
+
 
 - (void) addObstacles
 {
@@ -146,7 +177,9 @@ SKSpriteNode *background;
     
 }
 
+
 // The following methods has to be implemented by sub-class, or exception will be raised.
+
 - (NSString *) getGroundAtlasName
 {
 //    [NSException raise:NSInternalInconsistencyException

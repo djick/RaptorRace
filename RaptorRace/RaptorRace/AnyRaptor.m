@@ -65,7 +65,7 @@ int collisions;
     SKTextureAtlas *raptorAnimatedAtlas = [SKTextureAtlas atlasNamed:name];
     
     int numImages = raptorAnimatedAtlas.textureNames.count;
-    for (int i=1; i <= numImages/2; i++) {
+    for (int i=1; i <= numImages; i++) {
         NSString *textureName = [NSString stringWithFormat:format, i];
         SKTexture *temp = [raptorAnimatedAtlas textureNamed:textureName];
         [runningFrames addObject:temp];
@@ -85,38 +85,19 @@ int collisions;
     raptor.physicsBody.categoryBitMask = dinoCategory;
 }
 
-- (void) forceApplied:(CGVector) force {
+- (void) applyForce
+{
     CGFloat velocity = raptor.physicsBody.velocity.dy;
-//    NSLog(@"velocity: %f", velocity);
-//    NSLog(@"allowedToJump: %d",self.allowedToJump);
-//    NSLog(@"inAir: %d",self.inAir);
-    [raptor.physicsBody setVelocity:CGVectorMake(0, 0)];
-    [raptor.physicsBody applyImpulse:force];
-    raptor.speed = 1.0;
-}
-
--(void)jump {
-    CGFloat velocity = raptor.physicsBody.velocity.dy;
-    //Raptor allowed to jump?
-    if ((self.allowedToJump && !self.inAir) || _jumpState == 0) {
-        [self forceApplied:(CGVectorMake(0.0, 87.0))];
-        self.inAir = YES;
-        _jumpState = 1;
+    if(velocity > 0)
+    {
+        [raptor.physicsBody applyImpulse:CGVectorMake(0, 25)];
+        raptor.speed = 1.0;
     }
-    else if (self.allowedToJump && self.inAir && _jumpState == 1) {
-        [self forceApplied:(CGVectorMake(0.0, 30.0))];
-        self.inAir = YES;
-        self.allowedToJump = NO;
-        _jumpState = 2;
-    }
-    if (_jumpState == 2) {
-        if (velocity == 0) {
-            self.inAir = NO;
-            self.allowedToJump = YES;
-        }
-        [self forceApplied:CGVectorMake(0.0, 75.0)];
-        _jumpState = 1;
-        self.inAir = YES;
+    else
+    {
+        [raptor.physicsBody setVelocity:CGVectorMake(0, 0)];
+        [raptor.physicsBody applyImpulse:CGVectorMake(0, 60)];
+        raptor.speed = 1.0;
     }
 }
 
@@ -137,26 +118,5 @@ int collisions;
                                              restore:YES]] withKey:@"runningInPlaceRaptor"];
     return;
 }
--(void)didBeginContact:(SKPhysicsContact*)contact {
-    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-}
-//hello
 
 @end
