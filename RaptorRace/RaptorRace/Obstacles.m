@@ -146,17 +146,20 @@ NSMutableArray *obstacleList;
     double curTime = CACurrentMediaTime();
     if (curTime > _nextDinosaurSpawn) {
         NSLog(@"spawning new dinosaur");
-        float randSecs = [self randomValueBetween:3.0 andValue:10.0];
+        float randSecs = [self randomValueBetween:3.0
+                                         andValue:10.0];
         _nextDinosaurSpawn = randSecs + curTime;
         SKSpriteNode *obstacle = [dinosaurs objectAtIndex:rand()%1];
         [obstacle removeAllActions];
     
-        float randDuration = [self randomValueBetween:3.0 andValue:8.0];
+        float randDuration = [self randomValueBetween:3.0
+                                             andValue:8.0];
         //CGFloat height = 97;
         obstacle.position = CGPointMake(500, height);
         obstacle.hidden = NO;
         CGPoint location = CGPointMake(1, height);
-        SKAction *moveAction = [SKAction moveTo:location duration:randDuration];
+        SKAction *moveAction = [SKAction moveTo:location
+                                       duration:randDuration];
         SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
         obstacle.hidden = YES;
