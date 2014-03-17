@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7147B48D18CF0A500083C542 /* Raptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7147B48C18CF0A500083C542 /* Raptor.m */; };
 		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
+		71877D1018D74D5800DEE120 /* RRGameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 71877D0F18D74D5800DEE120 /* RRGameOver.png */; };
 		71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1718D08CE200441272 /* dinosaur1.png */; };
 		71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1818D08CE200441272 /* dinosaur2.png */; };
 		71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */; };
@@ -70,6 +71,7 @@
 		7147B48B18CF0A500083C542 /* Raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raptor.h; sourceTree = "<group>"; };
 		7147B48C18CF0A500083C542 /* Raptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raptor.m; sourceTree = "<group>"; };
 		7147B48E18CF0A570083C542 /* raptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptor.atlas; sourceTree = "<group>"; };
+		71877D0F18D74D5800DEE120 /* RRGameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RRGameOver.png; sourceTree = "<group>"; };
 		71A9DE1718D08CE200441272 /* dinosaur1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur1.png; sourceTree = "<group>"; };
 		71A9DE1818D08CE200441272 /* dinosaur2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur2.png; sourceTree = "<group>"; };
 		71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newestSkeleton1.png; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71877D0F18D74D5800DEE120 /* RRGameOver.png */,
 				71B12DAB18D6699500EA30D6 /* RRbg.png */,
 				71B12DA618D6669600EA30D6 /* newgame.png */,
 				71B12DA318D6652900EA30D6 /* highscore.png */,
@@ -399,6 +402,7 @@
 				AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */,
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
 				AFE9FF4818D1165C00835561 /* cloud.png in Resources */,
+				71877D1018D74D5800DEE120 /* RRGameOver.png in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
 				AFE9FF4618D0797800835561 /* landscape.png in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
