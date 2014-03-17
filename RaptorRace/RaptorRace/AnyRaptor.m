@@ -81,7 +81,7 @@ int collisions;
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
     raptor.physicsBody.restitution = 0.0;
-    raptor.physicsBody.density = 1.5;
+    
     raptor.physicsBody.categoryBitMask = dinoCategory;
     raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
     raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;

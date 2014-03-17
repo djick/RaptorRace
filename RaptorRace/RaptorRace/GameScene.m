@@ -215,6 +215,7 @@
         if (collisions==2) {
             //gameover
             [self.view presentScene:[[MenuScene alloc] initWithSize:self.size] transition:SKTransitionDirectionUp];
+            [[ScoreSingleton getInstance] stopTimer];
         }
         else{
             collisions=collisions+1;
@@ -225,6 +226,7 @@
         if (collisions==2) {
             //gameover
             [self.view presentScene:[[MenuScene alloc] initWithSize:self.size]];
+            [[ScoreSingleton getInstance] stopTimer];
         }
         else{
             collisions=collisions+1;

@@ -20,6 +20,8 @@
 - (void) startTimer;
 - (void) resumeTimer;
 - (void) pauseTimer;
+- (void) stopTimer;
+
 
 /**
  Customises the score counter.

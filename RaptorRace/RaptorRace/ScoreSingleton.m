@@ -44,6 +44,7 @@ static ScoreSingleton *_sharedInstance = nil;
     [[ScoreSingleton getInstance] updateScore:5.0];
 }
 
+
 - (void) customSingletonWithColor:(SKColor *)color
                       AndFontName:(NSString *)fontName
 {
@@ -68,5 +69,12 @@ static ScoreSingleton *_sharedInstance = nil;
     
     [timer setFireDate:[previousFireStart initWithTimeInterval:pauseTime sinceDate:previousFireStart]];
 }
+
+- (void) stopTimer{
+    [timer invalidate];
+    timer = nil;
+    score = 0.0;
+}
+
 
 @end
