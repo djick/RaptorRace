@@ -43,7 +43,7 @@
 
 - (void) animateObstacle
 {
-    [obstacle runAction:[SKAction repeatActionForever:
+   // [obstacle runAction:[SKAction repeatActionForever:
                        [SKAction animateWithTextures:raptorRunningFrames
                                         timePerFrame:0.1f
                                               resize:NO

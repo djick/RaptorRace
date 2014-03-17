@@ -172,6 +172,7 @@
 			children = (
 				7F3036AB18D70DCF00010347 /* Pause.h */,
 				7F3036AC18D70DCF00010347 /* Pause.m */,
+				90AA4A6318D71BAB00DE5E3E /* Templates */,
 				905AE3DD18CF21700007DE4E /* PlayerProfile.h */,
 				905AE3DE18CF21700007DE4E /* PlayerProfile.m */,
 				7147B48B18CF0A500083C542 /* Raptor.h */,
