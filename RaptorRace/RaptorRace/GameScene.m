@@ -12,14 +12,7 @@
 #import "Ground.h"
 #import "Categories.h"
 #import "ScoreSingleton.h"
-
-
-@interface GameScene () <UIGestureRecognizerDelegate>
-@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapit;
-
--(IBAction)handleTap:(id)sender;
-
-@end
+#import "Pause.h"
 
 
 @implementation GameScene {
@@ -29,13 +22,10 @@
     SKNode* moving;
     AnyRaptor *raptor;
     CGFloat groundHeight;
+    Pause * pausebtn;
     int collisions;
 }
 
--(void) didMoveToView:(SKView *)view{
-    UITapGestureRecognizer *rec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [[self view] addGestureRecognizer:rec];
-}
 
 
 -(id)initWithSize:(CGSize)size {
@@ -85,6 +75,7 @@
         raptor.physicsBody.categoryBitMask = dinoCategory;
         raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
         raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
+        raptor.name = @"braptor";
         
         [self addChild:raptor];
         
@@ -131,6 +122,13 @@
         _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
         
         [self addChild:_scoreLabel];
+        
+        pausebtn = [[Pause alloc] initWithImageNamed:@"dinosaur2"];
+        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/3));
+        pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
+                                .size];
+        pausebtn.physicsBody.dynamic = NO;
+        [self addChild:pausebtn];
 
         //Start timer
         timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
@@ -170,11 +168,26 @@
 }
 
 
--(IBAction)handleTap:(UITapGestureRecognizer *)tap{
-    NSLog(@"recognizes tap");
-    if(tap.state == UIGestureRecognizerStateEnded){
+/*-(IBAction)handleTap:(UITapGestureRecognizer *)tap{
+    //NSLog(@"recognizes tap");
+    CGPoint location =[tap locationInView:self.view];
+    if(tap.state == UIGestureRecognizerStateEnded && [self.physicsWorld bodyAtPoint:location] != pausebtn.physicsBody){
         [raptor applyForce];
+        NSLog(@"tapped outside pause btn");
     }
+    else if(tap.state == UIGestureRecognizerStateEnded && [self.physicsWorld bodyAtPoint:location] == pausebtn.physicsBody){
+        if(self.scene.view.paused){
+            self.scene.view.paused = NO;
+        }
+        else{
+            self.scene.view.paused = YES;
+        }
+    }
+    
+}*/
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [raptor applyForce];
 }
 //Increase score
 - (void)countUp {
@@ -190,6 +203,10 @@
     }
     //Trying to do da spawning
     [self.obs spawnObstacle:groundHeight];
+    
+    //Raptortest
+   // NSLog(@"%f",    [self childNodeWithName:@"braptor"].position.x);
+        //NSLog(@"%f",    raptor.position.x);
 }
 
 -(void)didBeginContact:(SKPhysicsContact*)contact {

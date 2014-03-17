@@ -19,7 +19,7 @@ SKSpriteNode *raptor;
     if (self = [super init])
     {
         [self makeRaptor];
-        
+        raptor.name = @"raptor";
         [self addChild:raptor];
         NSLog(@"Raptor initialized");
     }
@@ -89,6 +89,10 @@ SKSpriteNode *raptor;
         raptor.speed = 1.0;
     }
     
+}
+
+- (CGPoint) positionOfRaptor{
+    return raptor.parent.position;
 }
 
 
