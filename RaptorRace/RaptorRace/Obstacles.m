@@ -45,6 +45,7 @@ NSMutableArray *obstacleList;
     SKdinosaur1.physicsBody.categoryBitMask = obstacleCategory;
     SKdinosaur1.physicsBody.collisionBitMask = dinoCategory;
     SKdinosaur1.physicsBody.contactTestBitMask = dinoCategory;
+    SKdinosaur1.physicsBody.restitution = 0.0;
     //SKdinosaur1.xScale = 1;
     //SKdinosaur1.yScale = 1;
 
