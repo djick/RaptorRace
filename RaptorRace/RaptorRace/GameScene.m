@@ -12,30 +12,21 @@
 #import "Ground.h"
 #import "Categories.h"
 #import "ScoreSingleton.h"
-
-
-@interface GameScene () <UIGestureRecognizerDelegate>
-@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapit;
-
--(IBAction)handleTap:(id)sender;
-
-@end
+#import "Pause.h"
+#import "MenuScene.h"
 
 
 @implementation GameScene {
     CGFloat _displayedScore;
-    NSTimer* timer;
     SKColor* _skyColor;
     SKNode* moving;
     AnyRaptor *raptor;
     CGFloat groundHeight;
+    //int collisions;
+    Pause * pausebtn;
     int collisions;
 }
 
--(void) didMoveToView:(SKView *)view{
-    UITapGestureRecognizer *rec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [[self view] addGestureRecognizer:rec];
-}
 
 
 -(id)initWithSize:(CGSize)size {
@@ -82,9 +73,10 @@
         raptor.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame));
         raptor.physicsBody.dynamic = YES;
         raptor.physicsBody.allowsRotation = NO;
-        raptor.physicsBody.categoryBitMask = dinoCategory;
+        /*raptor.physicsBody.categoryBitMask = dinoCategory;
         raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
         raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
+        raptor.name = @"braptor";*/
         
         [self addChild:raptor];
         
@@ -132,9 +124,16 @@
         _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
         
         [self addChild:_scoreLabel];
+        
+        pausebtn = [[Pause alloc] initWithImageNamed:@"dinosaur2"];
+        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2));
+        pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
+                                .size];
+        pausebtn.physicsBody.dynamic = NO;
+        [self addChild:pausebtn];
 
         //Start timer
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+        [[ScoreSingleton getInstance] startTimer];
         
         //Clouds
         SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"cloud"];
@@ -171,18 +170,30 @@
 }
 
 
--(IBAction)handleTap:(UITapGestureRecognizer *)tap{
-    NSLog(@"recognizes tap");
-    if(tap.state == UIGestureRecognizerStateEnded){
-        [raptor jump];
+/*-(IBAction)handleTap:(UITapGestureRecognizer *)tap{
+    //NSLog(@"recognizes tap");
+    CGPoint location =[tap locationInView:self.view];
+    if(tap.state == UIGestureRecognizerStateEnded && [self.physicsWorld bodyAtPoint:location] != pausebtn.physicsBody){
+        [raptor applyForce];
+        NSLog(@"tapped outside pause btn");
     }
+    else if(tap.state == UIGestureRecognizerStateEnded && [self.physicsWorld bodyAtPoint:location] == pausebtn.physicsBody){
+        if(self.scene.view.paused){
+            self.scene.view.paused = NO;
+        }
+        else{
+            self.scene.view.paused = YES;
+        }
+    }
+    
+}*/
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [raptor jump];
 }
 
 //Increase score
-- (void)countUp {
-    //self.score += 5;
-    [[ScoreSingleton getInstance] updateScore:5];
-}
+
 
 - (void)update:(NSTimeInterval)currentTime {
     //If not the current score is shown
@@ -195,6 +206,32 @@
     
     //Raptor allowed to jump?
     [raptor updateAllowedToJump];
+}
+
+-(void)didBeginContact:(SKPhysicsContact*)contact {
+    NSLog(@"CONTACT");
+    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+            [self.view presentScene:[[MenuScene alloc] initWithSize:self.size] transition:SKTransitionDirectionUp];
+            [[ScoreSingleton getInstance] stopTimer];
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+            [self.view presentScene:[[MenuScene alloc] initWithSize:self.size]];
+            [[ScoreSingleton getInstance] stopTimer];
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
 }
 
 @end
