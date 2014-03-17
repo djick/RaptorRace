@@ -192,10 +192,7 @@
 }
 
 //Increase score
-- (void)countUp {
-    //self.score += 5;
-    [[ScoreSingleton getInstance] updateScore:5];
-}
+
 
 - (void)update:(NSTimeInterval)currentTime {
     //If not the current score is shown

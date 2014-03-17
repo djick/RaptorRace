@@ -39,6 +39,10 @@ static ScoreSingleton *_sharedInstance = nil;
 - (CGFloat) getScore{
     return score;
 }
+- (void)countUp {
+    //self.score += 5;
+    [[ScoreSingleton getInstance] updateScore:5];
+}
 
 - (void) customSingletonWithColor:(SKColor *)color
                       AndFontName:(NSString *)fontName
