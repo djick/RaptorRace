@@ -10,6 +10,8 @@
 
 @implementation MovingObstacle
 
+SKSpriteNode * obstacle;
+
 - (void) setPhysicsAbilitiesOfObstacle
 {
     
@@ -43,12 +45,17 @@
 
 - (void) animateObstacle
 {
-    [obstacle runAction:[SKAction repeatActionForever:
-                       [SKAction animateWithTextures:raptorRunningFrames
-                                        timePerFrame:0.1f
-                                              resize:NO
-                                             restore:YES]] withKey:@"runningInPlaceRaptor"];
-    return;
+//    [obstacle runAction:[SKAction repeatActionForever:
+//                       [SKAction animateWithTextures:raptorRunningFrames
+//                                        timePerFrame:0.1f
+//                                              resize:NO
+//                                             restore:YES]] withKey:@"runningInPlaceRaptor"];
+//    return;
+}
+
+- (SKAction *) makeMovementAction
+{
+    return NULL;
 }
 
 // Has to be implemented by sub-class, or it wil raise exception.

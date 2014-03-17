@@ -16,6 +16,7 @@ SKSpriteNode * obstacle;
 {
     if (self = [super init])
     {
+        [self makeObstacle];
         NSLog(@"Obstacle(s) initialized");
     }
     
