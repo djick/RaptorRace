@@ -43,7 +43,8 @@ NSMutableArray *obstacleList;
     SKdinosaur1.physicsBody.allowsRotation=NO;
     SKdinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
     SKdinosaur1.physicsBody.categoryBitMask = obstacleCategory;
-    [SKdinosaur1.physicsBody setCollisionBitMask:dinoCategory];
+    SKdinosaur1.physicsBody.collisionBitMask = dinoCategory;
+    SKdinosaur1.physicsBody.contactTestBitMask = dinoCategory;
     //SKdinosaur1.xScale = 1;
     //SKdinosaur1.yScale = 1;
 
@@ -140,7 +141,7 @@ NSMutableArray *obstacleList;
         [dinosaur setXScale:0.7];
         [dinosaur setYScale:0.7];
         [dinosaurs addObject:dinosaur];
-        [dinosaur.physicsBody setCollisionBitMask:obstacleCategory];
+        //[dinosaur.physicsBody setCollisionBitMask:obstacleCategory];
         [self addChild:dinosaur];
     }
     

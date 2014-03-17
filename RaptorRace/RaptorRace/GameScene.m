@@ -72,10 +72,10 @@
         raptor.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame));
         raptor.physicsBody.dynamic = YES;
         raptor.physicsBody.allowsRotation = NO;
-        raptor.physicsBody.categoryBitMask = dinoCategory;
+        /*raptor.physicsBody.categoryBitMask = dinoCategory;
         raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
         raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
-        raptor.name = @"braptor";
+        raptor.name = @"braptor";*/
         
         [self addChild:raptor];
         
@@ -125,7 +125,7 @@
         [self addChild:_scoreLabel];
         
         pausebtn = [[Pause alloc] initWithImageNamed:@"dinosaur2"];
-        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/3));
+        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2));
         pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
                                 .size];
         pausebtn.physicsBody.dynamic = NO;

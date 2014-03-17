@@ -41,7 +41,7 @@ static ScoreSingleton *_sharedInstance = nil;
 }
 - (void)countUp {
     //self.score += 5;
-    [[ScoreSingleton getInstance] updateScore:5];
+    [[ScoreSingleton getInstance] updateScore:5.0];
 }
 
 - (void) customSingletonWithColor:(SKColor *)color

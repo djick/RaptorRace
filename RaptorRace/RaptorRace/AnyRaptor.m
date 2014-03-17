@@ -83,6 +83,8 @@ int collisions;
     raptor.physicsBody.restitution = 0.0;
     raptor.physicsBody.density = 1.5;
     raptor.physicsBody.categoryBitMask = dinoCategory;
+    raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
+    raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
 }
 
 - (void) forceApplied:(CGVector) force {
