@@ -18,6 +18,7 @@
 		71B12DA718D6669600EA30D6 /* newgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA618D6669600EA30D6 /* newgame.png */; };
 		71B12DAC18D6699500EA30D6 /* RRbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DAB18D6699500EA30D6 /* RRbg.png */; };
 		7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036A918D705AD00010347 /* ScoreSingleton.m */; };
+		7F3036AD18D70DCF00010347 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036AC18D70DCF00010347 /* Pause.m */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
 		7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDAC26718D1D98900EBFEF0 /* BRaptor.m */; };
 		90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */; };
@@ -81,6 +82,8 @@
 		71B12DAB18D6699500EA30D6 /* RRbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RRbg.png; sourceTree = "<group>"; };
 		7F3036A818D705AD00010347 /* ScoreSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSingleton.h; sourceTree = "<group>"; };
 		7F3036A918D705AD00010347 /* ScoreSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSingleton.m; sourceTree = "<group>"; };
+		7F3036AB18D70DCF00010347 /* Pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pause.h; sourceTree = "<group>"; };
+		7F3036AC18D70DCF00010347 /* Pause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pause.m; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
 		7FDAC26518D0872A00EBFEF0 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		7FDAC26618D1D98900EBFEF0 /* BRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRaptor.h; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 		905AE3CF18CF20210007DE4E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F3036AB18D70DCF00010347 /* Pause.h */,
+				7F3036AC18D70DCF00010347 /* Pause.m */,
 				90AA4A6318D71BAB00DE5E3E /* Templates */,
 				905AE3DD18CF21700007DE4E /* PlayerProfile.h */,
 				905AE3DE18CF21700007DE4E /* PlayerProfile.m */,

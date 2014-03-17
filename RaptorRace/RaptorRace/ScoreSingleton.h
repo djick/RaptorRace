@@ -10,10 +10,18 @@
 
 @interface ScoreSingleton : SKLabelNode{
     CGFloat score;
+    NSTimer* timer;
+    NSDate* pauseStart;
+    NSDate* previousFireStart;
 }
 +(ScoreSingleton* ) getInstance;
 - (void) updateScore:(CGFloat) s;
 - (CGFloat) getScore;
+- (void) startTimer;
+- (void) resumeTimer;
+- (void) pauseTimer;
+- (void) stopTimer;
+
 
 /**
  Customises the score counter.

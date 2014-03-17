@@ -39,6 +39,11 @@ static ScoreSingleton *_sharedInstance = nil;
 - (CGFloat) getScore{
     return score;
 }
+- (void)countUp {
+    //self.score += 5;
+    [[ScoreSingleton getInstance] updateScore:5.0];
+}
+
 
 - (void) customSingletonWithColor:(SKColor *)color
                       AndFontName:(NSString *)fontName
@@ -46,5 +51,30 @@ static ScoreSingleton *_sharedInstance = nil;
     self.fontColor = color;
     self.fontName = fontName;
 }
+
+- (void) startTimer{
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+}
+
+- (void) pauseTimer{
+    pauseStart = [NSDate dateWithTimeIntervalSinceNow:0];
+    
+    previousFireStart = [timer fireDate];
+    
+    [timer setFireDate:[NSDate distantFuture]];
+}
+
+- (void) resumeTimer{
+    float pauseTime = -1*[pauseStart timeIntervalSinceNow];
+    
+    [timer setFireDate:[previousFireStart initWithTimeInterval:pauseTime sinceDate:previousFireStart]];
+}
+
+- (void) stopTimer{
+    [timer invalidate];
+    timer = nil;
+    score = 0.0;
+}
+
 
 @end

@@ -23,7 +23,7 @@ int collisions;
     {
         collisions=0;
         [self makeRaptor];
-        
+        raptor.name = @"raptor";
         [self addChild:raptor];
         self.allowedToJump = YES;
         self.inAir = NO;
@@ -81,7 +81,10 @@ int collisions;
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
     raptor.physicsBody.restitution = 0.0;
+    
     raptor.physicsBody.categoryBitMask = dinoCategory;
+    raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
+    raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
 }
 
 - (void) forceApplied:(CGVector) force {
@@ -126,6 +129,7 @@ int collisions;
     }
 }
 
+
 -(void)runningRaptor
 {
     [raptor runAction:[SKAction repeatActionForever:
@@ -136,25 +140,6 @@ int collisions;
     return;
 }
 
--(void)didBeginContact:(SKPhysicsContact*)contact {
-    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-}
+
 
 @end
