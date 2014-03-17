@@ -40,6 +40,7 @@ NSMutableArray *obstacleList;
     //SKdinosaur1.position = CGPointMake(100, 100);
     SKdinosaur1.physicsBody.affectedByGravity=NO;
     SKdinosaur1.physicsBody.mass=1;
+    SKdinosaur1.physicsBody.restitution = 0.0;
     SKdinosaur1.physicsBody.allowsRotation=NO;
     SKdinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
     SKdinosaur1.physicsBody.categoryBitMask = obstacleCategory;
