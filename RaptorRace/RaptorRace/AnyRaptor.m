@@ -85,10 +85,10 @@ int collisions;
 }
 
 - (void) forceApplied:(CGVector) force {
-    CGFloat velocity = raptor.physicsBody.velocity.dy;
-//    NSLog(@"velocity: %f", velocity);
-//    NSLog(@"allowedToJump: %d",self.allowedToJump);
-//    NSLog(@"inAir: %d",self.inAir);
+    //CGFloat velocity = raptor.physicsBody.velocity.dy;
+    //    NSLog(@"velocity: %f", velocity);
+    //    NSLog(@"allowedToJump: %d",self.allowedToJump);
+    //    NSLog(@"inAir: %d",self.inAir);
     [raptor.physicsBody setVelocity:CGVectorMake(0, 0)];
     [raptor.physicsBody applyImpulse:force];
     raptor.speed = 1.0;

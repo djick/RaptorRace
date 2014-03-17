@@ -11,7 +11,7 @@
 
 @implementation MovingObstacle
 
-SKSpriteNode * obstacle;
+int collisions;
 
 - (void) setPhysicsAbilitiesOfObstacle
 {
@@ -75,6 +75,7 @@ SKSpriteNode * obstacle;
     return NULL;
 }
 
+// THIS SHOULD BE IN ANYOBSTACLE
 -(void)didBeginContact:(SKPhysicsContact*)contact {
     if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
         NSLog(@"collison detected");
