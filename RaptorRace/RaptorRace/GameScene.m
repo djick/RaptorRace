@@ -22,6 +22,7 @@
     SKNode* moving;
     AnyRaptor *raptor;
     CGFloat groundHeight;
+    //int collisions;
     Pause * pausebtn;
     int collisions;
 }
@@ -33,7 +34,7 @@
         /* Setup your scene here */
         
         //resets the number of raptor-obstacle crashes
-        //collisions=0;
+        collisions=0;
         
         //Physics of the world/scene
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
@@ -210,26 +211,26 @@
     [raptor updateAllowedToJump];
 }
 
-//-(void)didBeginContact:(SKPhysicsContact*)contact {
-//    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
-//        NSLog(@"collison detected");
-//        if (collisions==2) {
-//            //gameover
-//        }
-//        else{
-//            collisions=collisions+1;
-//        }
-//    }
-//    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
-//        NSLog(@"collison detected");
-//        if (collisions==2) {
-//            //gameover
-//        }
-//        else{
-//            collisions=collisions+1;
-//        }
-//    }
-//}
+-(void)didBeginContact:(SKPhysicsContact*)contact {
+    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+}
 
 
 

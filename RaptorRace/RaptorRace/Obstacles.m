@@ -8,6 +8,7 @@
 
 #import "Obstacles.h"
 #import "Ground.h"
+#import "Categories.h"
 #include <stdlib.h>
 
 #define kNumObstacles   17
@@ -33,7 +34,7 @@ NSMutableArray *obstacleList;
 
 -(SKSpriteNode*)makeDinosaur1 {
     SKSpriteNode* SKdinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur1"];
-    SKdinosaur1.size=CGSizeMake(70, 50);
+    SKdinosaur1.size=CGSizeMake(40, 40);
     //_dinosaur1.position = CGPointMake(100, 100);
     SKdinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(40,40)];
     //SKdinosaur1.position = CGPointMake(100, 100);
@@ -41,9 +42,10 @@ NSMutableArray *obstacleList;
     SKdinosaur1.physicsBody.mass=1;
     SKdinosaur1.physicsBody.allowsRotation=NO;
     SKdinosaur1.physicsBody.dynamic=NO; //Making dem obstacles static
-    [SKdinosaur1.physicsBody setCollisionBitMask:0];
-    SKdinosaur1.xScale = 1;
-    SKdinosaur1.yScale = 1;
+    SKdinosaur1.physicsBody.categoryBitMask = obstacleCategory;
+    [SKdinosaur1.physicsBody setCollisionBitMask:dinoCategory];
+    //SKdinosaur1.xScale = 1;
+    //SKdinosaur1.yScale = 1;
 
     return SKdinosaur1;
     
@@ -134,9 +136,11 @@ NSMutableArray *obstacleList;
         }
         NSLog(@"making obstacles");
         dinosaur.hidden = YES;
+        
         [dinosaur setXScale:0.7];
         [dinosaur setYScale:0.7];
         [dinosaurs addObject:dinosaur];
+        [dinosaur.physicsBody setCollisionBitMask:obstacleCategory];
         [self addChild:dinosaur];
     }
     

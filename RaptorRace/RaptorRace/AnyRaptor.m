@@ -81,9 +81,8 @@ int collisions;
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
     raptor.physicsBody.restitution = 0.0;
-    raptor.physicsBody.density = 1.5
-    ;
-    raptor.physicsBody.categoryBitMask = obstacleCategory;
+    raptor.physicsBody.density = 1.5;
+    raptor.physicsBody.categoryBitMask = dinoCategory;
 }
 
 - (void) forceApplied:(CGVector) force {
