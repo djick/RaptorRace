@@ -20,10 +20,13 @@
     if(self.scene.paused){
         //self.view.scene.paused = NO;
         self.scene.paused = NO;
-
+        self.parent.scene.paused = NO;
+        [[ScoreSingleton getInstance] resumeTimer];
     }
     else{
         self.scene.paused = YES;
+        self.parent.scene.paused = YES;
+        [[ScoreSingleton getInstance] pauseTimer];
     }
 }
 

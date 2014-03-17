@@ -7,6 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "ScoreSingleton.h"
+
 
 @interface Pause : SKSpriteNode
 

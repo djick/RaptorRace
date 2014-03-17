@@ -17,7 +17,6 @@
 
 @implementation GameScene {
     CGFloat _displayedScore;
-    NSTimer* timer;
     SKColor* _skyColor;
     SKNode* moving;
     AnyRaptor *raptor;
@@ -133,7 +132,7 @@
         [self addChild:pausebtn];
 
         //Start timer
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+        [[ScoreSingleton getInstance] startTimer];
         
         //Clouds
         SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"cloud"];
