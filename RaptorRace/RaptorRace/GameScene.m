@@ -39,7 +39,7 @@
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
         //self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
-        [self.physicsWorld setGravity:CGVectorMake(0, -5)];
+        [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
         
         moving = [SKNode node];
         [self addChild:moving];
@@ -189,6 +189,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [raptor applyForce];
 }
+
 //Increase score
 - (void)countUp {
     //self.score += 5;

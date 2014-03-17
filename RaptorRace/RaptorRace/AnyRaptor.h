@@ -9,6 +9,8 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface AnyRaptor : SKSpriteNode
+@property (nonatomic, assign) BOOL allowedToJump;
+@property (nonatomic, assign) BOOL inAir;
 
 /**
  This methd runs all of the defined methods for an object of class AnyRaptor, creating the raptor.
@@ -50,6 +52,20 @@
  */
 -(void)runningRaptor;
 
-- (void) applyForce;
+/**
+ Apply force to the raptor
+ @param vector containing the force in x and y direction to apply
+*/
+-(void)forceApplied:(CGVector)force;
+
+/**
+ Is the raptor allowed to jump, if so calculate force to apply
+*/
+-(void)jump;
+
+/**
+ Update status of raptor
+*/
+-(void)updateAllowedToJump;
 
 @end

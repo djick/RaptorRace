@@ -31,7 +31,6 @@ SKSpriteNode *background;
 - (void)didMoveToView:(SKView *)view
 {
     [self addChild:ground];
-    ground.position = CGPointMake(0, ground.size.height/4);
     [self addChild:background];
     NSLog(@"%f", ground.position.x);
 }
@@ -101,9 +100,10 @@ SKSpriteNode *background;
     }
 }
 
-- (void) addScoreCounter
+- (void) addScoreCounterWithColor:(UIColor *)color
+                     AndFontNamed:(NSString *)fontName
 {
-    
+    SKLabelNode * scoreLabel;
 }
 
 - (void) createGroundWithAtlasNamed:(NSString *)name
@@ -132,7 +132,7 @@ SKSpriteNode *background;
                                              restore:YES]] withKey:@"movingGround"];
     
     [ground setScale:2.0];
-    
+        ground.position = CGPointMake(0, ground.size.height/4);
     
 }
 
@@ -185,5 +185,21 @@ SKSpriteNode *background;
                            alpha:1.0];
 }
 
+- (SKColor *) getScoreCounterColor
+{
+    //    [NSException raise:NSInternalInconsistencyException
+    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return [SKColor colorWithRed:251.0/255.0
+                           green:127.0/255.0
+                            blue:108.0/255.0
+                           alpha:1.0];
+}
+
+- (NSString *) getScoreCounterFontName
+{
+    //    [NSException raise:NSInternalInconsistencyException
+    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return @"Courier-Bold";
+}
 
 @end
