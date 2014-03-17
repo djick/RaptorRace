@@ -52,9 +52,21 @@
  */
 -(void)runningRaptor;
 
+
 /**
- Applys a force to the raptor sprite to make it "jump".
- */
-- (void) applyForce;
+ Apply force to the raptor
+ @param vector containing the force in x and y direction to apply
+*/
+-(void)forceApplied:(CGVector)force;
+
+/**
+ Is the raptor allowed to jump, if so calculate force to apply
+*/
+-(void)jump;
+
+/**
+ Update status of raptor
+*/
+-(void)updateAllowedToJump;
 
 @end

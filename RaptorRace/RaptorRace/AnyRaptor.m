@@ -84,19 +84,38 @@ int collisions;
     raptor.physicsBody.categoryBitMask = obstacleCategory;
 }
 
-- (void) applyForce
-{
+- (void) forceApplied:(CGVector) force {
+    //CGFloat velocity = raptor.physicsBody.velocity.dy;
+    //    NSLog(@"velocity: %f", velocity);
+    //    NSLog(@"allowedToJump: %d",self.allowedToJump);
+    //    NSLog(@"inAir: %d",self.inAir);
+    [raptor.physicsBody setVelocity:CGVectorMake(0, 0)];
+    [raptor.physicsBody applyImpulse:force];
+    raptor.speed = 1.0;
+}
+
+-(void)jump {
     CGFloat velocity = raptor.physicsBody.velocity.dy;
-    if(velocity > 0)
-    {
-        [raptor.physicsBody applyImpulse:CGVectorMake(0, 25)];
-        raptor.speed = 1.0;
+    //Raptor allowed to jump?
+    if ((self.allowedToJump && !self.inAir) || _jumpState == 0) {
+        [self forceApplied:(CGVectorMake(0.0, 87.0))];
+        self.inAir = YES;
+        _jumpState = 1;
     }
-    else
-    {
-        [raptor.physicsBody setVelocity:CGVectorMake(0, 0)];
-        [raptor.physicsBody applyImpulse:CGVectorMake(0, 60)];
-        raptor.speed = 1.0;
+    else if (self.allowedToJump && self.inAir && _jumpState == 1) {
+        [self forceApplied:(CGVectorMake(0.0, 30.0))];
+        self.inAir = YES;
+        self.allowedToJump = NO;
+        _jumpState = 2;
+    }
+    if (_jumpState == 2) {
+        if (velocity == 0) {
+            self.inAir = NO;
+            self.allowedToJump = YES;
+        }
+        [self forceApplied:CGVectorMake(0.0, 75.0)];
+        _jumpState = 1;
+        self.inAir = YES;
     }
 }
 
