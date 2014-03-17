@@ -40,15 +40,17 @@ SKSpriteNode *background;
 {
     [self createGroundWithAtlasNamed:[self getGroundAtlasName]
                            AndFormat:[self getGroundPictureNameFormat]];
-    [self createBackgroundWithImageNamed:[self getBackgroundPictureName]];
+    [self createBackgroundWithImageNamed:[self getBackgroundPictureName]
+                      AndBackgroundColor:[self getBackgroundColor]];
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
     
 }
 
 - (void) createBackgroundWithImageNamed:(NSString *)name
+                     AndBackgroundColor:(SKColor *)color
 {
     //Set up background color.
-    [self setBackgroundColor:[SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0]];
+    [self setBackgroundColor:color];
     
     //Landscape
     SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"landscape"];
@@ -172,5 +174,16 @@ SKSpriteNode *background;
     //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return @"cloud";
 }
+
+- (SKColor *) getBackgroundColor
+{
+    //    [NSException raise:NSInternalInconsistencyException
+    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return [SKColor colorWithRed:113.0/255.0
+                           green:197.0/255.0
+                            blue:207.0/255.0
+                           alpha:1.0];
+}
+
 
 @end

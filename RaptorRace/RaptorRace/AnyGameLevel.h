@@ -20,7 +20,8 @@
  
  @param name The name of the image to be used as background.
  */
-- (void) createBackgroundWithImageNamed:(NSString *)name;
+- (void) createBackgroundWithImageNamed:(NSString *)name
+                     AndBackgroundColor:(SKColor *)color;
 
 /**
  Adds clouds to the scene.
@@ -30,9 +31,9 @@
 - (void) addCloudsWithImageNamed:(NSString *)name;
 
 /**
- Adds the scorecounter to the scene (or should this be somewhere else?
+ Adds the scorecounter to the scene (or should this be somewhere else?)
  */
-- (void) addScoreCounter;
+- (void) addScoreCounterWithColor:(SKColor *)color;
 
 /**
  Creats the ground for the scene.
@@ -80,5 +81,11 @@ Gets the name of the picture that should be used for the clouds.
 */
 - (NSString *) getCloudPictureName;
 
+/**
+ Gets the color that should be used as background color.
+ 
+ @return The color.
+ */
+- (SKColor *) getBackgroundColor;
 
 @end
