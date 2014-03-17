@@ -187,7 +187,7 @@
 }*/
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [raptor applyForce];
+    [raptor jump];
 }
 
 //Increase score
@@ -205,9 +205,8 @@
     //Trying to do da spawning
     [self.obs spawnObstacle:groundHeight];
     
-    //Raptortest
-   // NSLog(@"%f",    [self childNodeWithName:@"braptor"].position.x);
-        //NSLog(@"%f",    raptor.position.x);
+    //Raptor allowed to jump?
+    [raptor updateAllowedToJump];
 }
 
 -(void)didBeginContact:(SKPhysicsContact*)contact {

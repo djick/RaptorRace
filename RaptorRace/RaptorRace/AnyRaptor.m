@@ -79,6 +79,8 @@ SKSpriteNode *raptor;
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
     raptor.physicsBody.allowsRotation = NO;
     raptor.physicsBody.restitution = 0.0;
+    raptor.physicsBody.density = 1.5
+    ;
     raptor.physicsBody.categoryBitMask = obstacleCategory;
 }
 
@@ -117,8 +119,11 @@ SKSpriteNode *raptor;
     }
 }
 
-- (CGPoint) positionOfRaptor{
-    return raptor.parent.position;
+-(void)updateAllowedToJump {
+    if (raptor.physicsBody.velocity.dy == 0) {
+        self.allowedToJump = YES;
+        self.inAir = NO;
+    }
 }
 
 
