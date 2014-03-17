@@ -445,6 +445,7 @@
 				AFCFA36718BF81F900092E6E /* MyScene.m in Sources */,
 				AFCFA36418BF81F900092E6E /* ViewController.m in Sources */,
 				AFFB37FC18D7444000E3F781 /* GameOverScene.m in Sources */,
+				7F3036AD18D70DCF00010347 /* Pause.m in Sources */,
 				AFCFA35E18BF81F900092E6E /* AppDelegate.m in Sources */,
 				AFE6394A18D201A90011D3CC /* MenuScene.m in Sources */,
 				905AE3DC18CF213B0007DE4E /* Ground.m in Sources */,
