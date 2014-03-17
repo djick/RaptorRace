@@ -29,7 +29,7 @@
     SKNode* moving;
     AnyRaptor *raptor;
     CGFloat groundHeight;
-    int collisions;
+    //int collisions;
 }
 
 -(void) didMoveToView:(SKView *)view{
@@ -43,13 +43,13 @@
         /* Setup your scene here */
         
         //resets the number of raptor-obstacle crashes
-        collisions=0;
+        //collisions=0;
         
         //Physics of the world/scene
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
         //self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
-        [self.physicsWorld setGravity:CGVectorMake(0, -5)];
+        [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
         
         moving = [SKNode node];
         [self addChild:moving];
@@ -112,6 +112,7 @@
         dummy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, groundTexture.size.height * 2)];
         dummy.physicsBody.dynamic = NO;
         dummy.physicsBody.categoryBitMask = worldCategory;
+        dummy.physicsBody.restitution = 0.0;
         [self addChild:dummy];
         
         
@@ -173,9 +174,10 @@
 -(IBAction)handleTap:(UITapGestureRecognizer *)tap{
     NSLog(@"recognizes tap");
     if(tap.state == UIGestureRecognizerStateEnded){
-        [raptor applyForce];
+        [raptor jump];
     }
 }
+
 //Increase score
 - (void)countUp {
     //self.score += 5;
@@ -190,28 +192,31 @@
     }
     //Trying to do da spawning
     [self.obs spawnObstacle:groundHeight];
+    
+    //Raptor allowed to jump?
+    [raptor updateAllowedToJump];
 }
 
--(void)didBeginContact:(SKPhysicsContact*)contact {
-    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
-        NSLog(@"collison detected");
-        if (collisions==2) {
-            //gameover
-        }
-        else{
-            collisions=collisions+1;
-        }
-    }
-}
+//-(void)didBeginContact:(SKPhysicsContact*)contact {
+//    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+//        NSLog(@"collison detected");
+//        if (collisions==2) {
+//            //gameover
+//        }
+//        else{
+//            collisions=collisions+1;
+//        }
+//    }
+//    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+//        NSLog(@"collison detected");
+//        if (collisions==2) {
+//            //gameover
+//        }
+//        else{
+//            collisions=collisions+1;
+//        }
+//    }
+//}
 
 
 

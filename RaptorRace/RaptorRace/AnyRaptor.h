@@ -9,6 +9,8 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface AnyRaptor : SKSpriteNode
+@property (nonatomic, assign) BOOL allowedToJump;
+@property (nonatomic, assign) BOOL inAir;
 
 /**
  This methd runs all of the defined methods for an object of class AnyRaptor, creating the raptor.

@@ -9,18 +9,25 @@
 #import "AnyRaptor.h"
 #import "Categories.h"
 
-@implementation AnyRaptor
+@implementation AnyRaptor {
+    int _jumpState;
+}
 
 NSArray *raptorRunningFrames;
 SKSpriteNode *raptor;
+int collisions;
 
 -(id)init
 {
     if (self = [super init])
     {
+        collisions=0;
         [self makeRaptor];
         
         [self addChild:raptor];
+        self.allowedToJump = YES;
+        self.inAir = NO;
+        _jumpState = 0;
         NSLog(@"Raptor initialized");
     }
     
@@ -91,9 +98,14 @@ SKSpriteNode *raptor;
         [raptor.physicsBody applyImpulse:CGVectorMake(0, 60)];
         raptor.speed = 1.0;
     }
-    
 }
 
+-(void)updateAllowedToJump {
+    if (raptor.physicsBody.velocity.dy == 0) {
+        self.allowedToJump = YES;
+        self.inAir = NO;
+    }
+}
 
 -(void)runningRaptor
 {
@@ -104,4 +116,26 @@ SKSpriteNode *raptor;
                                              restore:YES]] withKey:@"runningInPlaceRaptor"];
     return;
 }
+-(void)didBeginContact:(SKPhysicsContact*)contact {
+    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+}
+//hello
+
 @end
