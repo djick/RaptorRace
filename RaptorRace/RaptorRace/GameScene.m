@@ -48,7 +48,7 @@
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
         //self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
-        [self.physicsWorld setGravity:CGVectorMake(0, -5)];
+        [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
         
         moving = [SKNode node];
         [self addChild:moving];
@@ -169,9 +169,10 @@
 -(IBAction)handleTap:(UITapGestureRecognizer *)tap{
     NSLog(@"recognizes tap");
     if(tap.state == UIGestureRecognizerStateEnded){
-        [raptor applyForce];
+        [raptor jump];
     }
 }
+
 //Increase score
 - (void)countUp {
     self.score += 5;
@@ -185,6 +186,9 @@
     }
     //Trying to do da spawning
     [self.obs spawnObstacle:groundHeight];
+    
+    //Raptor allowed to jump?
+    [raptor updateAllowedToJump];
 }
 
 -(void)didBeginContact:(SKPhysicsContact*)contact {
