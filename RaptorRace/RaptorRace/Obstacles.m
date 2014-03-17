@@ -157,14 +157,14 @@ NSMutableArray *obstacleList;
         SKSpriteNode *obstacle = [dinosaurs objectAtIndex:rand()%1];
         [obstacle removeAllActions];
     
-        float randDuration = [self randomValueBetween:3.0
-                                             andValue:8.0];
+        //float randDuration =[self randomValueBetween:3.0
+                                             //andValue:8.0];
         //CGFloat height = 97;
         obstacle.position = CGPointMake(500, height);
         obstacle.hidden = NO;
         CGPoint location = CGPointMake(1, height);
         SKAction *moveAction = [SKAction moveTo:location
-                                       duration:randDuration];
+                                       duration: 8/*randDuration*/];
         SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
         obstacle.hidden = YES;
