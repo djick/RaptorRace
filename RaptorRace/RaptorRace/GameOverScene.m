@@ -14,7 +14,7 @@
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        SKSpriteNode* sn = [SKSpriteNode spriteNodeWithImageNamed:@"RRbg"];
+        SKSpriteNode* sn = [SKSpriteNode spriteNodeWithImageNamed:@"RRGameOver"];
         sn.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         sn.size = self.size;
         

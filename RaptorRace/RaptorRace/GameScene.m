@@ -13,7 +13,7 @@
 #import "Categories.h"
 #import "ScoreSingleton.h"
 #import "Pause.h"
-#import "MenuScene.h"
+#import "GameOverScene.h"
 
 
 @implementation GameScene {
@@ -214,7 +214,7 @@
         NSLog(@"collison detected");
         if (collisions==2) {
             //gameover
-            [self.view presentScene:[[MenuScene alloc] initWithSize:self.size] transition:SKTransitionDirectionUp];
+            [self.view presentScene:[[GameOverScene alloc] initWithSize:self.size] transition:SKTransitionDirectionUp];
             [[ScoreSingleton getInstance] stopTimer];
         }
         else{
@@ -225,7 +225,7 @@
         NSLog(@"collison detected");
         if (collisions==2) {
             //gameover
-            [self.view presentScene:[[MenuScene alloc] initWithSize:self.size]];
+            [self.view presentScene:[[GameOverScene alloc] initWithSize:self.size]];
             [[ScoreSingleton getInstance] stopTimer];
         }
         else{
