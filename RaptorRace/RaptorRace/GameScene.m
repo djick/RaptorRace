@@ -13,6 +13,7 @@
 #import "Categories.h"
 #import "ScoreSingleton.h"
 #import "Pause.h"
+#import "MenuScene.h"
 
 
 @implementation GameScene {
@@ -205,6 +206,30 @@
     
     //Raptor allowed to jump?
     [raptor updateAllowedToJump];
+}
+
+-(void)didBeginContact:(SKPhysicsContact*)contact {
+    NSLog(@"CONTACT");
+    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+            [self.view presentScene:[[MenuScene alloc] initWithSize:self.size] transition:SKTransitionDirectionUp];
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+            [self.view presentScene:[[MenuScene alloc] initWithSize:self.size]];
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
 }
 
 @end
