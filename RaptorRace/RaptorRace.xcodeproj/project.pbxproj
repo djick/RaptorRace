@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7147B48D18CF0A500083C542 /* Raptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7147B48C18CF0A500083C542 /* Raptor.m */; };
 		7147B48F18CF0A570083C542 /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7147B48E18CF0A570083C542 /* raptor.atlas */; };
+		71877D1018D74D5800DEE120 /* RRGameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = 71877D0F18D74D5800DEE120 /* RRGameOver.png */; };
+		71877D1218D7540400DEE120 /* obstacleRaptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71877D1118D7540400DEE120 /* obstacleRaptor.atlas */; };
 		71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1718D08CE200441272 /* dinosaur1.png */; };
 		71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1818D08CE200441272 /* dinosaur2.png */; };
 		71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */; };
@@ -18,6 +20,7 @@
 		71B12DA718D6669600EA30D6 /* newgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA618D6669600EA30D6 /* newgame.png */; };
 		71B12DAC18D6699500EA30D6 /* RRbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DAB18D6699500EA30D6 /* RRbg.png */; };
 		7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036A918D705AD00010347 /* ScoreSingleton.m */; };
+		7F3036AD18D70DCF00010347 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036AC18D70DCF00010347 /* Pause.m */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
 		7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDAC26718D1D98900EBFEF0 /* BRaptor.m */; };
 		90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */; };
@@ -54,6 +57,7 @@
 		AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE6394B18D203EC0011D3CC /* mainMenyBG.png */; };
 		AFE9FF4618D0797800835561 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4518D0797800835561 /* landscape.png */; };
 		AFE9FF4818D1165C00835561 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE9FF4718D1165C00835561 /* cloud.png */; };
+		AFFB37FC18D7444000E3F781 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB37FB18D7444000E3F781 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,8 @@
 		7147B48B18CF0A500083C542 /* Raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raptor.h; sourceTree = "<group>"; };
 		7147B48C18CF0A500083C542 /* Raptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raptor.m; sourceTree = "<group>"; };
 		7147B48E18CF0A570083C542 /* raptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptor.atlas; sourceTree = "<group>"; };
+		71877D0F18D74D5800DEE120 /* RRGameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RRGameOver.png; sourceTree = "<group>"; };
+		71877D1118D7540400DEE120 /* obstacleRaptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = obstacleRaptor.atlas; sourceTree = "<group>"; };
 		71A9DE1718D08CE200441272 /* dinosaur1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur1.png; sourceTree = "<group>"; };
 		71A9DE1818D08CE200441272 /* dinosaur2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dinosaur2.png; sourceTree = "<group>"; };
 		71A9DE1B18D0DA7500441272 /* newestSkeleton1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newestSkeleton1.png; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 		71B12DAB18D6699500EA30D6 /* RRbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RRbg.png; sourceTree = "<group>"; };
 		7F3036A818D705AD00010347 /* ScoreSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSingleton.h; sourceTree = "<group>"; };
 		7F3036A918D705AD00010347 /* ScoreSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSingleton.m; sourceTree = "<group>"; };
+		7F3036AB18D70DCF00010347 /* Pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pause.h; sourceTree = "<group>"; };
+		7F3036AC18D70DCF00010347 /* Pause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pause.m; sourceTree = "<group>"; };
 		7FDAC26318D06C7900EBFEF0 /* Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ground.png; sourceTree = "<group>"; };
 		7FDAC26518D0872A00EBFEF0 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		7FDAC26618D1D98900EBFEF0 /* BRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRaptor.h; sourceTree = "<group>"; };
@@ -137,6 +145,8 @@
 		AFE6394B18D203EC0011D3CC /* mainMenyBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenyBG.png; sourceTree = "<group>"; };
 		AFE9FF4518D0797800835561 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
 		AFE9FF4718D1165C00835561 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		AFFB37FA18D7444000E3F781 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		AFFB37FB18D7444000E3F781 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +177,8 @@
 		905AE3CF18CF20210007DE4E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F3036AB18D70DCF00010347 /* Pause.h */,
+				7F3036AC18D70DCF00010347 /* Pause.m */,
 				90AA4A6318D71BAB00DE5E3E /* Templates */,
 				905AE3DD18CF21700007DE4E /* PlayerProfile.h */,
 				905AE3DE18CF21700007DE4E /* PlayerProfile.m */,
@@ -202,6 +214,8 @@
 				905AE3D218CF20A40007DE4E /* GameScene.m */,
 				AFE6394818D201A90011D3CC /* MenuScene.h */,
 				AFE6394918D201A90011D3CC /* MenuScene.m */,
+				AFFB37FA18D7444000E3F781 /* GameOverScene.h */,
+				AFFB37FB18D7444000E3F781 /* GameOverScene.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +276,7 @@
 				9044F67918D608950076B124 /* ground.atlas */,
 				7147B48E18CF0A570083C542 /* raptor.atlas */,
 				90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */,
+				71877D1118D7540400DEE120 /* obstacleRaptor.atlas */,
 				AFCFA35C18BF81F900092E6E /* AppDelegate.h */,
 				AFCFA35D18BF81F900092E6E /* AppDelegate.m */,
 				AFCFA35F18BF81F900092E6E /* Main.storyboard */,
@@ -274,6 +289,7 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71877D0F18D74D5800DEE120 /* RRGameOver.png */,
 				71B12DAB18D6699500EA30D6 /* RRbg.png */,
 				71B12DA618D6669600EA30D6 /* newgame.png */,
 				71B12DA318D6652900EA30D6 /* highscore.png */,
@@ -399,9 +415,11 @@
 				AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */,
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
 				AFE9FF4818D1165C00835561 /* cloud.png in Resources */,
+				71877D1018D74D5800DEE120 /* RRGameOver.png in Resources */,
 				7147B48F18CF0A570083C542 /* raptor.atlas in Resources */,
 				AFE9FF4618D0797800835561 /* landscape.png in Resources */,
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
+				71877D1218D7540400DEE120 /* obstacleRaptor.atlas in Resources */,
 				71A9DE1E18D0F6B000441272 /* ground1.png in Resources */,
 				71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */,
 				71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */,
@@ -434,6 +452,8 @@
 				9044F67818D5E67F0076B124 /* AnyGameLevel.m in Sources */,
 				AFCFA36718BF81F900092E6E /* MyScene.m in Sources */,
 				AFCFA36418BF81F900092E6E /* ViewController.m in Sources */,
+				AFFB37FC18D7444000E3F781 /* GameOverScene.m in Sources */,
+				7F3036AD18D70DCF00010347 /* Pause.m in Sources */,
 				AFCFA35E18BF81F900092E6E /* AppDelegate.m in Sources */,
 				AFE6394A18D201A90011D3CC /* MenuScene.m in Sources */,
 				905AE3DC18CF213B0007DE4E /* Ground.m in Sources */,
