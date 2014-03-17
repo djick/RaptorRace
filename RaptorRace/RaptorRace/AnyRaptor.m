@@ -15,11 +15,13 @@
 
 NSArray *raptorRunningFrames;
 SKSpriteNode *raptor;
+int collisions;
 
 -(id)init
 {
     if (self = [super init])
     {
+        collisions=0;
         [self makeRaptor];
         
         [self addChild:raptor];
@@ -133,4 +135,25 @@ SKSpriteNode *raptor;
                                              restore:YES]] withKey:@"runningInPlaceRaptor"];
     return;
 }
+-(void)didBeginContact:(SKPhysicsContact*)contact {
+    if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+    if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
+        NSLog(@"collison detected");
+        if (collisions==2) {
+            //gameover
+        }
+        else{
+            collisions=collisions+1;
+        }
+    }
+}
+
 @end

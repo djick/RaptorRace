@@ -68,4 +68,9 @@
 */
 -(void)updateAllowedToJump;
 
+/**
+ Checks for collision and keeps track of collision count. Inits gameover
+*/
+ -(void)didBeginContact:(SKPhysicsContact*)contact;
+
 @end
