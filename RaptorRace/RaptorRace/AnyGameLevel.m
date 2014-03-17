@@ -31,7 +31,6 @@ SKSpriteNode *background;
 - (void)didMoveToView:(SKView *)view
 {
     [self addChild:ground];
-    ground.position = CGPointMake(0, ground.size.height/4);
     [self addChild:background];
     NSLog(@"%f", ground.position.x);
 }
@@ -40,15 +39,17 @@ SKSpriteNode *background;
 {
     [self createGroundWithAtlasNamed:[self getGroundAtlasName]
                            AndFormat:[self getGroundPictureNameFormat]];
-    [self createBackgroundWithImageNamed:[self getBackgroundPictureName]];
+    [self createBackgroundWithImageNamed:[self getBackgroundPictureName]
+                      AndBackgroundColor:[self getBackgroundColor]];
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
     
 }
 
 - (void) createBackgroundWithImageNamed:(NSString *)name
+                     AndBackgroundColor:(SKColor *)color
 {
     //Set up background color.
-    [self setBackgroundColor:[SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0]];
+    [self setBackgroundColor:color];
     
     //Landscape
     SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"landscape"];
@@ -99,9 +100,10 @@ SKSpriteNode *background;
     }
 }
 
-- (void) addScoreCounter
+- (void) addScoreCounterWithColor:(UIColor *)color
+                     AndFontNamed:(NSString *)fontName
 {
-    
+    SKLabelNode * scoreLabel;
 }
 
 - (void) createGroundWithAtlasNamed:(NSString *)name
@@ -130,7 +132,7 @@ SKSpriteNode *background;
                                              restore:YES]] withKey:@"movingGround"];
     
     [ground setScale:2.0];
-    
+        ground.position = CGPointMake(0, ground.size.height/4);
     
 }
 
@@ -171,6 +173,33 @@ SKSpriteNode *background;
     //    [NSException raise:NSInternalInconsistencyException
     //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return @"cloud";
+}
+
+- (SKColor *) getBackgroundColor
+{
+    //    [NSException raise:NSInternalInconsistencyException
+    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return [SKColor colorWithRed:113.0/255.0
+                           green:197.0/255.0
+                            blue:207.0/255.0
+                           alpha:1.0];
+}
+
+- (SKColor *) getScoreCounterColor
+{
+    //    [NSException raise:NSInternalInconsistencyException
+    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return [SKColor colorWithRed:251.0/255.0
+                           green:127.0/255.0
+                            blue:108.0/255.0
+                           alpha:1.0];
+}
+
+- (NSString *) getScoreCounterFontName
+{
+    //    [NSException raise:NSInternalInconsistencyException
+    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return @"Courier-Bold";
 }
 
 @end
