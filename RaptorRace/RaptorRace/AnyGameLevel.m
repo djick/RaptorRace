@@ -8,6 +8,9 @@
 
 #import "AnyGameLevel.h"
 #import "ScoreSingleton.h"
+#import "Categories.h"
+#import "AnyRaptor.h"
+#import "BRaptor.h"
 
 @implementation AnyGameLevel
 
@@ -17,6 +20,7 @@ NSArray *groundMovingFrames;
 
 SKSpriteNode *ground;
 SKSpriteNode *background;
+AnyRaptor *raptor;
 
 ScoreSingleton * scoreLabel;
 
@@ -38,6 +42,9 @@ NSTimer* timer;
     [self addChild:ground];
     [self addChild:background];
     [self addChild:scoreLabel];
+    [self addChild:raptor];
+    UITapGestureRecognizer *rec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [[self view] addGestureRecognizer:rec];
 }
 
 - (void)update:(NSTimeInterval)currentTime
@@ -46,6 +53,13 @@ NSTimer* timer;
     CGFloat displayedScore = 0.0;
     if([scoreLabel getScore] != displayedScore) {
         displayedScore = [[ScoreSingleton getInstance] getScore];
+    }
+}
+
+-(IBAction)handleTap:(UITapGestureRecognizer *)tap{
+    NSLog(@"recognizes tap");
+    if(tap.state == UIGestureRecognizerStateEnded){
+        [raptor jump];
     }
 }
 
@@ -58,6 +72,7 @@ NSTimer* timer;
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
+    [self addRaptor];
     
 }
 
@@ -143,7 +158,7 @@ NSTimer* timer;
     SKTextureAtlas *groundAnimatedAtlas = [SKTextureAtlas atlasNamed:name];
     
     int numImages = groundAnimatedAtlas.textureNames.count;
-    for (int i=1; i <= numImages; i++) {
+    for (int i=numImages; i >= 1; i--) {
         NSString *textureName = [NSString stringWithFormat:format, i];
         SKTexture *temp = [groundAnimatedAtlas textureNamed:textureName];
         temp.filteringMode = SKTextureFilteringNearest;
@@ -157,13 +172,17 @@ NSTimer* timer;
     // Run the animation.
     [ground runAction:[SKAction repeatActionForever:
                        [SKAction animateWithTextures:groundMovingFrames
-                                        timePerFrame:0.1f
+                                        timePerFrame:0.03f
                                               resize:NO
                                              restore:YES]] withKey:@"movingGround"];
     
     [ground setScale:2.0];
     ground.position = CGPointMake(0, ground.size.height/4);
     
+    ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.frame.size.width, ground.size.height)];
+    ground.physicsBody.dynamic = NO;
+    ground.physicsBody.categoryBitMask = worldCategory;
+    ground.physicsBody.restitution = 0.0;
 }
 
 
@@ -174,7 +193,13 @@ NSTimer* timer;
 
 - (void) addRaptor
 {
-    
+    raptor = [[BRaptor alloc] init];
+    raptor.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame));
+    raptor.physicsBody.dynamic = YES;
+    raptor.physicsBody.allowsRotation = NO;
+    raptor.physicsBody.categoryBitMask = dinoCategory;
+    raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
+    raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
 }
 
 

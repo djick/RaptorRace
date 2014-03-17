@@ -19,7 +19,7 @@ NSArray *_raptorRunningFrames;
         SKTextureAtlas *raptorAnimatedAtlas = [SKTextureAtlas atlasNamed:@"raptor"];
         
         int numImages = raptorAnimatedAtlas.textureNames.count;
-        for (int i=1; i <= numImages/2; i++) {
+        for (int i=1; i <= numImages; i++) {
             NSString *textureName = [NSString stringWithFormat:@"rapto%d", i];
             SKTexture *temp = [raptorAnimatedAtlas textureNamed:textureName];
             [runningFrames addObject:temp];

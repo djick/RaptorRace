@@ -55,7 +55,7 @@
 
 /**
  Apply force to the raptor
- @param vector containing the force in x and y direction to apply
+ @param force A vector containing the force in x and y direction to apply
 */
 -(void)forceApplied:(CGVector)force;
 
@@ -68,5 +68,10 @@
  Update status of raptor
 */
 -(void)updateAllowedToJump;
+
+/**
+ Checks for collision and keeps track of collision count. Inits gameover
+*/
+ -(void)didBeginContact:(SKPhysicsContact*)contact;
 
 @end
