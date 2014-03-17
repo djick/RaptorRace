@@ -50,6 +50,9 @@
  */
 -(void)runningRaptor;
 
+/**
+ Applys a force to the raptor sprite to make it "jump".
+ */
 - (void) applyForce;
 
 @end

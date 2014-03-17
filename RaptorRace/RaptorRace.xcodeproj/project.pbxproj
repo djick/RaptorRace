@@ -31,8 +31,9 @@
 		905AE3DF18CF21700007DE4E /* PlayerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3DE18CF21700007DE4E /* PlayerProfile.m */; };
 		905AE3E218CF21950007DE4E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 905AE3E118CF21950007DE4E /* GameViewController.m */; };
 		9066C23818D08D20001F355B /* AnyRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9066C23718D08D20001F355B /* AnyRaptor.m */; };
-		90AA4A5918D7001400DE5E3E /* ScoreCounterSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A5818D7001400DE5E3E /* ScoreCounterSingleton.m */; };
 		90AA4A5C18D7098300DE5E3E /* AnyObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A5B18D7098300DE5E3E /* AnyObstacle.m */; };
+		90AA4A5F18D7184100DE5E3E /* MovingObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A5E18D7184100DE5E3E /* MovingObstacle.m */; };
+		90AA4A6218D7185300DE5E3E /* StaticObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A6118D7185300DE5E3E /* StaticObstacle.m */; };
 		AFCFA34C18BF81F900092E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34B18BF81F900092E6E /* Foundation.framework */; };
 		AFCFA34E18BF81F900092E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */; };
 		AFCFA35018BF81F900092E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34F18BF81F900092E6E /* UIKit.framework */; };
@@ -103,10 +104,12 @@
 		905AE3E118CF21950007DE4E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		9066C23618D08D20001F355B /* AnyRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyRaptor.h; sourceTree = "<group>"; };
 		9066C23718D08D20001F355B /* AnyRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyRaptor.m; sourceTree = "<group>"; };
-		90AA4A5718D7001400DE5E3E /* ScoreCounterSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCounterSingleton.h; sourceTree = "<group>"; };
-		90AA4A5818D7001400DE5E3E /* ScoreCounterSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreCounterSingleton.m; sourceTree = "<group>"; };
 		90AA4A5A18D7098300DE5E3E /* AnyObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyObstacle.h; sourceTree = "<group>"; };
 		90AA4A5B18D7098300DE5E3E /* AnyObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyObstacle.m; sourceTree = "<group>"; };
+		90AA4A5D18D7184100DE5E3E /* MovingObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingObstacle.h; sourceTree = "<group>"; };
+		90AA4A5E18D7184100DE5E3E /* MovingObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovingObstacle.m; sourceTree = "<group>"; };
+		90AA4A6018D7185300DE5E3E /* StaticObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticObstacle.h; sourceTree = "<group>"; };
+		90AA4A6118D7185300DE5E3E /* StaticObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticObstacle.m; sourceTree = "<group>"; };
 		AFCFA34818BF81F900092E6E /* RaptorRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaptorRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCFA34B18BF81F900092E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,20 +167,15 @@
 		905AE3CF18CF20210007DE4E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				90AA4A6318D71BAB00DE5E3E /* Templates */,
 				905AE3DD18CF21700007DE4E /* PlayerProfile.h */,
 				905AE3DE18CF21700007DE4E /* PlayerProfile.m */,
 				7147B48B18CF0A500083C542 /* Raptor.h */,
 				7147B48C18CF0A500083C542 /* Raptor.m */,
 				7FDAC26618D1D98900EBFEF0 /* BRaptor.h */,
 				7FDAC26718D1D98900EBFEF0 /* BRaptor.m */,
-				9066C23618D08D20001F355B /* AnyRaptor.h */,
-				9066C23718D08D20001F355B /* AnyRaptor.m */,
-				9044F67618D5E67F0076B124 /* AnyGameLevel.h */,
-				9044F67718D5E67F0076B124 /* AnyGameLevel.m */,
 				905AE3D418CF20C90007DE4E /* Obstacles.h */,
 				905AE3D518CF20C90007DE4E /* Obstacles.m */,
-				90AA4A5A18D7098300DE5E3E /* AnyObstacle.h */,
-				90AA4A5B18D7098300DE5E3E /* AnyObstacle.m */,
 				905AE3DA18CF213B0007DE4E /* Ground.h */,
 				905AE3DB18CF213B0007DE4E /* Ground.m */,
 				90293B4318D1D44F00DDE637 /* TemplateTestRaptor.h */,
@@ -206,6 +204,23 @@
 				AFE6394918D201A90011D3CC /* MenuScene.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90AA4A6318D71BAB00DE5E3E /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				9066C23618D08D20001F355B /* AnyRaptor.h */,
+				9066C23718D08D20001F355B /* AnyRaptor.m */,
+				9044F67618D5E67F0076B124 /* AnyGameLevel.h */,
+				9044F67718D5E67F0076B124 /* AnyGameLevel.m */,
+				90AA4A5A18D7098300DE5E3E /* AnyObstacle.h */,
+				90AA4A5B18D7098300DE5E3E /* AnyObstacle.m */,
+				90AA4A5D18D7184100DE5E3E /* MovingObstacle.h */,
+				90AA4A5E18D7184100DE5E3E /* MovingObstacle.m */,
+				90AA4A6018D7185300DE5E3E /* StaticObstacle.h */,
+				90AA4A6118D7185300DE5E3E /* StaticObstacle.m */,
+			);
+			name = Templates;
 			sourceTree = "<group>";
 		};
 		AFCFA33F18BF81F900092E6E = {
@@ -422,11 +437,13 @@
 				AFCFA35E18BF81F900092E6E /* AppDelegate.m in Sources */,
 				AFE6394A18D201A90011D3CC /* MenuScene.m in Sources */,
 				905AE3DC18CF213B0007DE4E /* Ground.m in Sources */,
+				90AA4A5F18D7184100DE5E3E /* MovingObstacle.m in Sources */,
 				905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */,
 				7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */,
 				AFCFA35A18BF81F900092E6E /* main.m in Sources */,
 				905AE3D318CF20A40007DE4E /* GameScene.m in Sources */,
 				7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */,
+				90AA4A6218D7185300DE5E3E /* StaticObstacle.m in Sources */,
 				905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */,
 				9066C23818D08D20001F355B /* AnyRaptor.m in Sources */,
 				7147B48D18CF0A500083C542 /* Raptor.m in Sources */,

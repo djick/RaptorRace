@@ -15,5 +15,20 @@
  */
 - (void) makeObstacle;
 
+/**
+ Adds a texture to the obstacle. This can be an animation or a picture.
+ 
+ @param texture The texture thet should be added to the obstacle.
+ */
+- (void) addTexture:(SKTexture *)texture;
 
+/**
+ Sets the physical abilities of the obstacle to standard values.
+ */
+- (void) setPhysicsAbilitiesOfObstacle;
+
+/**
+ Gets the texture that should be used on the obstacle.
+ */
+- (SKTexture *)getTexture;
 @end
