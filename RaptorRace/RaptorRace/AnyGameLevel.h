@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface AnyGameLevel : SKScene
+@interface AnyGameLevel : SKScene <SKPhysicsContactDelegate>
 
 /**
  Makes the gamelevel with the defined game level methods.
@@ -54,6 +54,11 @@
  */
 - (void) addRaptor;
 
+/**
+ Sets the physicks for the game world.
+ */
+
+- (void) setGamePhysics;
 /**
  Gets the name of the atlas that should be used for the animation of the sprite.
  

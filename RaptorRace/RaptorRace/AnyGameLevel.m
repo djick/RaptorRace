@@ -26,12 +26,15 @@ ScoreSingleton * scoreLabel;
 
 NSTimer* timer;
 
+
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
     {
         background = [[SKSpriteNode alloc] init];
         [self makeGameLevel];
+        //Physics of the world/scene
+        self.physicsWorld.contactDelegate = self;
         NSLog(@"GameLevel initialized");
     }
     return self;
@@ -54,6 +57,9 @@ NSTimer* timer;
     if([scoreLabel getScore] != displayedScore) {
         displayedScore = [[ScoreSingleton getInstance] getScore];
     }
+    
+    // Raptor allowed to jump?
+    [raptor updateAllowedToJump];
 }
 
 -(IBAction)handleTap:(UITapGestureRecognizer *)tap{
@@ -202,6 +208,11 @@ NSTimer* timer;
     raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
 }
 
+- (void) setGamePhysics
+{
+    //Physics of the world/scene
+    [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
+}
 
 // The following methods has to be implemented by sub-class, or exception will be raised.
 
