@@ -28,12 +28,12 @@ static ScoreSingleton *_sharedInstance = nil;
     [self setFontName:@"Courier-Bold"];
     self.fontSize = 20;
     self.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
-    self.text = @"000";
+    self.text = @"Score: 000";
 }
 
 - (void) updateScore:(CGFloat) s{
     score += s;
-    self.text = [NSString stringWithFormat:@"%05.0f", score];
+    self.text = [NSString stringWithFormat:@"Score: %05.0f", score];
 }
 
 - (CGFloat) getScore{
