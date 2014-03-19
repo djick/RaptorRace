@@ -166,7 +166,7 @@ NSMutableArray *obstacleList;
         obstacle.hidden = NO;
         CGPoint location = CGPointMake(1, height);
         SKAction *moveAction = [SKAction moveTo:location
-                                       duration: 4];
+                                       duration: 3/*randDuration*/];
         SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
         obstacle.hidden = YES;

@@ -15,6 +15,7 @@
     SKSpriteNode *raptor;
     int collisions;
 
+    int _lifes;
 }
 
 
