@@ -195,10 +195,10 @@
 
 - (void) addObstacles
 {
-    NSLog(@"%f",obstacle.nodeHeight);
+    //NSLog(@"%f,%f",obstacle.nodeSize.width,obstacle.nodeSize.height);
     obstacle = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
     NSLog(@" obstacle height %f", [obstacle childNodeWithName:@"obs"].frame.size.width);
-    [obstacle setPosition:CGPointMake(self.frame.size.width+, ground.texture.size.height/4+obstacle.nodeHeight)];
+    [obstacle setPosition:CGPointMake(self.frame.size.width-obstacle.nodeWidth, ground.texture.size.height/4+obstacle.nodeHeight)];
     
 }
 

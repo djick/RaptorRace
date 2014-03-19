@@ -18,7 +18,8 @@
     {
         [self makeObstacle];
         obstacle.name = @"obs";
-        self.nodeHeight = self.getTexture.size;
+        self.nodeHeight = self.getTexture.size.height;
+        self.nodeWidth = self.getTexture.size.width;
         [self addChild:obstacle];
         NSLog(@"Obstacle(s) initialized");
     }
@@ -30,7 +31,8 @@
     if (self = [super init])
     {
         self.height = groundHeight;
-        self.nodeHeight = self.getTexture.size;
+        self.nodeHeight = self.getTexture.size.height;
+        self.nodeWidth = self.getTexture.size.width;
         [self makeObstacle];
         [self addChild:obstacle];
         
