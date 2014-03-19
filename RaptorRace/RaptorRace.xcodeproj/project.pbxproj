@@ -23,6 +23,7 @@
 		7F3036AD18D70DCF00010347 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036AC18D70DCF00010347 /* Pause.m */; };
 		7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FDAC26318D06C7900EBFEF0 /* Ground.png */; };
 		7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDAC26718D1D98900EBFEF0 /* BRaptor.m */; };
+		7FEB5E0518D9B0ED00354762 /* RedRaptorObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEB5E0418D9B0ED00354762 /* RedRaptorObstacle.m */; };
 		90293B4518D1D44F00DDE637 /* TemplateTestRaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */; };
 		90293B4718D1D4EB00DDE637 /* sillyRaptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */; };
 		9044F67818D5E67F0076B124 /* AnyGameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9044F67718D5E67F0076B124 /* AnyGameLevel.m */; };
@@ -92,6 +93,8 @@
 		7FDAC26518D0872A00EBFEF0 /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		7FDAC26618D1D98900EBFEF0 /* BRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRaptor.h; sourceTree = "<group>"; };
 		7FDAC26718D1D98900EBFEF0 /* BRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRaptor.m; sourceTree = "<group>"; };
+		7FEB5E0318D9B0ED00354762 /* RedRaptorObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedRaptorObstacle.h; sourceTree = "<group>"; };
+		7FEB5E0418D9B0ED00354762 /* RedRaptorObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedRaptorObstacle.m; sourceTree = "<group>"; };
 		90293B4318D1D44F00DDE637 /* TemplateTestRaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateTestRaptor.h; sourceTree = "<group>"; };
 		90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateTestRaptor.m; sourceTree = "<group>"; };
 		90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sillyRaptor.atlas; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				905AE3D418CF20C90007DE4E /* Obstacles.h */,
 				905AE3D518CF20C90007DE4E /* Obstacles.m */,
 				905AE3DA18CF213B0007DE4E /* Ground.h */,
+				7FEB5E0318D9B0ED00354762 /* RedRaptorObstacle.h */,
+				7FEB5E0418D9B0ED00354762 /* RedRaptorObstacle.m */,
 				905AE3DB18CF213B0007DE4E /* Ground.m */,
 				90293B4318D1D44F00DDE637 /* TemplateTestRaptor.h */,
 				90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */,
@@ -464,6 +469,7 @@
 				905AE3D318CF20A40007DE4E /* GameScene.m in Sources */,
 				7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */,
 				90AA4A6218D7185300DE5E3E /* StaticObstacle.m in Sources */,
+				7FEB5E0518D9B0ED00354762 /* RedRaptorObstacle.m in Sources */,
 				905AE3D618CF20C90007DE4E /* Obstacles.m in Sources */,
 				9066C23818D08D20001F355B /* AnyRaptor.m in Sources */,
 				7147B48D18CF0A500083C542 /* Raptor.m in Sources */,
