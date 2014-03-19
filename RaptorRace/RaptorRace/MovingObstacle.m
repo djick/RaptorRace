@@ -43,6 +43,7 @@
 
 - (void) animateObstacle
 {
+    NSLog(@"CALL ANIMATE FRAME!");
     NSLog(@"animates frames");
     [[super obstacle] runAction:[SKAction repeatActionForever:
                        [SKAction animateWithTextures:objectAnimatedFrames

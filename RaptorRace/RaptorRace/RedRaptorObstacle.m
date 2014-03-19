@@ -17,6 +17,12 @@
     return self;
 }
 
+- (id)initWithGroundHeight:(CGFloat)groundHeight{
+    self = [super initWithGroundHeight:groundHeight];
+    [super animateObstacle];
+    return self;
+}
+
 -(NSString *)getAtlasName{
     NSLog(@"name");
     return @"obstacleRaptor";
@@ -36,5 +42,7 @@
     [super obstacle].physicsBody.categoryBitMask = obstacleCategory;
     [super obstacle].physicsBody.collisionBitMask = dinoCategory;
     [super obstacle].physicsBody.contactTestBitMask = dinoCategory;
+    [super obstacle].xScale = 0.5;
+    [super obstacle].yScale = 0.5;
 }
 @end

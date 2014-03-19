@@ -110,7 +110,6 @@
         self.inAir = YES;
         _jumpState = 1;
         [self runAction:jumpSound];
-        NSLog(@"allowed to jump first");
     }
     else if (self.allowedToJump && self.inAir && _jumpState == 1) {
         [self forceApplied:(CGVectorMake(0.0, 40.0))];
