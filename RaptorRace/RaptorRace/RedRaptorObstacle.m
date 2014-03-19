@@ -36,5 +36,7 @@
     [super obstacle].physicsBody.categoryBitMask = obstacleCategory;
     [super obstacle].physicsBody.collisionBitMask = dinoCategory;
     [super obstacle].physicsBody.contactTestBitMask = dinoCategory;
+    [super obstacle].xScale = 0.5;
+    [super obstacle].yScale = 0.5;
 }
 @end
