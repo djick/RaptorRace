@@ -105,28 +105,29 @@ int collisions;
     SKAction* jumpSound = [SKAction playSoundFileNamed:@"jump.wav" waitForCompletion:NO];
     //Raptor allowed to jump?
     if ((self.allowedToJump && !self.inAir) || _jumpState == 0) {
-        [self forceApplied:(CGVectorMake(0.0, 87.0))];
+        [self forceApplied:(CGVectorMake(0.0, 90.0))];
         self.inAir = YES;
         _jumpState = 1;
         [self runAction:jumpSound];
     }
     else if (self.allowedToJump && self.inAir && _jumpState == 1) {
-        [self forceApplied:(CGVectorMake(0.0, 30.0))];
+        [self forceApplied:(CGVectorMake(0.0, 40.0))];
         self.inAir = YES;
         self.allowedToJump = NO;
         _jumpState = 2;
         [self runAction:jumpSound];
     }
-    if (_jumpState == 2) {
-        if (velocity == 0) {
-            self.inAir = NO;
-            self.allowedToJump = YES;
-        }
-        [self forceApplied:CGVectorMake(0.0, 75.0)];
-        [self runAction:jumpSound];
-        _jumpState = 1;
-        self.inAir = YES;
-    }
+//    else if (_jumpState == 2) {
+//        if (velocity == 0) {
+//            self.inAir = NO;
+//            self.allowedToJump = YES;
+//        }
+//        NSLog(@"Hello");
+//        [self forceApplied:CGVectorMake(0.0, 20.0)];
+//        [self runAction:jumpSound];
+//        _jumpState = 1;
+//        self.inAir = YES;
+//    }
 }
 
 -(void)updateAllowedToJump {
