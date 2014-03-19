@@ -234,7 +234,7 @@
 {
 //    [NSException raise:NSInternalInconsistencyException
 //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return @"ground%d";
+    return @"groun%d";
 }
 
 - (NSString *) getBackgroundPictureName
