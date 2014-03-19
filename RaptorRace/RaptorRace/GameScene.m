@@ -41,7 +41,7 @@
         //self.backgroundColor = [SKColor colorWithRed:0.1 green:0.5 blue:0.95 alpha:1.0];
         self.physicsWorld.contactDelegate = self;
         //self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
-        [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
+        [self.physicsWorld setGravity:CGVectorMake(0, -7.0)];
         
         moving = [SKNode node];
         [self addChild:moving];
@@ -122,7 +122,7 @@
         _scoreLabel.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
         _scoreLabel.text = @"000";*/
         _scoreLabel = [ScoreSingleton getInstance];
-        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
+        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
         
         [self addChild:_scoreLabel];
         
