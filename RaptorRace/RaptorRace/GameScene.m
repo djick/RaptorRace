@@ -14,7 +14,7 @@
 #import "ScoreSingleton.h"
 #import "Pause.h"
 #import "GameOverScene.h"
-@import AVFoundation;
+#import "RedRaptorObstacle.h"
 
 
 @implementation GameScene {
@@ -122,7 +122,7 @@
         _scoreLabel.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
         _scoreLabel.text = @"000";*/
         _scoreLabel = [ScoreSingleton getInstance];
-        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
+        _scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
         
         [self addChild:_scoreLabel];
         
@@ -161,10 +161,13 @@
             [moving addChild:sprite];
         }
         
-        self.obs = [[Obstacles alloc]init];
+        /*self.obs = [[Obstacles alloc]init];
         [self addChild:self.obs];
-        [self.obs addObstacles];
+        [self.obs addObstacles];*/
         
+        
+        self.obs = [[RedRaptorObstacle alloc] init];
+        [self addChild:self.obs];
     }
     
     return self;
@@ -203,7 +206,7 @@
         _displayedScore = [[ScoreSingleton getInstance] getScore];
     }
     //Trying to do da spawning
-    [self.obs spawnObstacle:groundHeight];
+    //[self.obs spawnObstacle:groundHeight];
     
     //Raptor allowed to jump?
     [raptor updateAllowedToJump];
