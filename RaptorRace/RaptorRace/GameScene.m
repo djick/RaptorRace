@@ -14,6 +14,7 @@
 #import "ScoreSingleton.h"
 #import "Pause.h"
 #import "GameOverScene.h"
+@import AVFoundation;
 
 
 @implementation GameScene {

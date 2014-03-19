@@ -102,17 +102,20 @@ int collisions;
 
 -(void)jump {
     CGFloat velocity = raptor.physicsBody.velocity.dy;
+    SKAction* jumpSound = [SKAction playSoundFileNamed:@"jump.wav" waitForCompletion:NO];
     //Raptor allowed to jump?
     if ((self.allowedToJump && !self.inAir) || _jumpState == 0) {
         [self forceApplied:(CGVectorMake(0.0, 87.0))];
         self.inAir = YES;
         _jumpState = 1;
+        [self runAction:jumpSound];
     }
     else if (self.allowedToJump && self.inAir && _jumpState == 1) {
         [self forceApplied:(CGVectorMake(0.0, 30.0))];
         self.inAir = YES;
         self.allowedToJump = NO;
         _jumpState = 2;
+        [self runAction:jumpSound];
     }
     if (_jumpState == 2) {
         if (velocity == 0) {
@@ -120,6 +123,7 @@ int collisions;
             self.allowedToJump = YES;
         }
         [self forceApplied:CGVectorMake(0.0, 75.0)];
+        [self runAction:jumpSound];
         _jumpState = 1;
         self.inAir = YES;
     }
@@ -145,17 +149,19 @@ int collisions;
 
 -(void)looseLife {
     _lifes -= 1;
-    SKAction* fadeOut = [SKAction fadeAlphaTo:0.6 duration:0.1];
+    SKAction* hurtSound = [SKAction playSoundFileNamed:@"hurt.wav" waitForCompletion:NO];
+    SKAction* fadeOut = [SKAction fadeAlphaTo:0.5 duration:0.1];
     SKAction* fadeIn = [SKAction fadeAlphaTo:1 duration:0.1];
 //    self.undead = YES;
 //    raptor.physicsBody.collisionBitMask = worldCategory;
 //    raptor.physicsBody.contactTestBitMask = worldCategory;
     [raptor runAction:[SKAction moveByX:-80.0 y:0.0 duration:0.3]];
+    [self runAction:hurtSound];
     [raptor runAction:[SKAction repeatAction:[SKAction sequence:@[fadeOut, fadeIn]] count:15]];
 //    raptor.physicsBody.collisionBitMask = worldCategory | obstacelCategory;
 //    raptor.physicsBody.contactTestBitMask = worldCategory | obstacelCategory;
 //    self.undead = NO;
-
 }
+
 
 @end
