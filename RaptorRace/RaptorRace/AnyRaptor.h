@@ -11,6 +11,7 @@
 @interface AnyRaptor : SKSpriteNode
 @property (nonatomic, assign) BOOL allowedToJump;
 @property (nonatomic, assign) BOOL inAir;
+@property (nonatomic, assign) BOOL undead;
 
 /**
  This methd runs all of the defined methods for an object of class AnyRaptor, creating the raptor.
@@ -73,5 +74,10 @@
  Checks for collision and keeps track of collision count. Inits gameover
 */
  //-(void)didBeginContact:(SKPhysicsContact*)contact;
+
+/**
+ Raptor looses life and moves backwards on screen
+*/
+-(void)looseLife;
 
 @end

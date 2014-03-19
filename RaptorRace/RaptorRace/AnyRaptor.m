@@ -29,6 +29,8 @@
         self.allowedToJump = YES;
         self.inAir = NO;
         _jumpState = 0;
+        _lifes = 2;
+        self.undead = NO;
         NSLog(@"Raptor initialized");
     }
     
@@ -142,6 +144,19 @@
     return;
 }
 
+-(void)looseLife {
+    _lifes -= 1;
+    SKAction* fadeOut = [SKAction fadeAlphaTo:0.6 duration:0.1];
+    SKAction* fadeIn = [SKAction fadeAlphaTo:1 duration:0.1];
+//    self.undead = YES;
+//    raptor.physicsBody.collisionBitMask = worldCategory;
+//    raptor.physicsBody.contactTestBitMask = worldCategory;
+    [raptor runAction:[SKAction moveByX:-80.0 y:0.0 duration:0.3]];
+    [raptor runAction:[SKAction repeatAction:[SKAction sequence:@[fadeOut, fadeIn]] count:15]];
+//    raptor.physicsBody.collisionBitMask = worldCategory | obstacelCategory;
+//    raptor.physicsBody.contactTestBitMask = worldCategory | obstacelCategory;
+//    self.undead = NO;
 
+}
 
 @end
