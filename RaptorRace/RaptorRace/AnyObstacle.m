@@ -9,10 +9,10 @@
 #import "AnyObstacle.h"
 
 @implementation AnyObstacle{
-    SKSpriteNode * obstacle;
-    CGFloat height;
+    
 }
-
+SKSpriteNode * obstacle;
+CGFloat height;
 
 
 -(id)init

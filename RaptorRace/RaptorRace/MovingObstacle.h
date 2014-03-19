@@ -26,7 +26,7 @@
 /**
  Makes the action that moves the obstacle over the screen.
  */
-- (SKAction *) makeMovmentAction;
+- (SKAction *) makeMovementAction;
 
 
 @end

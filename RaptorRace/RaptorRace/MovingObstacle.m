@@ -12,7 +12,6 @@
 
 - (void) setPhysicsAbilitiesOfObstacle
 {
-    
 }
 
 - (SKTexture *) getTexture
