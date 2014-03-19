@@ -20,6 +20,9 @@
     return [self createTextureWithImageNamed:[self getPictureName]];
 }
 
+#pragma mark -
+#pragma StaticObstacle Specific Methods
+
 - (SKTexture *) createTextureWithImageNamed:(NSString *)name
 {
     return [SKTexture textureWithImageNamed:name];
