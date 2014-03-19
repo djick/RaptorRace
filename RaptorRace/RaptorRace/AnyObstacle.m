@@ -7,19 +7,19 @@
 //
 
 #import "AnyObstacle.h"
+#import "Categories.h"
 
-@implementation AnyObstacle{
-    
-}
-SKSpriteNode * obstacle;
-CGFloat height;
-
-
+@implementation AnyObstacle
+@synthesize obstacle = obstacle;
+@synthesize height = height;
 -(id)init
 {
     if (self = [super init])
     {
         [self makeObstacle];
+        obstacle.name = @"obs";
+        self.nodeHeight = self.getTexture.size.height;
+        [self addChild:obstacle];
         NSLog(@"Obstacle(s) initialized");
     }
     
@@ -27,8 +27,15 @@ CGFloat height;
 }
 
 - (id) initWithGroundHeight:(CGFloat)groundHeight{
-    self = [self init];
-    height = groundHeight;
+    if (self = [super init])
+    {
+        self.height = groundHeight;
+        self.nodeHeight = self.getTexture.size.height;
+        [self makeObstacle];
+        [self addChild:obstacle];
+        
+    }
+    
     return self;
 }
 
@@ -62,15 +69,16 @@ CGFloat height;
 
 - (void) setPhysicsAbilitiesOfObstacle
 {
-    //    [NSException raise:NSInternalInconsistencyException
-    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+        [NSException raise:NSInternalInconsistencyException
+                    format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    
 
 }
 
 - (SKTexture *)getTexture
 {
-    //    [NSException raise:NSInternalInconsistencyException
-    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+        [NSException raise:NSInternalInconsistencyException
+                    format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return NULL;
 }
 

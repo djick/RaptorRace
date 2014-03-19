@@ -9,6 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface AnyObstacle : SKSpriteNode
+
+@property SKSpriteNode * obstacle;
+@property CGFloat height;
+@property CGFloat nodeHeight;
 /**
  Initiate obstacle with the height of ground level
  **/

@@ -14,6 +14,7 @@
 #import "ScoreSingleton.h"
 #import "Pause.h"
 #import "GameOverScene.h"
+#import "RedRaptorObstacle.h"
 
 
 @implementation GameScene {
@@ -160,10 +161,13 @@
             [moving addChild:sprite];
         }
         
-        self.obs = [[Obstacles alloc]init];
+        /*self.obs = [[Obstacles alloc]init];
         [self addChild:self.obs];
-        [self.obs addObstacles];
+        [self.obs addObstacles];*/
         
+        
+        self.obs = [[RedRaptorObstacle alloc] init];
+        [self addChild:self.obs];
     }
     
     return self;
@@ -202,7 +206,7 @@
         _displayedScore = [[ScoreSingleton getInstance] getScore];
     }
     //Trying to do da spawning
-    [self.obs spawnObstacle:groundHeight];
+    //[self.obs spawnObstacle:groundHeight];
     
     //Raptor allowed to jump?
     [raptor updateAllowedToJump];

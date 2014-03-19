@@ -28,5 +28,20 @@
  */
 - (SKAction *) makeMovementAction;
 
+/**
+ Gets the name of the atlas that should be used for the animation of the sprite.
+ 
+ @return Retruns a string with the name of the atlas that should be used for animation.
+ */
+- (NSString *) getAtlasName;
+
+/**
+ Gets the formate of the names of the pictures in the atlas.
+ 
+ @return Returns the name format of the pictures in the atas.
+ */
+- (NSString* ) getPictureNameFormat;
+
+- (void) animateObstacle;
 
 @end

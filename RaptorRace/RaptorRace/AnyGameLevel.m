@@ -11,6 +11,7 @@
 #import "Categories.h"
 #import "AnyRaptor.h"
 #import "BRaptor.h"
+#import "RedRaptorObstacle.h"
 
 @implementation AnyGameLevel{
     // An array of frames used for the ground animation
@@ -19,6 +20,7 @@
     
     SKSpriteNode *ground;
     SKSpriteNode *background;
+    AnyObstacle *obstacle;
     AnyRaptor *raptor;
     
     ScoreSingleton * scoreLabel;
@@ -41,6 +43,10 @@
         [self addChild:ground];
         [self addChild:background];
         [self addChild:scoreLabel];
+        [self addChild:obstacle];
+
+        
+        
     }
     return self;
 }
@@ -72,6 +78,7 @@
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
     [self addRaptor];
+    [self addObstacles];
 
     
 }
@@ -188,6 +195,10 @@
 
 - (void) addObstacles
 {
+    NSLog(@"%f",obstacle.nodeHeight);
+    obstacle = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+    NSLog(@" obstacle height %f", [obstacle childNodeWithName:@"obs"].frame.size.width);
+    [obstacle setPosition:CGPointMake(self.frame.size.width, ground.texture.size.height+obstacle.nodeHeight)];
     
 }
 

@@ -34,9 +34,9 @@ NSMutableArray *obstacleList;
 
 -(SKSpriteNode*)makeDinosaur1 {
     SKSpriteNode* SKdinosaur1= [SKSpriteNode spriteNodeWithImageNamed:@"dinosaur1"];
-    SKdinosaur1.size=CGSizeMake(40, 40);
+    SKdinosaur1.size=CGSizeMake(60, 40);
     //_dinosaur1.position = CGPointMake(100, 100);
-    SKdinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100,100)];
+    SKdinosaur1.physicsBody=[SKPhysicsBody bodyWithRectangleOfSize:SKdinosaur1.size];
     //SKdinosaur1.position = CGPointMake(100, 100);
     SKdinosaur1.physicsBody.affectedByGravity=NO;
     SKdinosaur1.physicsBody.mass=1;
@@ -159,10 +159,10 @@ NSMutableArray *obstacleList;
         SKSpriteNode *obstacle = [dinosaurs objectAtIndex:rand()%1];
         [obstacle removeAllActions];
     
-        //float randDuration =[self randomValueBetween:3.0
+       // float randDuration =[self randomValueBetween:3.0
                                              //andValue:8.0];
         //CGFloat height = 97;
-        obstacle.position = CGPointMake(-self.frame.size.width+ 20, height);
+        obstacle.position = CGPointMake(500, height);
         obstacle.hidden = NO;
         CGPoint location = CGPointMake(1, height);
         SKAction *moveAction = [SKAction moveTo:location
