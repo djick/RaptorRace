@@ -21,8 +21,4 @@
  */
 - (SKTexture *) createTextureWithImageNamed:(NSString *)name;
 
-/**
- Spawns the obstacle, yep.
- */
-- (void) spawnObstacle;
 @end

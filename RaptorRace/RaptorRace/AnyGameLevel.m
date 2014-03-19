@@ -12,19 +12,21 @@
 #import "AnyRaptor.h"
 #import "BRaptor.h"
 
-@implementation AnyGameLevel
+@implementation AnyGameLevel{
+    // An array of frames used for the ground animation
+    NSArray *groundMovingFrames;
+    
+    
+    SKSpriteNode *ground;
+    SKSpriteNode *background;
+    AnyRaptor *raptor;
+    
+    ScoreSingleton * scoreLabel;
+    
+    NSTimer* timer;
+}
 
-// An array of frames used for the ground animation
-NSArray *groundMovingFrames;
 
-
-SKSpriteNode *ground;
-SKSpriteNode *background;
-AnyRaptor *raptor;
-
-ScoreSingleton * scoreLabel;
-
-NSTimer* timer;
 
 
 -(id)initWithSize:(CGSize)size
@@ -34,20 +36,13 @@ NSTimer* timer;
         background = [[SKSpriteNode alloc] init];
         [self makeGameLevel];
         //Physics of the world/scene
-        self.physicsWorld.contactDelegate = self;
+        //self.physicsWorld.contactDelegate = self;
         NSLog(@"GameLevel initialized");
+        [self addChild:ground];
+        [self addChild:background];
+        [self addChild:scoreLabel];
     }
     return self;
-}
-
-- (void)didMoveToView:(SKView *)view
-{
-    [self addChild:ground];
-    [self addChild:background];
-    [self addChild:scoreLabel];
-    [self addChild:raptor];
-    UITapGestureRecognizer *rec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [[self view] addGestureRecognizer:rec];
 }
 
 - (void)update:(NSTimeInterval)currentTime
@@ -62,15 +57,13 @@ NSTimer* timer;
     [raptor updateAllowedToJump];
 }
 
--(IBAction)handleTap:(UITapGestureRecognizer *)tap{
-    NSLog(@"recognizes tap");
-    if(tap.state == UIGestureRecognizerStateEnded){
-        [raptor jump];
-    }
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [raptor jump];
 }
 
 - (void) makeGameLevel
 {
+    [self setGamePhysics];
     [self createGroundWithAtlasNamed:[self getGroundAtlasName]
                            AndFormat:[self getGroundPictureNameFormat]];
     [self createBackgroundWithImageNamed:[self getBackgroundPictureName]
@@ -79,6 +72,7 @@ NSTimer* timer;
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
     [self addRaptor];
+
     
 }
 
@@ -201,16 +195,18 @@ NSTimer* timer;
 {
     raptor = [[BRaptor alloc] init];
     raptor.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame));
-    raptor.physicsBody.dynamic = YES;
-    raptor.physicsBody.allowsRotation = NO;
-    raptor.physicsBody.categoryBitMask = dinoCategory;
+    //raptor.physicsBody.dynamic = YES;
+    //raptor.physicsBody.allowsRotation = NO;
+    /*raptor.physicsBody.categoryBitMask = dinoCategory;
     raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
-    raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
+    raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;*/
+    [self addChild:raptor];
 }
 
 - (void) setGamePhysics
 {
     //Physics of the world/scene
+    [self.physicsWorld setContactDelegate:self];
     [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
 }
 

@@ -9,6 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface AnyObstacle : SKSpriteNode
+/**
+ Initiate obstacle with the height of ground level
+ **/
+- (id) initWithGroundHeight:(CGFloat)groundHeight;
 
 /**
  Makes the obstacle using the template methods.
@@ -31,4 +35,9 @@
  Gets the texture that should be used on the obstacle.
  */
 - (SKTexture *)getTexture;
+
+/**
+ Fires the obstacles towards the player
+ **/
+- (void) fireObstacle;
 @end

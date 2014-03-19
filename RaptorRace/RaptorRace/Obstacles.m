@@ -162,7 +162,7 @@ NSMutableArray *obstacleList;
         //float randDuration =[self randomValueBetween:3.0
                                              //andValue:8.0];
         //CGFloat height = 97;
-        obstacle.position = CGPointMake(self.frame.size.width+ 20, height);
+        obstacle.position = CGPointMake(-self.frame.size.width+ 20, height);
         obstacle.hidden = NO;
         CGPoint location = CGPointMake(1, height);
         SKAction *moveAction = [SKAction moveTo:location

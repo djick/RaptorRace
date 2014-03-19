@@ -8,9 +8,12 @@
 
 #import "AnyObstacle.h"
 
-@implementation AnyObstacle
+@implementation AnyObstacle{
+    SKSpriteNode * obstacle;
+    CGFloat height;
+}
 
-SKSpriteNode * obstacle;
+
 
 -(id)init
 {
@@ -23,6 +26,14 @@ SKSpriteNode * obstacle;
     return self;
 }
 
+- (id) initWithGroundHeight:(CGFloat)groundHeight{
+    self = [self init];
+    height = groundHeight;
+    return self;
+}
+
+
+
 - (void) makeObstacle
 {
     [self addTexture:[self getTexture]];
@@ -33,6 +44,21 @@ SKSpriteNode * obstacle;
 {
     obstacle = [SKSpriteNode spriteNodeWithTexture:texture];
 }
+
+- (void) fireObstacle {
+    //    [NSException raise:NSInternalInconsistencyException
+    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    [obstacle removeAllActions];
+    SKAction *moveAction = [SKAction moveTo:CGPointMake(0, height) duration: 8];
+    SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
+        NSLog(@"Animation Completed");
+        obstacle.hidden = YES;
+    }];
+    SKAction *moveDinosaurActionWithDone = [SKAction sequence:@[moveAction, doneAction ]];
+    [obstacle runAction:moveDinosaurActionWithDone withKey:@"dinosaurMoving"];
+}
+
+
 
 - (void) setPhysicsAbilitiesOfObstacle
 {
