@@ -11,6 +11,7 @@
 
 @implementation AnyRaptor {
     int _jumpState;
+    int _lifes;
 }
 
 NSArray *raptorRunningFrames;
@@ -28,6 +29,7 @@ int collisions;
         self.allowedToJump = YES;
         self.inAir = NO;
         _jumpState = 0;
+        _lifes = 2;
         NSLog(@"Raptor initialized");
     }
     
@@ -140,6 +142,17 @@ int collisions;
     return;
 }
 
+-(void)looseLife {
+    _lifes -= 1;
+    SKAction* fadeOut = [SKAction fadeAlphaTo:0.6 duration:0.1];
+    SKAction* fadeIn = [SKAction fadeAlphaTo:1 duration:0.1];
+//    raptor.physicsBody.collisionBitMask = worldCategory;
+//    raptor.physicsBody.contactTestBitMask = worldCategory;
+    [raptor runAction:[SKAction moveByX:-80.0 y:0.0 duration:0.3]];
+    [raptor runAction:[SKAction repeatAction:[SKAction sequence:@[fadeOut, fadeIn]] count:15]];
+//    raptor.physicsBody.collisionBitMask = worldCategory | obstacelCategory;
+//    raptor.physicsBody.contactTestBitMask = worldCategory | obstacelCategory;
 
+}
 
 @end

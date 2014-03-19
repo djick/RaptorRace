@@ -217,8 +217,12 @@
             [self.view presentScene:[[GameOverScene alloc] initWithSize:self.size] transition:SKTransitionDirectionUp];
             [[ScoreSingleton getInstance] stopTimer];
         }
+        if (raptor.undead == YES) {
+        
+        }
         else{
             collisions=collisions+1;
+            [raptor looseLife];
         }
     }
     if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
@@ -228,8 +232,12 @@
             [self.view presentScene:[[GameOverScene alloc] initWithSize:self.size]];
             [[ScoreSingleton getInstance] stopTimer];
         }
+        if (raptor.undead == YES) {
+            
+        }
         else{
             collisions=collisions+1;
+            [raptor looseLife];
         }
     }
 }
