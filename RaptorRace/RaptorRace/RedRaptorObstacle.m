@@ -17,6 +17,12 @@
     return self;
 }
 
+- (id)initWithGroundHeight:(CGFloat)groundHeight{
+    self = [super initWithGroundHeight:groundHeight];
+    [super animateObstacle];
+    return self;
+}
+
 -(NSString *)getAtlasName{
     NSLog(@"name");
     return @"obstacleRaptor";
