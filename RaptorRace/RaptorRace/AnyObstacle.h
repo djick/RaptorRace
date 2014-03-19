@@ -12,7 +12,7 @@
 
 @property SKSpriteNode * obstacle;
 @property CGFloat height;
-@property CGFloat nodeHeight;
+@property CGSize nodeSize;
 /**
  Initiate obstacle with the height of ground level
  **/

@@ -15,6 +15,7 @@
 #import "Pause.h"
 #import "GameOverScene.h"
 #import "RedRaptorObstacle.h"
+@import AVFoundation;
 
 
 @implementation GameScene {

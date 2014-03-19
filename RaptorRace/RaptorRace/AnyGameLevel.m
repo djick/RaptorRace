@@ -198,7 +198,7 @@
     NSLog(@"%f",obstacle.nodeHeight);
     obstacle = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
     NSLog(@" obstacle height %f", [obstacle childNodeWithName:@"obs"].frame.size.width);
-    [obstacle setPosition:CGPointMake(self.frame.size.width, ground.texture.size.height+obstacle.nodeHeight)];
+    [obstacle setPosition:CGPointMake(self.frame.size.width+, ground.texture.size.height/4+obstacle.nodeHeight)];
     
 }
 
