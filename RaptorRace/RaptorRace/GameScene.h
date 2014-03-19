@@ -7,10 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "AnyObstacle.h"
+#import "Obstacles.h"
 
 @interface GameScene : SKScene <SKPhysicsContactDelegate> 
 @property(nonatomic,readonly) SKLabelNode *scoreLabel;
 //@property(nonatomic) CGFloat score;
-@property (nonatomic) AnyObstacle* obs;
+@property (nonatomic) Obstacles* obs;
 @end

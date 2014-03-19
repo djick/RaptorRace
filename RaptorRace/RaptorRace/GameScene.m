@@ -51,7 +51,7 @@
         [self setBackgroundColor:_skyColor];
         
         //Landscape
-        SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"landscape"];
+        SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"LargeLandscape"];
         skylineTexture.filteringMode = SKTextureFilteringNearest;
         
         SKAction* moveSkylineSprite = [SKAction moveByX:-skylineTexture.size.width*2 y:0 duration:0.1 * skylineTexture.size.width*2];
@@ -161,13 +161,13 @@
             [moving addChild:sprite];
         }
         
-        /*self.obs = [[Obstacles alloc]init];
+        self.obs = [[Obstacles alloc]init];
         [self addChild:self.obs];
-        [self.obs addObstacles];*/
+        [self.obs addObstacles];
         
         
-        self.obs = [[RedRaptorObstacle alloc] init];
-        [self addChild:self.obs];
+        //self.obs = [[RedRaptorObstacle alloc] init];
+        //[self addChild:self.obs];
     }
     
     return self;
@@ -206,7 +206,7 @@
         _displayedScore = [[ScoreSingleton getInstance] getScore];
     }
     //Trying to do da spawning
-    //[self.obs spawnObstacle:groundHeight];
+    [self.obs spawnObstacle:groundHeight];
     
     //Raptor allowed to jump?
     [raptor updateAllowedToJump];
