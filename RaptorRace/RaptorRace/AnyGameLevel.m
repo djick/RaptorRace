@@ -165,7 +165,7 @@
     SKTextureAtlas *groundAnimatedAtlas = [SKTextureAtlas atlasNamed:name];
     
     int numImages = groundAnimatedAtlas.textureNames.count;
-    for (int i=numImages; i >= 1; i--) {
+    for (int i=1; i < numImages; i++) {
         NSString *textureName = [NSString stringWithFormat:format, i];
         SKTexture *temp = [groundAnimatedAtlas textureNamed:textureName];
         temp.filteringMode = SKTextureFilteringNearest;
