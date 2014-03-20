@@ -128,8 +128,9 @@
         
         [self addChild:_scoreLabel];
         
-        pausebtn = [[Pause alloc] initWithImageNamed:@"dinosaur2"];
-        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2));
+        pausebtn = [[Pause alloc] initWithImageNamed:@"PauseButton"];
+        [pausebtn setScale:0.7];
+        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2.5));
         pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
                                 .size];
         pausebtn.physicsBody.dynamic = NO;

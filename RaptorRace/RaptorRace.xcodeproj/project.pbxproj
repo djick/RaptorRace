@@ -39,6 +39,7 @@
 		90AA4A5F18D7184100DE5E3E /* MovingObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A5E18D7184100DE5E3E /* MovingObstacle.m */; };
 		90AA4A6218D7185300DE5E3E /* StaticObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A6118D7185300DE5E3E /* StaticObstacle.m */; };
 		AF12A0D718D9F4E800272B3D /* dark_cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = AF12A0D618D9F4E800272B3D /* dark_cloud.png */; };
+		AF12A0DB18DB007000272B3D /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AF12A0DA18DB007000272B3D /* PauseButton.png */; };
 		AF2FEA5C18D9D72200A13B42 /* LargeLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2FEA5B18D9D72200A13B42 /* LargeLandscape.png */; };
 		AF7CFB9A18D9B069009111AB /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF7CFB9918D9B069009111AB /* jump.wav */; };
 		AF7CFB9C18D9B29C009111AB /* hurt.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF7CFB9B18D9B29C009111AB /* hurt.wav */; };
@@ -126,6 +127,7 @@
 		90AA4A6018D7185300DE5E3E /* StaticObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticObstacle.h; sourceTree = "<group>"; };
 		90AA4A6118D7185300DE5E3E /* StaticObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticObstacle.m; sourceTree = "<group>"; };
 		AF12A0D618D9F4E800272B3D /* dark_cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_cloud.png; sourceTree = "<group>"; };
+		AF12A0DA18DB007000272B3D /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseButton.png; sourceTree = "<group>"; };
 		AF2FEA5B18D9D72200A13B42 /* LargeLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeLandscape.png; sourceTree = "<group>"; };
 		AF7CFB9918D9B069009111AB /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 		AF7CFB9B18D9B29C009111AB /* hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hurt.wav; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF12A0DA18DB007000272B3D /* PauseButton.png */,
 				AF12A0D618D9F4E800272B3D /* dark_cloud.png */,
 				AF2FEA5B18D9D72200A13B42 /* LargeLandscape.png */,
 				AF7CFB9B18D9B29C009111AB /* hurt.wav */,
@@ -446,6 +449,7 @@
 				AF2FEA5C18D9D72200A13B42 /* LargeLandscape.png in Resources */,
 				7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */,
 				90293B4718D1D4EB00DDE637 /* sillyRaptor.atlas in Resources */,
+				AF12A0DB18DB007000272B3D /* PauseButton.png in Resources */,
 				AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */,
 				71B12DAC18D6699500EA30D6 /* RRbg.png in Resources */,
 			);
