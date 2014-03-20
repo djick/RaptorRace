@@ -17,23 +17,38 @@
     return self;
 }
 
-- (id)initWithGroundHeight:(CGFloat)groundHeight{
+- (id)initWithGroundHeight:(CGFloat)groundHeight
+{
     self = [super initWithGroundHeight:groundHeight];
     [super animateObstacle];
     return self;
 }
 
--(NSString *)getAtlasName{
+-(NSString *)getAtlasName
+{
     NSLog(@"name");
-    return @"obstacleRaptor";
+    int index = arc4random() % 2;
+    if(index == 0)
+    {
+        NSLog(@"ObstacleRed");
+        return @"obstacleRedRaptor";
+    }
+    else
+    {
+        NSLog(@"ObstacleGreen");
+        return @"obstacleGreenRaptor";
+    }
 }
+    
 
-- (NSString *)getPictureNameFormat{
+- (NSString *)getPictureNameFormat
+{
     NSLog(@"nameFormat");
     return @"obstacleRaptor%d";
 }
 
-- (void)setPhysicsAbilitiesOfObstacle{
+- (void)setPhysicsAbilitiesOfObstacle
+{
     NSLog(@"SETS PHysical abilities");
     [super obstacle].physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:[super obstacle].frame.size];
     [super obstacle].physicsBody.allowsRotation = NO;
@@ -45,4 +60,6 @@
     [super obstacle].xScale = 0.5;
     [super obstacle].yScale = 0.5;
 }
+
+
 @end
