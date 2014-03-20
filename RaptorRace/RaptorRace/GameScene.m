@@ -49,6 +49,7 @@
         
         //Set up background
         _skyColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0];
+//        _skyColor = [SKColor colorWithRed:113.0/255.0 green:255.0/255.0 blue:207.0/255.0 alpha:1.0];
         [self setBackgroundColor:_skyColor];
         
         //Landscape
@@ -127,8 +128,9 @@
         
         [self addChild:_scoreLabel];
         
-        pausebtn = [[Pause alloc] initWithImageNamed:@"dinosaur2"];
-        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2));
+        pausebtn = [[Pause alloc] initWithImageNamed:@"PauseButton"];
+        [pausebtn setScale:0.7];
+        pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2.5));
         pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
                                 .size];
         pausebtn.physicsBody.dynamic = NO;
@@ -138,7 +140,7 @@
         [[ScoreSingleton getInstance] startTimer];
         
         //Clouds
-        SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"cloud"];
+        SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"dark_cloud"];
         cloudTexture.filteringMode=SKTextureFilteringNearest;
         
         SKAction* moveCloudSprite = [SKAction moveByX:-cloudTexture.size.width*2 y:0 duration:0.3 * cloudTexture.size.width*2];

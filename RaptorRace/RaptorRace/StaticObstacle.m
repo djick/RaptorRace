@@ -10,9 +10,17 @@
 
 @implementation StaticObstacle
 
-- (void) setPhysicsAbilitiesOfObstacle
+- (void)setPhysicsAbilitiesOfObstacle
 {
-    
+    [super obstacle].physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:[super obstacle].frame.size];
+    [super obstacle].physicsBody.allowsRotation = NO;
+    [super obstacle].physicsBody.restitution = 0.0;
+    [super obstacle].physicsBody.dynamic = NO;
+    [super obstacle].physicsBody.categoryBitMask = obstacleCategory;
+    [super obstacle].physicsBody.collisionBitMask = dinoCategory;
+    [super obstacle].physicsBody.contactTestBitMask = dinoCategory;
+    [super obstacle].xScale = 0.7;
+    [super obstacle].yScale = 0.7;
 }
 
 - (SKTexture *) getTexture

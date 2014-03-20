@@ -14,7 +14,7 @@
     NSArray *raptorRunningFrames;
     SKSpriteNode *raptor;
     int collisions;
-
+    SKAction* jumpSound;
     int _lifes;
 }
 
@@ -33,6 +33,7 @@
         _lifes = 2;
         self.undead = NO;
         NSLog(@"Raptor initialized");
+        jumpSound = [SKAction playSoundFileNamed:@"jump.wav" waitForCompletion:NO];
     }
     
     return self;
@@ -103,7 +104,6 @@
 
 -(void)jump {
     //CGFloat velocity = raptor.physicsBody.velocity.dy;
-    SKAction* jumpSound = [SKAction playSoundFileNamed:@"jump.wav" waitForCompletion:NO];
     //Raptor allowed to jump?
     if ((self.allowedToJump && !self.inAir) || _jumpState == 0) {
         [self forceApplied:(CGVectorMake(0.0, 90.0))];

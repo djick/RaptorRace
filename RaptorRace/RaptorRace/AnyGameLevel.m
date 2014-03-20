@@ -12,6 +12,7 @@
 #import "AnyRaptor.h"
 #import "BRaptor.h"
 #import "RedRaptorObstacle.h"
+#import "StoneObstacle.h"
 
 @implementation AnyGameLevel{
     // An array of frames used for the ground animation
@@ -21,6 +22,7 @@
     SKSpriteNode *ground;
     SKSpriteNode *background;
     AnyObstacle *obstacle;
+    AnyObstacle *stoneObstacle;
     AnyRaptor *raptor;
     
     ScoreSingleton * scoreLabel;
@@ -44,6 +46,7 @@
         [self addChild:background];
         [self addChild:scoreLabel];
         [self addChild:obstacle];
+        [self addChild:stoneObstacle];
 
         
         
@@ -90,7 +93,7 @@
     [self setBackgroundColor:color];
     
     //Landscape
-    SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"landscape"];
+    SKTexture* skylineTexture = [SKTexture textureWithImageNamed:@"LargeLandscape"];
     skylineTexture.filteringMode = SKTextureFilteringNearest;
     
     SKAction* moveSkylineSprite = [SKAction moveByX:-skylineTexture.size.width*2
@@ -199,7 +202,9 @@
     obstacle = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
     NSLog(@" obstacle height %f", [obstacle childNodeWithName:@"obs"].frame.size.width);
     [obstacle setPosition:CGPointMake(self.frame.size.width-obstacle.nodeWidth, ground.texture.size.height/4+obstacle.nodeHeight)];
-    
+
+    stoneObstacle = [[StoneObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+    [stoneObstacle setPosition:CGPointMake(self.frame.size.width-stoneObstacle.nodeWidth*1.5, ground.texture.size.height + stoneObstacle.height*0.90)];
 }
 
 - (void) addRaptor
@@ -218,7 +223,7 @@
 {
     //Physics of the world/scene
     [self.physicsWorld setContactDelegate:self];
-    [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
+    [self.physicsWorld setGravity:CGVectorMake(0, -7.0)];
 }
 
 // The following methods has to be implemented by sub-class, or exception will be raised.
