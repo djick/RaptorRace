@@ -49,6 +49,7 @@
         
         //Set up background
         _skyColor = [SKColor colorWithRed:113.0/255.0 green:197.0/255.0 blue:207.0/255.0 alpha:1.0];
+//        _skyColor = [SKColor colorWithRed:113.0/255.0 green:255.0/255.0 blue:207.0/255.0 alpha:1.0];
         [self setBackgroundColor:_skyColor];
         
         //Landscape
