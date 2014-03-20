@@ -10,6 +10,10 @@
 
 @implementation StoneObstacle
 
+- (id)initWithGroundHeight:(CGFloat)groundHeight{
+    self = [super initWithGroundHeight:groundHeight];
+    return self;
+}
 - (NSString* ) getPictureName
 {
     return @"stone_obstacle";
