@@ -7,6 +7,7 @@
 //
 
 #import "AnyObstacle.h"
+#import "Categories.h"
 
 @interface MovingObstacle : AnyObstacle
 
