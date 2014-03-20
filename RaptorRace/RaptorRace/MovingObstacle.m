@@ -13,8 +13,15 @@
 }
 
 - (void)setPhysicsAbilitiesOfObstacle{
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    [super obstacle].physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:[super obstacle].frame.size];
+    [super obstacle].physicsBody.allowsRotation = NO;
+    [super obstacle].physicsBody.restitution = 0.0;
+    [super obstacle].physicsBody.dynamic = NO;
+    [super obstacle].physicsBody.categoryBitMask = obstacleCategory;
+    [super obstacle].physicsBody.collisionBitMask = dinoCategory;
+    [super obstacle].physicsBody.contactTestBitMask = dinoCategory;
+    [super obstacle].xScale = 0.5;
+    [super obstacle].yScale = 0.5;
 }
 
 - (SKTexture *) getTexture

@@ -38,6 +38,8 @@
 		90AA4A5C18D7098300DE5E3E /* AnyObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A5B18D7098300DE5E3E /* AnyObstacle.m */; };
 		90AA4A5F18D7184100DE5E3E /* MovingObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A5E18D7184100DE5E3E /* MovingObstacle.m */; };
 		90AA4A6218D7185300DE5E3E /* StaticObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AA4A6118D7185300DE5E3E /* StaticObstacle.m */; };
+		90B15FB718DB141800B8DEED /* stone_obstacle.png in Resources */ = {isa = PBXBuildFile; fileRef = 90B15FB618DB141800B8DEED /* stone_obstacle.png */; };
+		90B15FBD18DB145000B8DEED /* StoneObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B15FBC18DB145000B8DEED /* StoneObstacle.m */; };
 		AF12A0D718D9F4E800272B3D /* dark_cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = AF12A0D618D9F4E800272B3D /* dark_cloud.png */; };
 		AF12A0DD18DB0EB800272B3D /* PauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AF12A0DC18DB0EB800272B3D /* PauseButton.png */; };
 		AF2FEA5C18D9D72200A13B42 /* LargeLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2FEA5B18D9D72200A13B42 /* LargeLandscape.png */; };
@@ -126,6 +128,9 @@
 		90AA4A5E18D7184100DE5E3E /* MovingObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovingObstacle.m; sourceTree = "<group>"; };
 		90AA4A6018D7185300DE5E3E /* StaticObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticObstacle.h; sourceTree = "<group>"; };
 		90AA4A6118D7185300DE5E3E /* StaticObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticObstacle.m; sourceTree = "<group>"; };
+		90B15FB618DB141800B8DEED /* stone_obstacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stone_obstacle.png; sourceTree = "<group>"; };
+		90B15FBB18DB145000B8DEED /* StoneObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoneObstacle.h; sourceTree = "<group>"; };
+		90B15FBC18DB145000B8DEED /* StoneObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoneObstacle.m; sourceTree = "<group>"; };
 		AF12A0D618D9F4E800272B3D /* dark_cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_cloud.png; sourceTree = "<group>"; };
 		AF12A0DC18DB0EB800272B3D /* PauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PauseButton.png; sourceTree = "<group>"; };
 		AF2FEA5B18D9D72200A13B42 /* LargeLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeLandscape.png; sourceTree = "<group>"; };
@@ -201,9 +206,11 @@
 				7FDAC26718D1D98900EBFEF0 /* BRaptor.m */,
 				905AE3D418CF20C90007DE4E /* Obstacles.h */,
 				905AE3D518CF20C90007DE4E /* Obstacles.m */,
-				905AE3DA18CF213B0007DE4E /* Ground.h */,
 				7FEB5E0318D9B0ED00354762 /* RedRaptorObstacle.h */,
 				7FEB5E0418D9B0ED00354762 /* RedRaptorObstacle.m */,
+				90B15FBB18DB145000B8DEED /* StoneObstacle.h */,
+				90B15FBC18DB145000B8DEED /* StoneObstacle.m */,
+				905AE3DA18CF213B0007DE4E /* Ground.h */,
 				905AE3DB18CF213B0007DE4E /* Ground.m */,
 				90293B4318D1D44F00DDE637 /* TemplateTestRaptor.h */,
 				90293B4418D1D44F00DDE637 /* TemplateTestRaptor.m */,
@@ -443,6 +450,7 @@
 				AFCFA36B18BF81F900092E6E /* Images.xcassets in Resources */,
 				71877D1218D7540400DEE120 /* obstacleRaptor.atlas in Resources */,
 				71A9DE1E18D0F6B000441272 /* ground1.png in Resources */,
+				90B15FB718DB141800B8DEED /* stone_obstacle.png in Resources */,
 				71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */,
 				AF12A0D718D9F4E800272B3D /* dark_cloud.png in Resources */,
 				71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */,
@@ -486,6 +494,7 @@
 				905AE3D918CF20FF0007DE4E /* MenuViewController.m in Sources */,
 				7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */,
 				AFCFA35A18BF81F900092E6E /* main.m in Sources */,
+				90B15FBD18DB145000B8DEED /* StoneObstacle.m in Sources */,
 				905AE3D318CF20A40007DE4E /* GameScene.m in Sources */,
 				7FDAC26818D1D98900EBFEF0 /* BRaptor.m in Sources */,
 				90AA4A6218D7185300DE5E3E /* StaticObstacle.m in Sources */,

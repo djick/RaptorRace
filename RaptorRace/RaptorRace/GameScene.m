@@ -140,7 +140,7 @@
         [[ScoreSingleton getInstance] startTimer];
         
         //Clouds
-        SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"cloud"];
+        SKTexture* cloudTexture = [SKTexture textureWithImageNamed:@"dark_cloud"];
         cloudTexture.filteringMode=SKTextureFilteringNearest;
         
         SKAction* moveCloudSprite = [SKAction moveByX:-cloudTexture.size.width*2 y:0 duration:0.3 * cloudTexture.size.width*2];
