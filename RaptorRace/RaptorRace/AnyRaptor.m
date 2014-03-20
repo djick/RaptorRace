@@ -16,6 +16,7 @@
     int collisions;
     SKAction* jumpSound;
     int _lifes;
+    CGMutablePathRef path;
 }
 
 
@@ -84,6 +85,21 @@
 - (void) setPhysicalAbilitiesOfRaptor
 {
     raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
+//    raptor.anchorPoint = CGPointMake(0.0, 1.0);
+//    
+//    path = CGPathCreateMutable();
+//    CGPathMoveToPoint(path, NULL, 0, 5);
+//    CGPathAddLineToPoint(path, NULL, 75, 0);
+//    CGPathAddLineToPoint(path, NULL, 81, 0);
+//    CGPathAddLineToPoint(path, NULL, 88, 7);
+//    CGPathAddLineToPoint(path, NULL, 88, 8);
+//    CGPathAddLineToPoint(path, NULL, 68, 26);
+//    CGPathAddLineToPoint(path, NULL, 48, 33);
+//    CGPathAddLineToPoint(path, NULL, 31, 44);
+//    CGPathCloseSubpath(path);
+//    
+//    
+//    raptor.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
     raptor.physicsBody.allowsRotation = NO;
     raptor.physicsBody.restitution = 0.0;
     raptor.physicsBody.dynamic = YES;

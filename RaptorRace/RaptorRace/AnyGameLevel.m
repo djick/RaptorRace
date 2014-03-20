@@ -45,8 +45,11 @@
         [self addChild:ground];
         [self addChild:background];
         [self addChild:scoreLabel];
-        [self addChild:obstacle];
+//        [self addChild:obstacle];
+//        [obstacle fireObstacle];
         [self addChild:stoneObstacle];
+        [stoneObstacle fireObstacle];
+
 
         
         
