@@ -45,6 +45,7 @@
 		AF2FEA5C18D9D72200A13B42 /* LargeLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2FEA5B18D9D72200A13B42 /* LargeLandscape.png */; };
 		AF7CFB9A18D9B069009111AB /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF7CFB9918D9B069009111AB /* jump.wav */; };
 		AF7CFB9C18D9B29C009111AB /* hurt.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF7CFB9B18D9B29C009111AB /* hurt.wav */; };
+		AFC5219C18DC884C00E31982 /* PlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC5219B18DC884C00E31982 /* PlayButton.png */; };
 		AFCFA34C18BF81F900092E6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34B18BF81F900092E6E /* Foundation.framework */; };
 		AFCFA34E18BF81F900092E6E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */; };
 		AFCFA35018BF81F900092E6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCFA34F18BF81F900092E6E /* UIKit.framework */; };
@@ -131,6 +132,7 @@
 		AF2FEA5B18D9D72200A13B42 /* LargeLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeLandscape.png; sourceTree = "<group>"; };
 		AF7CFB9918D9B069009111AB /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 		AF7CFB9B18D9B29C009111AB /* hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hurt.wav; sourceTree = "<group>"; };
+		AFC5219B18DC884C00E31982 /* PlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton.png; sourceTree = "<group>"; };
 		AFCFA34818BF81F900092E6E /* RaptorRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaptorRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCFA34B18BF81F900092E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -296,6 +298,9 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFC5219B18DC884C00E31982 /* PlayButton.png */,
+				71D5C8BB18DC8700003B497F /* DeadYellowRaptor.png */,
+				71D5C8B918DC7C78003B497F /* DeadYellowRaptor.png */,
 				AF12A0DC18DB0EB800272B3D /* PauseButton.png */,
 				90B15FB618DB141800B8DEED /* stone_obstacle.png */,
 				AF12A0D618D9F4E800272B3D /* dark_cloud.png */,
@@ -420,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC5219C18DC884C00E31982 /* PlayButton.png in Resources */,
 				9044F67A18D608950076B124 /* ground.atlas in Resources */,
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
 				719454C918DB3DE200B07E25 /* obstacleGreenRaptor.atlas in Resources */,
@@ -447,7 +453,6 @@
 				71A9DE1C18D0DA7500441272 /* newestSkeleton1.png in Resources */,
 				AF2FEA5C18D9D72200A13B42 /* LargeLandscape.png in Resources */,
 				7FDAC26418D06C7900EBFEF0 /* Ground.png in Resources */,
-				90293B4718D1D4EB00DDE637 /* sillyRaptor.atlas in Resources */,
 				AF12A0DD18DB0EB800272B3D /* PauseButton.png in Resources */,
 				AFCFA36118BF81F900092E6E /* Main.storyboard in Resources */,
 				71B12DAC18D6699500EA30D6 /* RRbg.png in Resources */,

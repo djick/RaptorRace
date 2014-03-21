@@ -55,7 +55,7 @@
     if ([node.name isEqualToString:@"newGameButton"]) {
         NSLog(@"New game button pressed");
         MainGameScene *game = [[MainGameScene alloc] initWithSize:self.size];
-        [self.view presentScene:game transition:[SKTransition doorsOpenHorizontalWithDuration:0.5]];
+        [self.view presentScene:game transition:[SKTransition doorsOpenVerticalWithDuration:0.5]];
     }
 }
 

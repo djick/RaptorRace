@@ -124,13 +124,13 @@
     //CGFloat velocity = raptor.physicsBody.velocity.dy;
     //Raptor allowed to jump?
     if ((self.allowedToJump && !self.inAir) || _jumpState == 0) {
-        [self forceApplied:(CGVectorMake(0.0, 90.0))];
+        [self forceApplied:(CGVectorMake(0.0, 100.0))];
         self.inAir = YES;
         _jumpState = 1;
         [self runAction:jumpSound];
     }
     else if (self.allowedToJump && self.inAir && _jumpState == 1) {
-        [self forceApplied:(CGVectorMake(0.0, 40.0))];
+        [self forceApplied:(CGVectorMake(0.0, 50.0))];
         self.inAir = YES;
         self.allowedToJump = NO;
         _jumpState = 2;
