@@ -9,7 +9,9 @@
 #import "RedRaptorObstacle.h"
 #import "Categories.h"
 
-@implementation RedRaptorObstacle
+@implementation RedRaptorObstacle{
+    NSString *raptorType;
+}
 
 -(id) init{
     self = [super init];
@@ -26,25 +28,40 @@
 
 -(NSString *)getAtlasName
 {
-    NSLog(@"name");
-    int index = arc4random() % 2;
-    if(index == 0)
-    {
-        NSLog(@"ObstacleRed");
-        return @"obstacleRedRaptor";
-    }
-    else
-    {
-        NSLog(@"ObstacleGreen");
-        return @"obstacleGreenRaptor";
-    }
+    NSLog(@"getAtlas");
+    return @"obstacleGreenRaptor";
+    
+//
+//    NSLog(@"name");
+//    int index = arc4random() % 2;
+//    if(index == 0)
+//    {
+//        NSLog(@"RED");
+//        raptorType = @"obstacleRedRaptor";
+//        return @"obstacleRedRaptor";
+//    }
+//    else
+//    {
+//        NSLog(@"GREEN");
+//        raptorType = @"obstacleGreenRaptor";
+//        return @"obstacleGreenRaptor";
+//    }
 }
     
 
 - (NSString *)getPictureNameFormat
 {
-    NSLog(@"nameFormat");
-    return @"obstacleRaptor%d";
+    return @"ObstacleRaptor%d";
+    
+    
+    
+//    if([raptorType isEqualToString:@"obstacleRedRaptor"]){
+//        return @"obstacleRaptor%d";
+//    }
+//    else{
+//        return @"ObstacleRaptor%d";
+//    }
+//
 }
 
 - (void)setPhysicsAbilitiesOfObstacle

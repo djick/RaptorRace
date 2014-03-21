@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "AnyObstacle.h"
 
 @interface AnyGameLevel : SKScene <SKPhysicsContactDelegate>
 
@@ -47,7 +48,7 @@
 /**
  Adds obstacles to the scene.
  */
-- (void) addObstacles;
+- (AnyObstacle*) addObstacles;
 
 /**
  Adds a raptor to the scene.

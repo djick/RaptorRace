@@ -17,10 +17,11 @@
 @implementation AnyGameLevel{
     // An array of frames used for the ground animation
     NSArray *groundMovingFrames;
-    
+    NSTimeInterval nextDinosaurSpawn;
     
     SKSpriteNode *ground;
     SKSpriteNode *background;
+    NSMutableArray *obstacleList;
     AnyObstacle *obstacle;
     AnyObstacle *stoneObstacle;
     AnyRaptor *raptor;
@@ -38,6 +39,7 @@
     if (self = [super initWithSize:size])
     {
         background = [[SKSpriteNode alloc] init];
+        obstacleList = [[NSMutableArray alloc] init];
         [self makeGameLevel];
         //Physics of the world/scene
         //self.physicsWorld.contactDelegate = self;
@@ -45,16 +47,24 @@
         [self addChild:ground];
         [self addChild:background];
         [self addChild:scoreLabel];
+//        obstacle = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+//        [obstacle setPosition:CGPointMake(self.frame.size.width-obstacle.nodeWidth, ground.texture.size.height/4+obstacle.nodeHeight)];
 //        [self addChild:obstacle];
 //        [obstacle fireObstacle];
-        [self addChild:stoneObstacle];
-        [stoneObstacle fireObstacle];
+        //[self addChild:stoneObstacle];
+        //[stoneObstacle fireObstacle];
+        
+        nextDinosaurSpawn = 0.0;
 
 
         
         
     }
     return self;
+}
+
+- (float)randomValueBetween:(float)low andValue:(float)high {
+    return (((float) arc4random() / 0xFFFFFFFFu) * (high - low)) + low;
 }
 
 - (void)update:(NSTimeInterval)currentTime
@@ -67,6 +77,17 @@
     
     // Raptor allowed to jump?
     [raptor updateAllowedToJump];
+    
+    float randSecs = [self randomValueBetween:2.0
+                                     andValue:3.0];
+    
+    if(currentTime > nextDinosaurSpawn){
+        NSLog(@"SOAWNING OBSTACLE");
+        [self spawningObstacles];
+        nextDinosaurSpawn = randSecs + currentTime;
+    }
+    
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -199,16 +220,25 @@
 }
 
 
-- (void) addObstacles
+- (AnyObstacle*) addObstacles
 {
-    //NSLog(@"%f,%f",obstacle.nodeSize.width,obstacle.nodeSize.height);
-    obstacle = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
-    NSLog(@" obstacle height %f", [obstacle childNodeWithName:@"obs"].frame.size.width);
-    [obstacle setPosition:CGPointMake(self.frame.size.width-obstacle.nodeWidth, ground.texture.size.height/4+obstacle.nodeHeight)];
-
-    stoneObstacle = [[StoneObstacle alloc] initWithGroundHeight:ground.texture.size.height];
-    [stoneObstacle setPosition:CGPointMake(self.frame.size.width-stoneObstacle.nodeWidth*1.5, ground.texture.size.height + stoneObstacle.height*0.90)];
+    int x = arc4random() % 2;
+    if(x==0){
+        NSLog(@"MAKES A RAPTOR");
+        AnyObstacle *obstacleRand = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+        [obstacleRand setPosition:CGPointMake(self.frame.size.width-obstacleRand.nodeWidth, ground.texture.size.height/4+obstacleRand.nodeHeight)];
+        return obstacleRand;
+    }
+    else{
+        AnyObstacle *stoneObs = [[StoneObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+        [stoneObs setPosition:CGPointMake(self.frame.size.width-stoneObs.nodeWidth*1.5, ground.texture.size.height + stoneObs.height*0.90)];
+        return stoneObs;
+    }
+    return  nil;
+ 
+    //[obstacleList addObject:stoneObstacle];
 }
+
 
 - (void) addRaptor
 {
@@ -284,6 +314,16 @@
     //    [NSException raise:NSInternalInconsistencyException
     //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return @"Courier-Bold";
+}
+
+- (void) spawningObstacles{
+    obstacle = [self addObstacles];
+    [self addChild:obstacle];
+    [obstacle fireObstacle];
+//    obs.hidden = NO;
+    
+    
+    
 }
 
 @end
