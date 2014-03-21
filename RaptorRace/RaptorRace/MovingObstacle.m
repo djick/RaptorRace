@@ -26,6 +26,7 @@
 
 - (SKTexture *) getTexture
 {
+    NSLog(@"getTexture Moving obstacle");
     return [self createAnimationTextureWithAtlasNamed:[self getAtlasName] AndPictureNameFormat:[self getPictureNameFormat]];
 }
 
@@ -50,8 +51,6 @@
 
 - (void) animateObstacle
 {
-    NSLog(@"CALL ANIMATE FRAME!");
-    NSLog(@"animates frames");
     [[super obstacle] runAction:[SKAction repeatActionForever:
                        [SKAction animateWithTextures:objectAnimatedFrames
                                         timePerFrame:0.1f

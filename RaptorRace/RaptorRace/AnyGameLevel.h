@@ -7,8 +7,35 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "AnyObstacle.h"
 
-@interface AnyGameLevel : SKScene <SKPhysicsContactDelegate>
+#import "ScoreSingleton.h"
+#import "Categories.h"
+#import "AnyRaptor.h"
+#import "BRaptor.h"
+#import "RedRaptorObstacle.h"
+#import "GreenRaptorObstacle.h"
+#import "StoneObstacle.h"
+#import "Pause.h"
+
+@interface AnyGameLevel : SKScene <SKPhysicsContactDelegate>{
+    // An array of frames used for the ground animation
+    NSArray *groundMovingFrames;
+    NSTimeInterval nextDinosaurSpawn;
+    
+    SKSpriteNode *ground;
+    SKSpriteNode *background;
+    NSMutableArray *obstacleList;
+    AnyObstacle *obstacle;
+    AnyObstacle *stoneObstacle;
+    AnyRaptor *raptor;
+    Pause* pausebtn;
+    NSTimeInterval pausedAtTime;
+    
+    ScoreSingleton * scoreLabel;
+    
+    NSTimer* timer;
+}
 
 /**
  Makes the gamelevel with the defined game level methods.
@@ -67,6 +94,11 @@
 - (NSString *) getGroundAtlasName;
 
 /**
+ Gets the vector of gravity used for the physics engine
+ @return Returns a vector which represents the gravity applied to the objects
+ */
+- (CGVector) getGravityVector;
+/**
  Gets the formate of the names of the pictures in the atlas.
  
  @return Returns the name format of the pictures in the atas.
@@ -107,5 +139,13 @@ Gets the name of the picture that should be used for the clouds.
  @return Retruns a string with the name of the font to be used.
  */
 - (NSString *) getScoreCounterFontName;
+
+/**
+ Gets the image name of the pause button
+ 
+ @return Returns string with image name of pause button to be used
+ */
+-(NSString*) getPauseButton;
+
 
 @end

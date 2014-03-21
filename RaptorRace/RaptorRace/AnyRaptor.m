@@ -84,7 +84,7 @@
 
 - (void) setPhysicalAbilitiesOfRaptor
 {
-    raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
+    raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(raptor.frame.size.width*0.7, raptor.frame.size.height)];
 //    raptor.anchorPoint = CGPointMake(0.0, 1.0);
 //    
 //    path = CGPathCreateMutable();

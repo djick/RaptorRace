@@ -5,56 +5,33 @@
 //  Created by Martin Solheim on 16/03/14.
 //  Copyright (c) 2014 iOne. All rights reserved.
 //
-
 #import "AnyGameLevel.h"
-#import "ScoreSingleton.h"
-#import "Categories.h"
-#import "AnyRaptor.h"
-#import "BRaptor.h"
-#import "RedRaptorObstacle.h"
-#import "StoneObstacle.h"
-
-@implementation AnyGameLevel{
-    // An array of frames used for the ground animation
-    NSArray *groundMovingFrames;
-    
-    
-    SKSpriteNode *ground;
-    SKSpriteNode *background;
-    AnyObstacle *obstacle;
-    AnyObstacle *stoneObstacle;
-    AnyRaptor *raptor;
-    
-    ScoreSingleton * scoreLabel;
-    
-    NSTimer* timer;
-}
 
 
-
-
+@implementation AnyGameLevel
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
     {
         background = [[SKSpriteNode alloc] init];
+        obstacleList = [[NSMutableArray alloc] init];
         [self makeGameLevel];
-        //Physics of the world/scene
-        //self.physicsWorld.contactDelegate = self;
         NSLog(@"GameLevel initialized");
         [self addChild:ground];
         [self addChild:background];
         [self addChild:scoreLabel];
-//        [self addChild:obstacle];
-//        [obstacle fireObstacle];
-        [self addChild:stoneObstacle];
-        [stoneObstacle fireObstacle];
+        [self addChild:pausebtn];
+        nextDinosaurSpawn = 0.0;
 
 
         
         
     }
     return self;
+}
+
+- (float)randomValueBetween:(float)low andValue:(float)high {
+    return (((float) arc4random() / 0xFFFFFFFFu) * (high - low)) + low;
 }
 
 - (void)update:(NSTimeInterval)currentTime
@@ -67,6 +44,31 @@
     
     // Raptor allowed to jump?
     [raptor updateAllowedToJump];
+    
+    float randSecs = [self randomValueBetween:1.0
+                                     andValue:2.0];
+    if(pausebtn.isPaused){
+        pausedAtTime = currentTime + randSecs;
+    }
+    
+    if(currentTime > nextDinosaurSpawn && !pausebtn.isPaused){
+        if(pausedAtTime >0){
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(pausedAtTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSLog(@"SOAWNING OBSTACLE");
+                [self addObstacles];
+                nextDinosaurSpawn = randSecs + currentTime;
+            });
+            pausedAtTime = 0.0;
+        }
+        else{
+            NSLog(@"SOAWNING OBSTACLE");
+            [self addObstacles];
+            nextDinosaurSpawn = randSecs + currentTime;
+        }
+        
+    }
+    
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -83,8 +85,9 @@
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
+    [self addPauseButtonWithImageNamed:[self getPauseButton]];
     [self addRaptor];
-    [self addObstacles];
+    //[self addObstacles];
 
     
 }
@@ -144,14 +147,6 @@
     }
 }
 
-/**
- A helper-method for addScoreCounter... increments the timer.
- */
-- (void)countUp
-{
-    [[ScoreSingleton getInstance] updateScore:5];
-}
-
 
 - (void) addScoreCounterWithColor:(UIColor *)color
                      AndFontNamed:(NSString *)fontName
@@ -161,7 +156,16 @@
                              AndFontName:fontName];
     scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+    [[ScoreSingleton getInstance] startTimer];
+}
+
+- (void) addPauseButtonWithImageNamed:(NSString*)name{
+    pausebtn = [[Pause alloc] initWithImageNamed:name];
+    [pausebtn setScale:0.7];
+    pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2.5));
+    pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
+                            .size];
+    pausebtn.physicsBody.dynamic = NO;
 }
 
 - (void) createGroundWithAtlasNamed:(NSString *)name
@@ -201,24 +205,34 @@
 
 - (void) addObstacles
 {
-    //NSLog(@"%f,%f",obstacle.nodeSize.width,obstacle.nodeSize.height);
-    obstacle = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
-    NSLog(@" obstacle height %f", [obstacle childNodeWithName:@"obs"].frame.size.width);
-    [obstacle setPosition:CGPointMake(self.frame.size.width-obstacle.nodeWidth, ground.texture.size.height/4+obstacle.nodeHeight)];
-
-    stoneObstacle = [[StoneObstacle alloc] initWithGroundHeight:ground.texture.size.height];
-    [stoneObstacle setPosition:CGPointMake(self.frame.size.width-stoneObstacle.nodeWidth*1.5, ground.texture.size.height + stoneObstacle.height*0.90)];
+    int x = arc4random() % 3;
+    if(x==0){
+        AnyObstacle *obstacleRand = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+        [obstacleRand setPosition:CGPointMake(self.frame.size.width-obstacleRand.size.width, ground.texture.size.height/4+obstacleRand.nodeHeight)];
+        [self addChild:obstacleRand];
+        [obstacleRand fireObstacle];
+    }
+    else if (x == 1){
+        AnyObstacle *obstacleRand = [[GreenRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+        [obstacleRand setPosition:CGPointMake(self.frame.size.width-obstacleRand.size.width, ground.texture.size.height/4+obstacleRand.nodeHeight)];
+        [self addChild:obstacleRand];
+        [obstacleRand fireObstacle];
+    }
+    else{
+        AnyObstacle *stoneObs = [[StoneObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+        [stoneObs setPosition:CGPointMake(self.frame.size.width-stoneObs.nodeWidth, ground.texture.size.height + stoneObs.height*0.90)];
+        [self addChild:stoneObs];
+        [stoneObs fireObstacle];
+        }
+ 
+    //[obstacleList addObject:stoneObstacle];
 }
+
 
 - (void) addRaptor
 {
     raptor = [[BRaptor alloc] init];
     raptor.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame));
-    //raptor.physicsBody.dynamic = YES;
-    //raptor.physicsBody.allowsRotation = NO;
-    /*raptor.physicsBody.categoryBitMask = dinoCategory;
-    raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
-    raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;*/
     [self addChild:raptor];
 }
 
@@ -226,64 +240,85 @@
 {
     //Physics of the world/scene
     [self.physicsWorld setContactDelegate:self];
-    [self.physicsWorld setGravity:CGVectorMake(0, -7.0)];
+    
+    [self.physicsWorld setGravity:[self getGravityVector]];
 }
 
 // The following methods has to be implemented by sub-class, or exception will be raised.
 
 - (NSString *) getGroundAtlasName
 {
-//    [NSException raise:NSInternalInconsistencyException
-//                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return @"ground";
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
+}
+
+- (CGVector) getGravityVector
+{
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return CGVectorMake(0, 0);
 }
 
 - (NSString* ) getGroundPictureNameFormat
 {
-//    [NSException raise:NSInternalInconsistencyException
-//                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return @"groun%d";
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
 }
 
 - (NSString *) getBackgroundPictureName
 {
-    //    [NSException raise:NSInternalInconsistencyException
-    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return @"landscape";
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
 }
 
 - (NSString *) getCloudPictureName
 {
-    //    [NSException raise:NSInternalInconsistencyException
-    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return @"cloud";
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
 }
 
 - (SKColor *) getBackgroundColor
 {
-    //    [NSException raise:NSInternalInconsistencyException
-    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return [SKColor colorWithRed:113.0/255.0
-                           green:197.0/255.0
-                            blue:207.0/255.0
-                           alpha:1.0];
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
 }
 
 - (SKColor *) getScoreCounterColor
 {
-    //    [NSException raise:NSInternalInconsistencyException
-    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return [SKColor colorWithRed:251.0/255.0
-                           green:127.0/255.0
-                            blue:108.0/255.0
-                           alpha:1.0];
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
 }
 
 - (NSString *) getScoreCounterFontName
 {
-    //    [NSException raise:NSInternalInconsistencyException
-    //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return @"Courier-Bold";
+    [NSException raise:NSInternalInconsistencyException
+                    format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
+}
+
+- (NSString *) getPauseButton
+{
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
+}
+
+- (void) spawningObstacles{
+//    AnyObstacle *obs = [self addObstacles];
+//    [self addChild:obs];
+//    NSLog(@"added DINO");
+//    
+//    [obs fireObstacle];
+////    obs.hidden = NO;
+//    
+    
+    
 }
 
 @end
