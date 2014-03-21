@@ -106,6 +106,8 @@
     raptor.physicsBody.categoryBitMask = dinoCategory;
     raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
     raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
+    raptor.xScale = 0.8;
+    raptor.yScale = 0.8;
 }
 
 - (void) forceApplied:(CGVector) force {
