@@ -33,7 +33,7 @@
 
 - (NSString *) getCloudPictureName
 {
-    return @"cloud";
+    return @"dark_cloud";
 }
 
 - (SKColor *) getBackgroundColor
@@ -46,9 +46,9 @@
 
 - (SKColor *) getScoreCounterColor
 {
-    return [SKColor colorWithRed:251.0/255.0
-                           green:127.0/255.0
-                            blue:108.0/255.0
+    return [SKColor colorWithRed:255.0/255.0
+                           green:255.0/255.0
+                            blue:255.0/255.0
                            alpha:1.0];
 }
 
@@ -70,7 +70,7 @@
             //gameover
             [[ScoreSingleton getInstance] stopTimer];
             [scoreLabel removeFromParent];
-            SKTransition *reveal = [SKTransition crossFadeWithDuration:1.0];
+            SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
             GameOverScene *gameover = [[GameOverScene alloc] initWithSize:self.size];
             [self.view presentScene:gameover transition:reveal];
             
@@ -92,7 +92,7 @@
         if (collisions==2) {
             //gameover
             [scoreLabel removeFromParent];
-            SKTransition *reveal = [SKTransition crossFadeWithDuration:1.0];
+            SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
             GameOverScene *gameover = [[GameOverScene alloc] initWithSize:self.size];
             [self.view presentScene:gameover transition:reveal];
             [[ScoreSingleton getInstance] stopTimer];

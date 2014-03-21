@@ -23,12 +23,14 @@
         self.isPaused = NO;
         self.scene.paused = NO;
         self.parent.scene.paused = NO;
+        [self setTexture:[SKTexture textureWithImageNamed:@"PauseButton"]];
         [[ScoreSingleton getInstance] resumeTimer];
     }
     else{
         self.isPaused = YES;
         self.scene.paused = YES;
         self.parent.scene.paused = YES;
+        [self setTexture:[SKTexture textureWithImageNamed:@"PlayButton"]];
         [[ScoreSingleton getInstance] pauseTimer];
     }
 }
