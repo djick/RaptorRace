@@ -22,6 +22,7 @@
 		71D5C8B618DC588A003B497F /* gr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B518DC588A003B497F /* gr.atlas */; };
 		71D5C8B818DC7C3A003B497F /* raptorYellow.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B718DC7C3A003B497F /* raptorYellow.atlas */; };
 		71D5C8BA18DC7C78003B497F /* DeadYellowRaptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B918DC7C78003B497F /* DeadYellowRaptor.png */; };
+		71D5C8BC18DC8700003B497F /* DeadYellowRaptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8BB18DC8700003B497F /* DeadYellowRaptor.png */; };
 		7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036A918D705AD00010347 /* ScoreSingleton.m */; };
 		7F3036AD18D70DCF00010347 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036AC18D70DCF00010347 /* Pause.m */; };
 		7F5F71A418DC6A9D00389FB8 /* GreenRaptorObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F71A318DC6A9D00389FB8 /* GreenRaptorObstacle.m */; };
@@ -92,6 +93,7 @@
 		71D5C8B518DC588A003B497F /* gr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = gr.atlas; sourceTree = "<group>"; };
 		71D5C8B718DC7C3A003B497F /* raptorYellow.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptorYellow.atlas; sourceTree = "<group>"; };
 		71D5C8B918DC7C78003B497F /* DeadYellowRaptor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeadYellowRaptor.png; sourceTree = "<group>"; };
+		71D5C8BB18DC8700003B497F /* DeadYellowRaptor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeadYellowRaptor.png; sourceTree = "<group>"; };
 		7F3036A818D705AD00010347 /* ScoreSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSingleton.h; sourceTree = "<group>"; };
 		7F3036A918D705AD00010347 /* ScoreSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSingleton.m; sourceTree = "<group>"; };
 		7F3036AB18D70DCF00010347 /* Pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pause.h; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				9044F67A18D608950076B124 /* ground.atlas in Resources */,
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
 				719454C918DB3DE200B07E25 /* obstacleGreenRaptor.atlas in Resources */,
+				71D5C8BC18DC8700003B497F /* DeadYellowRaptor.png in Resources */,
 				71D5C8BA18DC7C78003B497F /* DeadYellowRaptor.png in Resources */,
 				71B12DA718D6669600EA30D6 /* newgame.png in Resources */,
 				AF7CFB9A18D9B069009111AB /* jump.wav in Resources */,
