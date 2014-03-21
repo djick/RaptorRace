@@ -9,7 +9,29 @@
 #import <SpriteKit/SpriteKit.h>
 #import "AnyObstacle.h"
 
-@interface AnyGameLevel : SKScene <SKPhysicsContactDelegate>
+#import "ScoreSingleton.h"
+#import "Categories.h"
+#import "AnyRaptor.h"
+#import "BRaptor.h"
+#import "RedRaptorObstacle.h"
+#import "StoneObstacle.h"
+
+@interface AnyGameLevel : SKScene <SKPhysicsContactDelegate>{
+    // An array of frames used for the ground animation
+    NSArray *groundMovingFrames;
+    NSTimeInterval nextDinosaurSpawn;
+    
+    SKSpriteNode *ground;
+    SKSpriteNode *background;
+    NSMutableArray *obstacleList;
+    AnyObstacle *obstacle;
+    AnyObstacle *stoneObstacle;
+    AnyRaptor *raptor;
+    
+    ScoreSingleton * scoreLabel;
+    
+    NSTimer* timer;
+}
 
 /**
  Makes the gamelevel with the defined game level methods.
@@ -48,7 +70,7 @@
 /**
  Adds obstacles to the scene.
  */
-- (AnyObstacle*) addObstacles;
+- (void) addObstacles;
 
 /**
  Adds a raptor to the scene.

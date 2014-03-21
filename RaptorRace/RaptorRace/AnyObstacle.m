@@ -57,7 +57,7 @@
 - (void) fireObstacle {
     //    [NSException raise:NSInternalInconsistencyException
     //                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    [obstacle removeAllActions];
+    //[obstacle removeAllActions];
     SKAction *moveAction = [SKAction moveTo:CGPointMake(-1000, 0) duration: 8];
     SKAction *doneAction = [SKAction runBlock:(dispatch_block_t)^() {
         NSLog(@"Animation Completed");
