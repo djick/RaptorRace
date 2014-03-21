@@ -44,8 +44,8 @@
     // Raptor allowed to jump?
     [raptor updateAllowedToJump];
     
-    float randSecs = [self randomValueBetween:2.0
-                                     andValue:3.0];
+    float randSecs = [self randomValueBetween:1.0
+                                     andValue:2.0];
     
     if(currentTime > nextDinosaurSpawn){
         NSLog(@"SOAWNING OBSTACLE");
@@ -217,7 +217,7 @@
 {
     //Physics of the world/scene
     [self.physicsWorld setContactDelegate:self];
-    [self.physicsWorld setGravity:CGVectorMake(0, -7.0)];
+    [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
 }
 
 // The following methods has to be implemented by sub-class, or exception will be raised.
