@@ -20,6 +20,7 @@
 		71B12DA518D6652900EA30D6 /* highscore.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA318D6652900EA30D6 /* highscore.png */; };
 		71B12DA718D6669600EA30D6 /* newgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA618D6669600EA30D6 /* newgame.png */; };
 		71B12DAC18D6699500EA30D6 /* RRbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DAB18D6699500EA30D6 /* RRbg.png */; };
+		71D5C8B618DC588A003B497F /* gr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B518DC588A003B497F /* gr.atlas */; };
 		7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036A918D705AD00010347 /* ScoreSingleton.m */; };
 		7F3036AD18D70DCF00010347 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036AC18D70DCF00010347 /* Pause.m */; };
 		7F6E66DF18DC45CE0098ECAB /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6E66DE18DC45CE0098ECAB /* MainGameScene.m */; };
@@ -95,6 +96,7 @@
 		71B12DA318D6652900EA30D6 /* highscore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highscore.png; sourceTree = "<group>"; };
 		71B12DA618D6669600EA30D6 /* newgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newgame.png; sourceTree = "<group>"; };
 		71B12DAB18D6699500EA30D6 /* RRbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RRbg.png; sourceTree = "<group>"; };
+		71D5C8B518DC588A003B497F /* gr.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = gr.atlas; sourceTree = "<group>"; };
 		7F3036A818D705AD00010347 /* ScoreSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSingleton.h; sourceTree = "<group>"; };
 		7F3036A918D705AD00010347 /* ScoreSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSingleton.m; sourceTree = "<group>"; };
 		7F3036AB18D70DCF00010347 /* Pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pause.h; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				7147B48E18CF0A570083C542 /* raptor.atlas */,
 				90293B4618D1D4EB00DDE637 /* sillyRaptor.atlas */,
 				AFCFA35C18BF81F900092E6E /* AppDelegate.h */,
+				71D5C8B518DC588A003B497F /* gr.atlas */,
 				AFCFA35D18BF81F900092E6E /* AppDelegate.m */,
 				AFCFA35F18BF81F900092E6E /* Main.storyboard */,
 				AFCFA36A18BF81F900092E6E /* Images.xcassets */,
@@ -451,6 +454,7 @@
 				71B12DA518D6652900EA30D6 /* highscore.png in Resources */,
 				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
 				AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */,
+				71D5C8B618DC588A003B497F /* gr.atlas in Resources */,
 				AFCFA35818BF81F900092E6E /* InfoPlist.strings in Resources */,
 				AFE9FF4818D1165C00835561 /* cloud.png in Resources */,
 				AF7CFB9C18D9B29C009111AB /* hurt.wav in Resources */,

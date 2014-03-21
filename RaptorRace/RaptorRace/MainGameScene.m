@@ -14,12 +14,12 @@
 
 - (NSString *) getGroundAtlasName
 {
-    return @"ground";
+    return @"gr";
 }
 
 - (NSString* ) getGroundPictureNameFormat
 {
-    return @"groun%d";
+    return @"gr%d";
 }
 
 - (NSString *) getBackgroundPictureName
@@ -51,6 +51,10 @@
 - (NSString *) getScoreCounterFontName
 {
     return @"Courier-Bold";
+}
+
+- (NSString *)getPauseButton{
+    return @"PauseButton";
 }
 
 

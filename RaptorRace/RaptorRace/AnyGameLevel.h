@@ -15,6 +15,7 @@
 #import "BRaptor.h"
 #import "RedRaptorObstacle.h"
 #import "StoneObstacle.h"
+#import "Pause.h"
 
 @interface AnyGameLevel : SKScene <SKPhysicsContactDelegate>{
     // An array of frames used for the ground animation
@@ -27,6 +28,8 @@
     AnyObstacle *obstacle;
     AnyObstacle *stoneObstacle;
     AnyRaptor *raptor;
+    Pause* pausebtn;
+    NSTimeInterval pausedAtTime;
     
     ScoreSingleton * scoreLabel;
     
@@ -130,5 +133,13 @@ Gets the name of the picture that should be used for the clouds.
  @return Retruns a string with the name of the font to be used.
  */
 - (NSString *) getScoreCounterFontName;
+
+/**
+ Gets the image name of the pause button
+ 
+ @return Returns string with image name of pause button to be used
+ */
+-(NSString*) getPauseButton;
+
 
 @end

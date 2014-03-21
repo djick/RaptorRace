@@ -20,6 +20,7 @@
         [self addChild:ground];
         [self addChild:background];
         [self addChild:scoreLabel];
+        [self addChild:pausebtn];
         nextDinosaurSpawn = 0.0;
 
 
@@ -46,11 +47,25 @@
     
     float randSecs = [self randomValueBetween:1.0
                                      andValue:2.0];
+    if(pausebtn.isPaused){
+        pausedAtTime = currentTime + randSecs;
+    }
     
-    if(currentTime > nextDinosaurSpawn){
-        NSLog(@"SOAWNING OBSTACLE");
-        [self addObstacles];
-        nextDinosaurSpawn = randSecs + currentTime;
+    if(currentTime > nextDinosaurSpawn && !pausebtn.isPaused){
+        if(pausedAtTime >0){
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(pausedAtTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSLog(@"SOAWNING OBSTACLE");
+                [self addObstacles];
+                nextDinosaurSpawn = randSecs + currentTime;
+            });
+            pausedAtTime = 0.0;
+        }
+        else{
+            NSLog(@"SOAWNING OBSTACLE");
+            [self addObstacles];
+            nextDinosaurSpawn = randSecs + currentTime;
+        }
+        
     }
     
     
@@ -70,6 +85,7 @@
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
+    [self addPauseButtonWithImageNamed:[self getPauseButton]];
     [self addRaptor];
     //[self addObstacles];
 
@@ -131,14 +147,6 @@
     }
 }
 
-/**
- A helper-method for addScoreCounter... increments the timer.
- */
-- (void)countUp
-{
-    [[ScoreSingleton getInstance] updateScore:5];
-}
-
 
 - (void) addScoreCounterWithColor:(UIColor *)color
                      AndFontNamed:(NSString *)fontName
@@ -148,7 +156,16 @@
                              AndFontName:fontName];
     scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+    [[ScoreSingleton getInstance] startTimer];
+}
+
+- (void) addPauseButtonWithImageNamed:(NSString*)name{
+    pausebtn = [[Pause alloc] initWithImageNamed:name];
+    [pausebtn setScale:0.7];
+    pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2.5));
+    pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
+                            .size];
+    pausebtn.physicsBody.dynamic = NO;
 }
 
 - (void) createGroundWithAtlasNamed:(NSString *)name
@@ -268,6 +285,13 @@
 {
     [NSException raise:NSInternalInconsistencyException
                     format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return NULL;
+}
+
+- (NSString *) getPauseButton
+{
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return NULL;
 }
 

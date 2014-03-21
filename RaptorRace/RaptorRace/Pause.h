@@ -11,5 +11,5 @@
 
 
 @interface Pause : SKSpriteNode
-
+@property BOOL isPaused;
 @end
