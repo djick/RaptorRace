@@ -90,7 +90,9 @@
         if (collisions==2) {
             //gameover
             [scoreLabel removeFromParent];
-            [self.view presentScene:[[GameOverScene alloc] initWithSize:self.size]];
+            SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:5.0];
+            GameOverScene *gameover = [[GameOverScene alloc] initWithSize:self.size];
+            [self.view presentScene:gameover transition:reveal];
             [[ScoreSingleton getInstance] stopTimer];
         }
         if (raptor.undead == YES) {
