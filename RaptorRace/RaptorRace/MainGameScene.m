@@ -103,6 +103,11 @@
         else{
             collisions=collisions+1;
             [raptor looseLife];
+            [self setBackgroundColor:[SKColor colorWithRed:((collisions*80)+113.0)/255.0
+                                                     green:(197.0 - (collisions*40))/255.0
+                                                      blue:(207.0- (collisions*80))/255.0
+                                                     alpha:1.0]];
+            
         }
     }
 }
