@@ -14,6 +14,7 @@
 #import "AnyRaptor.h"
 #import "BRaptor.h"
 #import "RedRaptorObstacle.h"
+#import "GreenRaptorObstacle.h"
 #import "StoneObstacle.h"
 #import "Pause.h"
 
@@ -92,6 +93,11 @@
  */
 - (NSString *) getGroundAtlasName;
 
+/**
+ Gets the vector of gravity used for the physics engine
+ @return Returns a vector which represents the gravity applied to the objects
+ */
+- (CGVector) getGravityVector;
 /**
  Gets the formate of the names of the pictures in the atlas.
  

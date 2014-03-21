@@ -205,9 +205,15 @@
 
 - (void) addObstacles
 {
-    int x = arc4random() % 2;
+    int x = arc4random() % 3;
     if(x==0){
         AnyObstacle *obstacleRand = [[RedRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
+        [obstacleRand setPosition:CGPointMake(self.frame.size.width-obstacleRand.size.width, ground.texture.size.height/4+obstacleRand.nodeHeight)];
+        [self addChild:obstacleRand];
+        [obstacleRand fireObstacle];
+    }
+    else if (x == 1){
+        AnyObstacle *obstacleRand = [[GreenRaptorObstacle alloc] initWithGroundHeight:ground.texture.size.height];
         [obstacleRand setPosition:CGPointMake(self.frame.size.width-obstacleRand.size.width, ground.texture.size.height/4+obstacleRand.nodeHeight)];
         [self addChild:obstacleRand];
         [obstacleRand fireObstacle];
@@ -234,7 +240,8 @@
 {
     //Physics of the world/scene
     [self.physicsWorld setContactDelegate:self];
-    [self.physicsWorld setGravity:CGVectorMake(0, -9.81)];
+    
+    [self.physicsWorld setGravity:[self getGravityVector]];
 }
 
 // The following methods has to be implemented by sub-class, or exception will be raised.
@@ -244,6 +251,13 @@
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
     return NULL;
+}
+
+- (CGVector) getGravityVector
+{
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+    return CGVectorMake(0, 0);
 }
 
 - (NSString* ) getGroundPictureNameFormat

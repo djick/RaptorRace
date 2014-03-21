@@ -1,16 +1,16 @@
+////
+////  GameScene.h
+////  RaptorRace
+////
+////  Created by Martin Solheim on 11/03/14.
+////  Copyright (c) 2014 iOne. All rights reserved.
+////
 //
-//  GameScene.h
-//  RaptorRace
+//#import <SpriteKit/SpriteKit.h>
 //
-//  Created by Martin Solheim on 11/03/14.
-//  Copyright (c) 2014 iOne. All rights reserved.
 //
-
-#import <SpriteKit/SpriteKit.h>
-#import "Obstacles.h"
-
-@interface GameScene : SKScene <SKPhysicsContactDelegate> 
-@property(nonatomic,readonly) SKLabelNode *scoreLabel;
-//@property(nonatomic) CGFloat score;
-@property (nonatomic) Obstacles* obs;
-@end
+//@interface GameScene : SKScene <SKPhysicsContactDelegate> 
+//@property(nonatomic,readonly) SKLabelNode *scoreLabel;
+////@property(nonatomic) CGFloat score;
+//@property (nonatomic) Obstacles* obs;
+//@end
