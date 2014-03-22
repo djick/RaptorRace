@@ -80,5 +80,9 @@
 */
 -(void)looseLife;
 
+/**
+ Return current lives
+ */
+-(int)getLifes;
 
 @end

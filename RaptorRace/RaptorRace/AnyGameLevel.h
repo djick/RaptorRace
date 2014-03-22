@@ -33,6 +33,8 @@
     NSTimeInterval pausedAtTime;
     
     ScoreSingleton * scoreLabel;
+    SKLabelNode * highscore;
+    SKLabelNode* lifeLabel;
     
     NSTimer* timer;
 }
@@ -62,6 +64,12 @@
  */
 - (void) addScoreCounterWithColor:(SKColor *)color
                      AndFontNamed:(NSString *)fontName;
+
+/**
+ Adds the life label to scene
+ */
+- (void) addLifeCounterWithColor:(UIColor *)color
+                    AndFontNamed:(NSString *)fontName;
 
 /**
  Creats the ground for the scene.

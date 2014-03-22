@@ -187,5 +187,9 @@
     }];
 }
 
+-(int)getLifes {
+    return _lifes;
+}
+
 
 @end
