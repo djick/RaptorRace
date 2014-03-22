@@ -21,6 +21,7 @@
         [self addChild:background];
         [self addChild:scoreLabel];
         [self addChild:pausebtn];
+        [self addChild:highscore];
         nextDinosaurSpawn = 0.0;
 
 
@@ -155,6 +156,26 @@
     [scoreLabel customSingletonWithColor:color
                              AndFontName:fontName];
     scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
+    
+    highscore = [[SKLabelNode alloc] initWithFontNamed:fontName];
+    highscore.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/3));
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"] != nil){
+        NSNumber *n =[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
+        NSString *str = [NSString stringWithFormat:@"Highscore: %d",[n intValue]];
+        [highscore setText:str];
+        [highscore setFontName:@"Courier-Bold"];
+        highscore.fontSize = 16;
+        //highscore.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
+
+    }
+    else{
+        NSString *str = [NSString stringWithFormat:@"Highscore: 0"];
+        [highscore setText:str];
+        [highscore setFontName:@"Courier-Bold"];
+        highscore.fontSize = 16;
+        //highscore.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
+
+    }
     
     [[ScoreSingleton getInstance] startTimer];
 }
