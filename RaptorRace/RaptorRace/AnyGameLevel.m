@@ -220,7 +220,7 @@
     }
     else{
         AnyObstacle *stoneObs = [[StoneObstacle alloc] initWithGroundHeight:ground.texture.size.height];
-        [stoneObs setPosition:CGPointMake(self.frame.size.width-stoneObs.nodeWidth, ground.texture.size.height + stoneObs.height*0.90)];
+        [stoneObs setPosition:CGPointMake(self.frame.size.width-stoneObs.size.width, ground.texture.size.height + stoneObs.height*0.90)];
         [self addChild:stoneObs];
         [stoneObs fireObstacle];
         }

@@ -8,6 +8,7 @@
 
 #import "MenuScene.h"
 #import "MainGameScene.h"
+#import "BRaptor.h"
 
 @implementation MenuScene
 -(id)initWithSize:(CGSize)size
@@ -20,6 +21,11 @@
         [self addChild:sn];
         [self addChild: [self newGameButton]];
         [self addChild:[self highscoreButton]];
+        
+        AnyObstacle *obstacle = [[GreenRaptorObstacle alloc] init];
+        obstacle.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame)*0.6);
+        obstacle.physicsBody.dynamic = NO;
+        [self addChild:obstacle];
     }
     return self;
 }
