@@ -80,5 +80,10 @@
 */
 -(void)looseLife;
 
+/*
+ Raptor looses life, but does not move backwards on screen
+ */
+-(void)makeInvisible;
+
 
 @end

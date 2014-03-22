@@ -9,10 +9,17 @@
 
 
 @implementation AnyGameLevel
+
+CGFloat currScore;
+int previousCollision;
+
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
     {
+        //livesGiven=0;
+        collisionHappenedAt=0;
+        previousCollision=0;
         background = [[SKSpriteNode alloc] init];
         obstacleList = [[NSMutableArray alloc] init];
         [self makeGameLevel];
@@ -42,7 +49,14 @@
         displayedScore = [[ScoreSingleton getInstance] getScore];
     }
     //Add life to raptor?
+    currScore = [[ScoreSingleton getInstance]getScore];
     
+    if (currScore >= collisionHappenedAt+300 && collisionHappenedAt != previousCollision) {
+        NSLog(@"addlife");
+        collisions=collisions-1;
+        previousCollision=collisionHappenedAt;
+        didGetLife=TRUE;
+    }
     
     // Raptor allowed to jump?
     [raptor updateAllowedToJump];

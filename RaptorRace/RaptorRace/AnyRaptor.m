@@ -187,5 +187,23 @@
     }];
 }
 
+-(void)makeInvisible{
+    _lifes -= 1;
+    SKAction* hurtSound = [SKAction playSoundFileNamed:@"hurt.wav" waitForCompletion:NO];
+    SKAction* fadeOut = [SKAction fadeAlphaTo:0.5 duration:0.1];
+    SKAction* fadeIn = [SKAction fadeAlphaTo:1 duration:0.1];
+    self.undead = YES;
+    raptor.physicsBody.categoryBitMask = invicibleCategory;
+    raptor.physicsBody.collisionBitMask = worldCategory;
+    raptor.physicsBody.contactTestBitMask = worldCategory;
+    [self runAction:hurtSound];
+    [raptor runAction:[SKAction repeatAction:[SKAction sequence:@[fadeOut, fadeIn]] count:15] completion:^{
+        raptor.physicsBody.categoryBitMask = dinoCategory;
+        raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
+        raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
+        self.undead = NO;
+        
+    }];}
+
 
 @end

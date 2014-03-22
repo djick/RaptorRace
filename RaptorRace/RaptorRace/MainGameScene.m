@@ -10,11 +10,7 @@
 
 
 @implementation MainGameScene {
-    int collisions;
-    /////////////////////
-    CGFloat collisionHappenedAt;
 }
-
 -(CGVector)getGravityVector{
     return CGVectorMake(0, -10);
 }
@@ -75,7 +71,7 @@
     NSLog(@"CONTACT");
     if (contact.bodyA.categoryBitMask ==dinoCategory && contact.bodyB.categoryBitMask==obstacleCategory){
         NSLog(@"collison detected");
-        if (collisions==2) {
+        if (collisions==2 && didGetLife ==FALSE) {
             //gameover
             collisionHappenedAt = 0;
             [[ScoreSingleton getInstance] stopTimer];
@@ -90,20 +86,25 @@
         }
         else{
             collisionHappenedAt = [[ScoreSingleton getInstance] getScore];
-            CGFloat currScore=[[ScoreSingleton getInstance]getScore];
-            if (currScore!=0 && currScore >= collisionHappenedAt + 100) {
-                collisions=collisions-1;
             collisions=collisions+1;
-            [raptor looseLife];
-            [self setBackgroundColor:[SKColor colorWithRed:((collisions*80)+113.0)/255.0
-                                                    green:(197.0 - (collisions*40))/255.0
-                                                     blue:(207.0- (collisions*80))/255.0
-                                                    alpha:1.0]];
+            if (didGetLife==FALSE) {
+                [raptor looseLife];
+                [self setBackgroundColor:[SKColor colorWithRed:((collisions*80)+113.0)/255.0
+                                                         green:(197.0 - (collisions*40))/255.0
+                                                          blue:(207.0- (collisions*80))/255.0
+                                                         alpha:1.0]];
+                
+            }
+            else if (didGetLife==TRUE){
+                [raptor makeInvisible];
+                didGetLife = FALSE;
+            }
         }
     }
+    
     if (contact.bodyA.categoryBitMask ==obstacleCategory && contact.bodyB.categoryBitMask==dinoCategory){
         NSLog(@"collison detected");
-        if (collisions==2) {
+        if (collisions==2 && didGetLife==FALSE) {
             //gameover
             [scoreLabel removeFromParent];
             SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
@@ -117,17 +118,19 @@
         else{
             collisionHappenedAt = [[ScoreSingleton getInstance] getScore];
             collisions=collisions+1;
-            CGFloat currScore=[[ScoreSingleton getInstance]getScore];
-            if (currScore!=0 && currScore >= collisionHappenedAt + 100) {
-                collisions=collisions-1;
+            if (didGetLife==FALSE) {
+                [raptor looseLife];
+                [self setBackgroundColor:[SKColor colorWithRed:((collisions*80)+113.0)/255.0
+                                                         green:(197.0 - (collisions*40))/255.0
+                                                          blue:(207.0- (collisions*80))/255.0
+                                                         alpha:1.0]];
+
             }
-            [raptor looseLife];
-            [self setBackgroundColor:[SKColor colorWithRed:((collisions*80)+113.0)/255.0
-                                                     green:(197.0 - (collisions*40))/255.0
-                                                      blue:(207.0- (collisions*80))/255.0
-                                                     alpha:1.0]];
+            else if (didGetLife==TRUE){
+                [raptor makeInvisible];
+                didGetLife = FALSE;
+            }
         }
-    }
     }
 }
 

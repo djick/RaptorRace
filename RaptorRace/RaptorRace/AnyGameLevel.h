@@ -22,7 +22,10 @@
     // An array of frames used for the ground animation
     NSArray *groundMovingFrames;
     NSTimeInterval nextDinosaurSpawn;
-    
+    int collisions;
+    //int livesGiven;
+    CGFloat collisionHappenedAt;
+    bool didGetLife;
     SKSpriteNode *ground;
     SKSpriteNode *background;
     NSMutableArray *obstacleList;
@@ -146,6 +149,11 @@ Gets the name of the picture that should be used for the clouds.
  @return Returns string with image name of pause button to be used
  */
 -(NSString*) getPauseButton;
+
+/**
+ Gets the time of last collision
+ */
+
 
 
 @end

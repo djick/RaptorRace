@@ -12,5 +12,4 @@
 #import "GameOverScene.h"
 
 @interface MainGameScene : AnyGameLevel <SKPhysicsContactDelegate>
-
 @end
