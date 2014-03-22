@@ -37,9 +37,9 @@
 
 - (SKColor *) getBackgroundColor
 {
-    return [SKColor colorWithRed:113.0/255.0
-                           green:197.0/255.0
-                            blue:207.0/255.0
+    return [SKColor colorWithRed:107.0/255.0
+                           green:190.0/255.0
+                            blue:242.0/255.0
                            alpha:1.0];
 }
 
@@ -106,11 +106,19 @@
         NSLog(@"collison detected");
         if (collisions==2 && didGetLife==FALSE) {
             //gameover
+            NSNumber *high =[[NSNumber alloc] initWithFloat:[[ScoreSingleton getInstance] getScore]];
+            NSNumber *currentHigh =[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
+            if(currentHigh == nil || currentHigh<high){
+                [[NSUserDefaults standardUserDefaults] setObject:high forKey:@"highscore"];
+            }
+            
+            
+            [[ScoreSingleton getInstance] stopTimer];
             [scoreLabel removeFromParent];
             SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
             GameOverScene *gameover = [[GameOverScene alloc] initWithSize:self.size];
             [self.view presentScene:gameover transition:reveal];
-            [[ScoreSingleton getInstance] stopTimer];
+            
         }
         if (raptor.undead == YES) {
             

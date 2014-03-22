@@ -26,8 +26,8 @@
 
 - (SKTexture *) getTexture
 {
-    return [self createAnimationTextureWithAtlasNamed:[self getAtlasName]
-                                 AndPictureNameFormat:[self getPictureNameFormat]];
+    NSLog(@"getTexture Moving obstacle");
+    return [self createAnimationTextureWithAtlasNamed:[self getAtlasName] AndPictureNameFormat:[self getPictureNameFormat]];
 }
 
 - (SKTexture *) createAnimationTextureWithAtlasNamed:(NSString *)name

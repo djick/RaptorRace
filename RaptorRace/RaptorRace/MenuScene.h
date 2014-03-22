@@ -10,7 +10,8 @@
 
 @interface MenuScene : SKScene
 
-- (SKSpriteNode *)newGameButton;
+- (SKSpriteNode *)onePlayerButton;
+- (SKSpriteNode *)twoPlayerButton;
 - (SKSpriteNode *)highscoreButton;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 @end
