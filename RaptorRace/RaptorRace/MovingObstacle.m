@@ -26,7 +26,8 @@
 
 - (SKTexture *) getTexture
 {
-    return [self createAnimationTextureWithAtlasNamed:[self getAtlasName] AndPictureNameFormat:[self getPictureNameFormat]];
+    return [self createAnimationTextureWithAtlasNamed:[self getAtlasName]
+                                 AndPictureNameFormat:[self getPictureNameFormat]];
 }
 
 - (SKTexture *) createAnimationTextureWithAtlasNamed:(NSString *)name
@@ -57,10 +58,6 @@
                                              restore:YES]] withKey:@"runningInPlaceObstacleRaptor"];
 }
 
-- (SKAction *) makeMovementAction
-{
-    return NULL;
-}
 
 // Has to be implemented by sub-class, or it wil raise exception.
 - (NSString *) getAtlasName

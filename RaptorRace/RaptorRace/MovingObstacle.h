@@ -25,11 +25,6 @@
                                AndPictureNameFormat:(NSString *)format;
 
 /**
- Makes the action that moves the obstacle over the screen.
- */
-- (SKAction *) makeMovementAction;
-
-/**
  Gets the name of the atlas that should be used for the animation of the sprite.
  
  @return Retruns a string with the name of the atlas that should be used for animation.

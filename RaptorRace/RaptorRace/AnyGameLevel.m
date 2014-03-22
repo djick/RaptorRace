@@ -105,7 +105,7 @@
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
     [self addRaptor];
-    [self addObstacles];
+    //[self addObstacles];
 
     
 }
