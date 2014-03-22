@@ -203,7 +203,7 @@
 - (void) addPauseButtonWithImageNamed:(NSString*)name{
     pausebtn = [[Pause alloc] initWithImageNamed:name];
     [pausebtn setScale:0.7];
-    pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2));
+    pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)*1.85));
     pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
                             .size];
     pausebtn.physicsBody.dynamic = NO;
