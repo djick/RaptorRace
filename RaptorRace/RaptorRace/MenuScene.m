@@ -23,7 +23,7 @@
         [self addChild:[self highscoreButton]];
         
         AnyObstacle *obstacle = [[GreenRaptorObstacle alloc] init];
-        obstacle.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame)*0.6);
+        obstacle.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame)*0.55);
         obstacle.physicsBody.dynamic = NO;
         [self addChild:obstacle];
     }
