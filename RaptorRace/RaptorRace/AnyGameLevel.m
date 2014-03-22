@@ -166,6 +166,26 @@
                              AndFontName:fontName];
     scoreLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/4));
     
+    highscore = [[SKLabelNode alloc] initWithFontNamed:fontName];
+    highscore.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/3), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/3));
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"] != nil){
+        NSNumber *n =[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
+        NSString *str = [NSString stringWithFormat:@"Highscore: %d",[n intValue]];
+        [highscore setText:str];
+        [highscore setFontName:@"Courier-Bold"];
+        highscore.fontSize = 16;
+        //highscore.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
+
+    }
+    else{
+        NSString *str = [NSString stringWithFormat:@"Highscore: 0"];
+        [highscore setText:str];
+        [highscore setFontName:@"Courier-Bold"];
+        highscore.fontSize = 16;
+        //highscore.fontColor = [SKColor colorWithRed:251.0/255.0 green:127.0/255.0 blue:108.0/255.0 alpha:1.0];
+
+    }
+    
     [[ScoreSingleton getInstance] startTimer];
 }
 
@@ -240,7 +260,7 @@
     }
     else{
         AnyObstacle *stoneObs = [[StoneObstacle alloc] initWithGroundHeight:ground.texture.size.height];
-        [stoneObs setPosition:CGPointMake(self.frame.size.width-stoneObs.nodeWidth, ground.texture.size.height + stoneObs.height*0.90)];
+        [stoneObs setPosition:CGPointMake(self.frame.size.width-stoneObs.size.width, ground.texture.size.height + stoneObs.height*0.90)];
         [self addChild:stoneObs];
         [stoneObs fireObstacle];
         }

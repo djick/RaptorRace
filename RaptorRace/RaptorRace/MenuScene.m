@@ -8,27 +8,33 @@
 
 #import "MenuScene.h"
 #import "MainGameScene.h"
+#import "BRaptor.h"
 
 @implementation MenuScene
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size]) {
-        SKSpriteNode* sn = [SKSpriteNode spriteNodeWithImageNamed:@"RRbg"];
+        SKSpriteNode* sn = [SKSpriteNode spriteNodeWithImageNamed:@"bg1"];
         sn.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         sn.size = self.size;
         
         [self addChild:sn];
         [self addChild: [self newGameButton]];
         [self addChild:[self highscoreButton]];
+        
+        AnyObstacle *obstacle = [[GreenRaptorObstacle alloc] init];
+        obstacle.position = CGPointMake(self.frame.size.width / 2, CGRectGetMidY(self.frame)*0.6);
+        obstacle.physicsBody.dynamic = NO;
+        [self addChild:obstacle];
     }
     return self;
 }
 
 - (SKSpriteNode *)newGameButton
 {
-    SKSpriteNode *newGameButton = [SKSpriteNode spriteNodeWithImageNamed:@"newgame"];
+    SKSpriteNode *newGameButton = [SKSpriteNode spriteNodeWithImageNamed:@"ng"];
     newGameButton.size = CGSizeMake(175, 38);
-    newGameButton.position = CGPointMake(CGRectGetMidX(self.frame)-100,CGRectGetMidY(self.frame));
+    newGameButton.position = CGPointMake(CGRectGetMidX(self.frame)-100,CGRectGetMidY(self.frame)+20);
     newGameButton.name = @"newGameButton";
     return newGameButton;
     
@@ -36,9 +42,9 @@
 
 - (SKSpriteNode *)highscoreButton
 {
-    SKSpriteNode *highscoreButton = [SKSpriteNode spriteNodeWithImageNamed:@"highscore"];
+    SKSpriteNode *highscoreButton = [SKSpriteNode spriteNodeWithImageNamed:@"hs"];
     highscoreButton.size = CGSizeMake(175, 38);
-    highscoreButton.position = CGPointMake(CGRectGetMidX(self.frame)+100,CGRectGetMidY(self.frame));
+    highscoreButton.position = CGPointMake(CGRectGetMidX(self.frame)+100,CGRectGetMidY(self.frame)+20);
     highscoreButton.name = @"highscoreButton";
     return highscoreButton;
     

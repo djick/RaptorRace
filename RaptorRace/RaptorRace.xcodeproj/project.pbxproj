@@ -23,6 +23,12 @@
 		71D5C8B818DC7C3A003B497F /* raptorYellow.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B718DC7C3A003B497F /* raptorYellow.atlas */; };
 		71D5C8BA18DC7C78003B497F /* DeadYellowRaptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B918DC7C78003B497F /* DeadYellowRaptor.png */; };
 		71D5C8BC18DC8700003B497F /* DeadYellowRaptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8BB18DC8700003B497F /* DeadYellowRaptor.png */; };
+		7F21186118DD93CA003ED5D3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F21186018DD93CA003ED5D3 /* GameKit.framework */; };
+		71D5C8CC18DDA1FC003B497F /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8C618DDA1FC003B497F /* go.png */; };
+		71D5C8CE18DDA1FC003B497F /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8C818DDA1FC003B497F /* bg1.png */; };
+		71D5C8D418DDA6BB003B497F /* ng.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8D318DDA6BB003B497F /* ng.png */; };
+		71D5C8D618DDA710003B497F /* hs.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8D518DDA710003B497F /* hs.png */; };
+		71D5C8D818DDAB34003B497F /* raptorBlue.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8D718DDAB34003B497F /* raptorBlue.atlas */; };
 		7F3036AA18D705AD00010347 /* ScoreSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036A918D705AD00010347 /* ScoreSingleton.m */; };
 		7F3036AD18D70DCF00010347 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3036AC18D70DCF00010347 /* Pause.m */; };
 		7F5F71A418DC6A9D00389FB8 /* GreenRaptorObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F71A318DC6A9D00389FB8 /* GreenRaptorObstacle.m */; };
@@ -95,6 +101,12 @@
 		71D5C8B718DC7C3A003B497F /* raptorYellow.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptorYellow.atlas; sourceTree = "<group>"; };
 		71D5C8B918DC7C78003B497F /* DeadYellowRaptor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeadYellowRaptor.png; sourceTree = "<group>"; };
 		71D5C8BB18DC8700003B497F /* DeadYellowRaptor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeadYellowRaptor.png; sourceTree = "<group>"; };
+		7F21186018DD93CA003ED5D3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		71D5C8C618DDA1FC003B497F /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go.png; sourceTree = "<group>"; };
+		71D5C8C818DDA1FC003B497F /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
+		71D5C8D318DDA6BB003B497F /* ng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ng.png; sourceTree = "<group>"; };
+		71D5C8D518DDA710003B497F /* hs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hs.png; sourceTree = "<group>"; };
+		71D5C8D718DDAB34003B497F /* raptorBlue.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = raptorBlue.atlas; sourceTree = "<group>"; };
 		7F3036A818D705AD00010347 /* ScoreSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreSingleton.h; sourceTree = "<group>"; };
 		7F3036A918D705AD00010347 /* ScoreSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreSingleton.m; sourceTree = "<group>"; };
 		7F3036AB18D70DCF00010347 /* Pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pause.h; sourceTree = "<group>"; };
@@ -171,6 +183,7 @@
 				AFCFA35018BF81F900092E6E /* UIKit.framework in Frameworks */,
 				AFCFA35218BF81F900092E6E /* SpriteKit.framework in Frameworks */,
 				AFCFA34C18BF81F900092E6E /* Foundation.framework in Frameworks */,
+				7F21186118DD93CA003ED5D3 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +279,7 @@
 		AFCFA34A18BF81F900092E6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F21186018DD93CA003ED5D3 /* GameKit.framework */,
 				AFCFA34B18BF81F900092E6E /* Foundation.framework */,
 				AFCFA34D18BF81F900092E6E /* CoreGraphics.framework */,
 				AFCFA34F18BF81F900092E6E /* UIKit.framework */,
@@ -280,6 +294,7 @@
 			children = (
 				905AE3D018CF20560007DE4E /* ViewControllers */,
 				905AE3CF18CF20210007DE4E /* Models */,
+				71D5C8D718DDAB34003B497F /* raptorBlue.atlas */,
 				9044F67918D608950076B124 /* ground.atlas */,
 				71D5C8B718DC7C3A003B497F /* raptorYellow.atlas */,
 				719454C818DB3DE200B07E25 /* obstacleGreenRaptor.atlas */,
@@ -300,6 +315,10 @@
 			children = (
 				AFE10B7A18DD999B00734614 /* PauseButton.png */,
 				AFE10B7B18DD999B00734614 /* PlayButton.png */,
+				71D5C8D518DDA710003B497F /* hs.png */,
+				71D5C8D318DDA6BB003B497F /* ng.png */,
+				71D5C8C618DDA1FC003B497F /* go.png */,
+				71D5C8C818DDA1FC003B497F /* bg1.png */,
 				71D5C8BB18DC8700003B497F /* DeadYellowRaptor.png */,
 				71D5C8B918DC7C78003B497F /* DeadYellowRaptor.png */,
 				90B15FB618DB141800B8DEED /* stone_obstacle.png */,
@@ -395,6 +414,11 @@
 				TargetAttributes = {
 					AFCFA34718BF81F900092E6E = {
 						DevelopmentTeam = 9JSE362875;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					AFCFA36F18BF81F900092E6E = {
 						TestTargetID = AFCFA34718BF81F900092E6E;
@@ -426,14 +450,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE10B7D18DD999B00734614 /* PlayButton.png in Resources */,
+				71D5C8CE18DDA1FC003B497F /* bg1.png in Resources */,
 				9044F67A18D608950076B124 /* ground.atlas in Resources */,
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
 				719454C918DB3DE200B07E25 /* obstacleGreenRaptor.atlas in Resources */,
 				71D5C8BC18DC8700003B497F /* DeadYellowRaptor.png in Resources */,
 				71D5C8BA18DC7C78003B497F /* DeadYellowRaptor.png in Resources */,
 				71B12DA718D6669600EA30D6 /* newgame.png in Resources */,
+				71D5C8D418DDA6BB003B497F /* ng.png in Resources */,
 				AF7CFB9A18D9B069009111AB /* jump.wav in Resources */,
 				71B12DA518D6652900EA30D6 /* highscore.png in Resources */,
+				71D5C8D818DDAB34003B497F /* raptorBlue.atlas in Resources */,
+				71D5C8CC18DDA1FC003B497F /* go.png in Resources */,
 				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
 				AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */,
 				71D5C8B618DC588A003B497F /* gr.atlas in Resources */,
@@ -447,6 +475,7 @@
 				71877D1218D7540400DEE120 /* obstacleRedRaptor.atlas in Resources */,
 				71D5C8B818DC7C3A003B497F /* raptorYellow.atlas in Resources */,
 				71A9DE1E18D0F6B000441272 /* ground1.png in Resources */,
+				71D5C8D618DDA710003B497F /* hs.png in Resources */,
 				90B15FB718DB141800B8DEED /* stone_obstacle.png in Resources */,
 				AFE10B7C18DD999B00734614 /* PauseButton.png in Resources */,
 				71A9DE1918D08CE200441272 /* dinosaur1.png in Resources */,
