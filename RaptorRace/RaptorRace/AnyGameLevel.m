@@ -21,6 +21,7 @@
         [self addChild:background];
         [self addChild:scoreLabel];
         [self addChild:pausebtn];
+        [self addChild:lifeLabel];
         nextDinosaurSpawn = 0.0;
 
 
@@ -40,6 +41,14 @@
     CGFloat displayedScore = 0.0;
     if([scoreLabel getScore] != displayedScore) {
         displayedScore = [[ScoreSingleton getInstance] getScore];
+    }
+    
+    int displayedLifes = lifeLabel.text;
+    if (displayedLifes != [raptor getLifes]) {
+        lifeLabel.text = [NSString stringWithFormat:@"Lifes: %d", [raptor getLifes]];
+    }
+    else if (displayedLifes < 0) {
+        lifeLabel.text = @"Dead";
     }
     
     // Raptor allowed to jump?
@@ -85,6 +94,7 @@
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
+    [self addLifeCounterWithColor:[self getScoreCounterColor] AndFontNamed:[self getScoreCounterFontName]];
     [self addPauseButtonWithImageNamed:[self getPauseButton]];
     [self addRaptor];
     //[self addObstacles];
@@ -159,10 +169,20 @@
     [[ScoreSingleton getInstance] startTimer];
 }
 
+- (void) addLifeCounterWithColor:(UIColor *)color
+                     AndFontNamed:(NSString *)fontName
+{
+    lifeLabel = [SKLabelNode labelNodeWithFontNamed:fontName];
+    lifeLabel.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/4), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2.8));
+    lifeLabel.text = [NSString stringWithFormat:@"Lifes: %d", [raptor getLifes]];
+    lifeLabel.fontSize = 20;
+}
+
+
 - (void) addPauseButtonWithImageNamed:(NSString*)name{
     pausebtn = [[Pause alloc] initWithImageNamed:name];
     [pausebtn setScale:0.7];
-    pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2.5));
+    pausebtn.position = CGPointMake(CGRectGetWidth(self.frame)-(CGRectGetMidX(self.frame)/5), CGRectGetHeight(self.frame)- (CGRectGetMidY(self.frame)/2));
     pausebtn.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pausebtn
                             .size];
     pausebtn.physicsBody.dynamic = NO;
