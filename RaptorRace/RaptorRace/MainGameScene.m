@@ -69,7 +69,10 @@
         if (collisions==2) {
             //gameover
             NSNumber *high =[[NSNumber alloc] initWithFloat:[[ScoreSingleton getInstance] getScore]];
-            [[NSUserDefaults standardUserDefaults] setObject:high forKey:@"highscore"];
+            NSNumber *currentHigh =[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
+            if(currentHigh == nil || currentHigh<high){
+                [[NSUserDefaults standardUserDefaults] setObject:high forKey:@"highscore"];
+            }
             [[ScoreSingleton getInstance] stopTimer];
             [scoreLabel removeFromParent];
             SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
@@ -103,7 +106,12 @@
         if (collisions==2) {
             //gameover
             NSNumber *high =[[NSNumber alloc] initWithFloat:[[ScoreSingleton getInstance] getScore]];
-            [[NSUserDefaults standardUserDefaults] setObject:high forKey:@"highscore"];
+            NSNumber *currentHigh =[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
+            if(currentHigh == nil || currentHigh<high){
+                [[NSUserDefaults standardUserDefaults] setObject:high forKey:@"highscore"];
+            }
+            
+            
             [[ScoreSingleton getInstance] stopTimer];
             [scoreLabel removeFromParent];
             SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
