@@ -41,6 +41,8 @@
     if([scoreLabel getScore] != displayedScore) {
         displayedScore = [[ScoreSingleton getInstance] getScore];
     }
+    //Add life to raptor?
+    
     
     // Raptor allowed to jump?
     [raptor updateAllowedToJump];

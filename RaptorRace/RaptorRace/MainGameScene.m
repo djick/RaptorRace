@@ -8,8 +8,11 @@
 
 #import "MainGameScene.h"
 
+
 @implementation MainGameScene {
     int collisions;
+    /////////////////////
+    CGFloat collisionHappenedAt;
 }
 
 -(CGVector)getGravityVector{
@@ -60,6 +63,12 @@
 - (NSString *)getPauseButton{
     return @"PauseButton";
 }
+//- (void) CheckAddLife{
+//    CGFloat currScore=[[ScoreSingleton getInstance]getScore];
+//    if (currScore!=0 && currScore >= collisionHappenedAt + 1000) {
+//        collisions=collisions-1;
+//    }
+//}
 
 
 -(void)didBeginContact:(SKPhysicsContact*)contact {
@@ -68,6 +77,7 @@
         NSLog(@"collison detected");
         if (collisions==2) {
             //gameover
+            collisionHappenedAt = 0;
             [[ScoreSingleton getInstance] stopTimer];
             [scoreLabel removeFromParent];
             SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
@@ -79,6 +89,10 @@
             
         }
         else{
+            collisionHappenedAt = [[ScoreSingleton getInstance] getScore];
+            CGFloat currScore=[[ScoreSingleton getInstance]getScore];
+            if (currScore!=0 && currScore >= collisionHappenedAt + 100) {
+                collisions=collisions-1;
             collisions=collisions+1;
             [raptor looseLife];
             [self setBackgroundColor:[SKColor colorWithRed:((collisions*80)+113.0)/255.0
@@ -101,17 +115,21 @@
             
         }
         else{
+            collisionHappenedAt = [[ScoreSingleton getInstance] getScore];
             collisions=collisions+1;
+            CGFloat currScore=[[ScoreSingleton getInstance]getScore];
+            if (currScore!=0 && currScore >= collisionHappenedAt + 100) {
+                collisions=collisions-1;
+            }
             [raptor looseLife];
             [self setBackgroundColor:[SKColor colorWithRed:((collisions*80)+113.0)/255.0
                                                      green:(197.0 - (collisions*40))/255.0
                                                       blue:(207.0- (collisions*80))/255.0
                                                      alpha:1.0]];
-
         }
     }
+    }
 }
-
 
 
 
