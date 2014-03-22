@@ -21,7 +21,8 @@
         [self addChild:background];
         [self addChild:scoreLabel];
         [self addChild:pausebtn];
-        [self addChild:lifeLabel];
+        [self addChild:highscore];
+//        [self addChild:lifeLabel];
         nextDinosaurSpawn = 0.0;
 
 
@@ -43,13 +44,13 @@
         displayedScore = [[ScoreSingleton getInstance] getScore];
     }
     
-    int displayedLifes = lifeLabel.text;
-    if (displayedLifes != [raptor getLifes]) {
-        lifeLabel.text = [NSString stringWithFormat:@"Lifes: %d", [raptor getLifes]];
-    }
-    else if (displayedLifes < 0) {
-        lifeLabel.text = @"Dead";
-    }
+//    int displayedLifes = lifeLabel.text;
+//    if (displayedLifes != [raptor getLifes]) {
+//        lifeLabel.text = [NSString stringWithFormat:@"Lifes: %d", [raptor getLifes]];
+//    }
+//    else if (displayedLifes < 0) {
+//        lifeLabel.text = @"Dead";
+//    }
     
     // Raptor allowed to jump?
     [raptor updateAllowedToJump];
@@ -94,7 +95,7 @@
     [self addCloudsWithImageNamed:[self getCloudPictureName]];
     [self addScoreCounterWithColor:[self getScoreCounterColor]
                       AndFontNamed:[self getScoreCounterFontName]];
-    [self addLifeCounterWithColor:[self getScoreCounterColor] AndFontNamed:[self getScoreCounterFontName]];
+//    [self addLifeCounterWithColor:[self getScoreCounterColor] AndFontNamed:[self getScoreCounterFontName]];
     [self addPauseButtonWithImageNamed:[self getPauseButton]];
     [self addRaptor];
     //[self addObstacles];

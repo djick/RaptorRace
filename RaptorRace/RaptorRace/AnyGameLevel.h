@@ -33,6 +33,7 @@
     NSTimeInterval pausedAtTime;
     
     ScoreSingleton * scoreLabel;
+    SKLabelNode * highscore;
     SKLabelNode* lifeLabel;
     
     NSTimer* timer;
