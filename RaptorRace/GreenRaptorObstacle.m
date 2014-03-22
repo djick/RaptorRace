@@ -1,15 +1,14 @@
 //
-//  RedRaptorObstacle.m
+//  GreenRaptorObstacle.m
 //  RaptorRace
 //
-//  Created by Nemanja Aksic on 3/19/14.
+//  Created by Nemanja Aksic on 3/21/14.
 //  Copyright (c) 2014 iOne. All rights reserved.
 //
 
-#import "RedRaptorObstacle.h"
-#import "Categories.h"
+#import "GreenRaptorObstacle.h"
 
-@implementation RedRaptorObstacle
+@implementation GreenRaptorObstacle
 
 -(id) init{
     self = [super init];
@@ -26,15 +25,15 @@
 
 -(NSString *)getAtlasName
 {
-    return @"obstacleRedRaptor";
-
+    return @"obstacleGreenRaptor";
 }
-    
+
 
 - (NSString *)getPictureNameFormat
 {
-    return @"obstacleRaptor%d";
+    return @"ObstacleRaptor%d";
 }
+
 
 
 @end

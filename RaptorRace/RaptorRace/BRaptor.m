@@ -13,12 +13,12 @@
 
 - (NSString *) getAtlasName
 {
-    return @"raptor";
+    return @"raptorYellow";
 }
 
 - (NSString* ) getPictureNameFormat
 {
-    return @"rapto%d";
+    return @"RaptorYellow%d";
 }
 
 @end

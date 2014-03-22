@@ -84,7 +84,7 @@
 
 - (void) setPhysicalAbilitiesOfRaptor
 {
-    raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:raptor.frame.size];
+    raptor.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(raptor.frame.size.width*0.7, raptor.frame.size.height)];
 //    raptor.anchorPoint = CGPointMake(0.0, 1.0);
 //    
 //    path = CGPathCreateMutable();
@@ -106,6 +106,8 @@
     raptor.physicsBody.categoryBitMask = dinoCategory;
     raptor.physicsBody.collisionBitMask = worldCategory | obstacleCategory;
     raptor.physicsBody.contactTestBitMask = worldCategory | obstacleCategory;
+    raptor.xScale = 0.8;
+    raptor.yScale = 0.8;
 }
 
 - (void) forceApplied:(CGVector) force {
@@ -122,13 +124,13 @@
     //CGFloat velocity = raptor.physicsBody.velocity.dy;
     //Raptor allowed to jump?
     if ((self.allowedToJump && !self.inAir) || _jumpState == 0) {
-        [self forceApplied:(CGVectorMake(0.0, 90.0))];
+        [self forceApplied:(CGVectorMake(0.0, 100.0))];
         self.inAir = YES;
         _jumpState = 1;
         [self runAction:jumpSound];
     }
     else if (self.allowedToJump && self.inAir && _jumpState == 1) {
-        [self forceApplied:(CGVectorMake(0.0, 40.0))];
+        [self forceApplied:(CGVectorMake(0.0, 50.0))];
         self.inAir = YES;
         self.allowedToJump = NO;
         _jumpState = 2;
