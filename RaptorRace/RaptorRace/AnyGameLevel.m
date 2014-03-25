@@ -59,7 +59,6 @@ int previousCollision;
         previousCollision=collisionHappenedAt;
         didGetLife=TRUE;
     }
-    
 //    int displayedLifes = lifeLabel.text;
 //    if (displayedLifes != [raptor getLifes]) {
 //        lifeLabel.text = [NSString stringWithFormat:@"Lifes: %d", [raptor getLifes]];

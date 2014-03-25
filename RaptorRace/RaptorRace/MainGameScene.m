@@ -74,6 +74,11 @@
         if (collisions==2 && didGetLife ==FALSE) {
             //gameover
             collisionHappenedAt = 0;
+            NSNumber *high =[[NSNumber alloc] initWithFloat:[[ScoreSingleton getInstance] getScore]];
+            NSNumber *currentHigh =[[NSUserDefaults standardUserDefaults] objectForKey:@"highscore"];
+            if(currentHigh == nil || currentHigh<high){
+                [[NSUserDefaults standardUserDefaults] setObject:high forKey:@"highscore"];
+            }
             [[ScoreSingleton getInstance] stopTimer];
             [scoreLabel removeFromParent];
             SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:1.0];
@@ -99,6 +104,7 @@
                 [raptor makeInvisible];
                 didGetLife = FALSE;
             }
+            
         }
     }
     
