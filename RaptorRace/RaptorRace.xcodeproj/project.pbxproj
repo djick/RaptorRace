@@ -19,12 +19,13 @@
 		71AD038718DDC5840029F26C /* 2p.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AD038418DDC5840029F26C /* 2p.png */; };
 		71AD038818DDC5840029F26C /* hs1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AD038518DDC5840029F26C /* hs1.png */; };
 		71AD038918DDC5840029F26C /* 1p.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AD038618DDC5840029F26C /* 1p.png */; };
+		71AD038C18DDCD7A0029F26C /* won.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AD038A18DDCD7A0029F26C /* won.png */; };
+		71AD038D18DDCD7A0029F26C /* lost.png in Resources */ = {isa = PBXBuildFile; fileRef = 71AD038B18DDCD7A0029F26C /* lost.png */; };
 		71B12DA518D6652900EA30D6 /* highscore.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA318D6652900EA30D6 /* highscore.png */; };
 		71B12DA718D6669600EA30D6 /* newgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DA618D6669600EA30D6 /* newgame.png */; };
 		71B12DAC18D6699500EA30D6 /* RRbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B12DAB18D6699500EA30D6 /* RRbg.png */; };
 		71D5C8B618DC588A003B497F /* gr.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B518DC588A003B497F /* gr.atlas */; };
 		71D5C8B818DC7C3A003B497F /* raptorYellow.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B718DC7C3A003B497F /* raptorYellow.atlas */; };
-		71D5C8BA18DC7C78003B497F /* DeadYellowRaptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8B918DC7C78003B497F /* DeadYellowRaptor.png */; };
 		71D5C8BC18DC8700003B497F /* DeadYellowRaptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8BB18DC8700003B497F /* DeadYellowRaptor.png */; };
 		71D5C8CC18DDA1FC003B497F /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8C618DDA1FC003B497F /* go.png */; };
 		71D5C8CE18DDA1FC003B497F /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 71D5C8C818DDA1FC003B497F /* bg1.png */; };
@@ -99,6 +100,8 @@
 		71AD038418DDC5840029F26C /* 2p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2p.png; sourceTree = "<group>"; };
 		71AD038518DDC5840029F26C /* hs1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hs1.png; sourceTree = "<group>"; };
 		71AD038618DDC5840029F26C /* 1p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1p.png; sourceTree = "<group>"; };
+		71AD038A18DDCD7A0029F26C /* won.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = won.png; sourceTree = "<group>"; };
+		71AD038B18DDCD7A0029F26C /* lost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lost.png; sourceTree = "<group>"; };
 		71B12DA318D6652900EA30D6 /* highscore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = highscore.png; sourceTree = "<group>"; };
 		71B12DA618D6669600EA30D6 /* newgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newgame.png; sourceTree = "<group>"; };
 		71B12DAB18D6699500EA30D6 /* RRbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RRbg.png; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 		AFCFA35418BF81F900092E6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71AD038A18DDCD7A0029F26C /* won.png */,
+				71AD038B18DDCD7A0029F26C /* lost.png */,
 				71AD038418DDC5840029F26C /* 2p.png */,
 				71AD038518DDC5840029F26C /* hs1.png */,
 				71AD038618DDC5840029F26C /* 1p.png */,
@@ -455,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71AD038C18DDCD7A0029F26C /* won.png in Resources */,
 				71AD038818DDC5840029F26C /* hs1.png in Resources */,
 				AFE10B7D18DD999B00734614 /* PlayButton.png in Resources */,
 				71D5C8CE18DDA1FC003B497F /* bg1.png in Resources */,
@@ -462,13 +468,13 @@
 				71A9DE1A18D08CE200441272 /* dinosaur2.png in Resources */,
 				719454C918DB3DE200B07E25 /* obstacleGreenRaptor.atlas in Resources */,
 				71D5C8BC18DC8700003B497F /* DeadYellowRaptor.png in Resources */,
-				71D5C8BA18DC7C78003B497F /* DeadYellowRaptor.png in Resources */,
 				71B12DA718D6669600EA30D6 /* newgame.png in Resources */,
 				71D5C8D418DDA6BB003B497F /* ng.png in Resources */,
 				AF7CFB9A18D9B069009111AB /* jump.wav in Resources */,
 				71B12DA518D6652900EA30D6 /* highscore.png in Resources */,
 				71D5C8D818DDAB34003B497F /* raptorBlue.atlas in Resources */,
 				71D5C8CC18DDA1FC003B497F /* go.png in Resources */,
+				71AD038D18DDCD7A0029F26C /* lost.png in Resources */,
 				71A9DE2018D0F9D500441272 /* ground2.png in Resources */,
 				AFE6394C18D203EC0011D3CC /* mainMenyBG.png in Resources */,
 				71D5C8B618DC588A003B497F /* gr.atlas in Resources */,
